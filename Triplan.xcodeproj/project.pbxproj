@@ -8,21 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */; };
-		4A62C31F1DEBE664008DAD1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C31E1DEBE664008DAD1D /* ViewController.swift */; };
 		4A62C3221DEBE664008DAD1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3201DEBE664008DAD1D /* Main.storyboard */; };
 		4A62C3241DEBE664008DAD1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3231DEBE664008DAD1D /* Assets.xcassets */; };
 		4A62C3271DEBE664008DAD1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3251DEBE664008DAD1D /* LaunchScreen.storyboard */; };
 		4A62C3321DEBE665008DAD1D /* TriplanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C3311DEBE665008DAD1D /* TriplanTests.swift */; };
 		4A62C33D1DEBE665008DAD1D /* TriplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */; };
-		4A62C35D1DEBF1E6008DAD1D /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */; };
-		4A62C35E1DEBF1E6008DAD1D /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */; };
-		4A62C35F1DEBF1E6008DAD1D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3561DEBF1E6008DAD1D /* Realm.framework */; };
-		4A62C3601DEBF1E6008DAD1D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */; };
-		4A62C3611DEBF1E6008DAD1D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */; };
-		4A62C3621DEBF1E6008DAD1D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */; };
-		4A62C3631DEBF1E6008DAD1D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */; };
-		4A62C3641DEBF1E6008DAD1D /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */; };
-		4A62C3651DEBF1E6008DAD1D /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */; };
+		4AB1D4271DEBF71600160E09 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */; };
+		4AB1D4281DEBF71600160E09 /* MarqueeLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D4291DEBF71600160E09 /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */; };
+		4AB1D42A1DEBF71600160E09 /* MarqueeLabelSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D42B1DEBF71600160E09 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3561DEBF1E6008DAD1D /* Realm.framework */; };
+		4AB1D42C1DEBF71600160E09 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3561DEBF1E6008DAD1D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D42D1DEBF71600160E09 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */; };
+		4AB1D42E1DEBF71600160E09 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D42F1DEBF71600160E09 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */; };
+		4AB1D4301DEBF71600160E09 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D4311DEBF71600160E09 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */; };
+		4AB1D4321DEBF71600160E09 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D4331DEBF71600160E09 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */; };
+		4AB1D4341DEBF71600160E09 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D4351DEBF71600160E09 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */; };
+		4AB1D4361DEBF71600160E09 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AB1D4371DEBF71600160E09 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */; };
+		4AB1D4381DEBF71600160E09 /* SwiftyUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +48,47 @@
 			remoteGlobalIDString = 4A62C3181DEBE664008DAD1D;
 			remoteInfo = Triplan;
 		};
+		4AB1D43C1DEBF89800160E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A62C3111DEBE664008DAD1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A62C32C1DEBE665008DAD1D;
+			remoteInfo = TriplanTests;
+		};
+		4AB1D43E1DEBF89A00160E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A62C3111DEBE664008DAD1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A62C3371DEBE665008DAD1D;
+			remoteInfo = TriplanUITests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4AB1D4391DEBF71700160E09 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4AB1D4321DEBF71600160E09 /* RxCocoa.framework in Embed Frameworks */,
+				4AB1D42C1DEBF71600160E09 /* Realm.framework in Embed Frameworks */,
+				4AB1D4341DEBF71600160E09 /* RxSwift.framework in Embed Frameworks */,
+				4AB1D4381DEBF71600160E09 /* SwiftyUserDefaults.framework in Embed Frameworks */,
+				4AB1D4301DEBF71600160E09 /* RxBlocking.framework in Embed Frameworks */,
+				4AB1D42A1DEBF71600160E09 /* MarqueeLabelSwift.framework in Embed Frameworks */,
+				4AB1D42E1DEBF71600160E09 /* RealmSwift.framework in Embed Frameworks */,
+				4AB1D4361DEBF71600160E09 /* RxTest.framework in Embed Frameworks */,
+				4AB1D4281DEBF71600160E09 /* MarqueeLabel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A62C3191DEBE664008DAD1D /* Triplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A62C31E1DEBE664008DAD1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A62C3211DEBE664008DAD1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A62C3231DEBE664008DAD1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A62C3261DEBE664008DAD1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,15 +115,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A62C35D1DEBF1E6008DAD1D /* MarqueeLabel.framework in Frameworks */,
-				4A62C35E1DEBF1E6008DAD1D /* MarqueeLabelSwift.framework in Frameworks */,
-				4A62C35F1DEBF1E6008DAD1D /* Realm.framework in Frameworks */,
-				4A62C3601DEBF1E6008DAD1D /* RealmSwift.framework in Frameworks */,
-				4A62C3611DEBF1E6008DAD1D /* RxBlocking.framework in Frameworks */,
-				4A62C3621DEBF1E6008DAD1D /* RxCocoa.framework in Frameworks */,
-				4A62C3631DEBF1E6008DAD1D /* RxSwift.framework in Frameworks */,
-				4A62C3641DEBF1E6008DAD1D /* RxTest.framework in Frameworks */,
-				4A62C3651DEBF1E6008DAD1D /* SwiftyUserDefaults.framework in Frameworks */,
+				4AB1D4311DEBF71600160E09 /* RxCocoa.framework in Frameworks */,
+				4AB1D42B1DEBF71600160E09 /* Realm.framework in Frameworks */,
+				4AB1D4331DEBF71600160E09 /* RxSwift.framework in Frameworks */,
+				4AB1D4371DEBF71600160E09 /* SwiftyUserDefaults.framework in Frameworks */,
+				4AB1D42F1DEBF71600160E09 /* RxBlocking.framework in Frameworks */,
+				4AB1D4291DEBF71600160E09 /* MarqueeLabelSwift.framework in Frameworks */,
+				4AB1D42D1DEBF71600160E09 /* RealmSwift.framework in Frameworks */,
+				4AB1D4351DEBF71600160E09 /* RxTest.framework in Frameworks */,
+				4AB1D4271DEBF71600160E09 /* MarqueeLabel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				4A62C34E1DEBED27008DAD1D /* 인터페이스 */,
-				4A62C31E1DEBE664008DAD1D /* ViewController.swift */,
 				4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */,
 			);
 			name = src;
@@ -235,10 +277,13 @@
 				4A62C3151DEBE664008DAD1D /* Sources */,
 				4A62C3161DEBE664008DAD1D /* Frameworks */,
 				4A62C3171DEBE664008DAD1D /* Resources */,
+				4AB1D4391DEBF71700160E09 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4AB1D43F1DEBF89A00160E09 /* PBXTargetDependency */,
+				4AB1D43D1DEBF89800160E09 /* PBXTargetDependency */,
 			);
 			name = Triplan;
 			productName = Triplan;
@@ -362,7 +407,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A62C31F1DEBE664008DAD1D /* ViewController.swift in Sources */,
 				4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +440,16 @@
 			target = 4A62C3181DEBE664008DAD1D /* Triplan */;
 			targetProxy = 4A62C3391DEBE665008DAD1D /* PBXContainerItemProxy */;
 		};
+		4AB1D43D1DEBF89800160E09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A62C32C1DEBE665008DAD1D /* TriplanTests */;
+			targetProxy = 4AB1D43C1DEBF89800160E09 /* PBXContainerItemProxy */;
+		};
+		4AB1D43F1DEBF89A00160E09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A62C3371DEBE665008DAD1D /* TriplanUITests */;
+			targetProxy = 4AB1D43E1DEBF89A00160E09 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -421,6 +475,7 @@
 		4A62C33F1DEBE665008DAD1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -458,6 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,6 +526,7 @@
 		4A62C3401DEBE665008DAD1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -501,6 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -620,6 +678,7 @@
 				4A62C3431DEBE665008DAD1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A62C3441DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "TriplanTests" */ = {
 			isa = XCConfigurationList;
@@ -628,6 +687,7 @@
 				4A62C3461DEBE665008DAD1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A62C3471DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "TriplanUITests" */ = {
 			isa = XCConfigurationList;
@@ -636,6 +696,7 @@
 				4A62C3491DEBE665008DAD1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
