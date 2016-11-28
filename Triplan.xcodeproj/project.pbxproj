@@ -7,30 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07BFB31053B7AB4C36E96956 /* Pods_Triplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B8283680A6744640F5642 /* Pods_Triplan.framework */; };
 		4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */; };
 		4A62C3221DEBE664008DAD1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3201DEBE664008DAD1D /* Main.storyboard */; };
 		4A62C3241DEBE664008DAD1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3231DEBE664008DAD1D /* Assets.xcassets */; };
 		4A62C3271DEBE664008DAD1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3251DEBE664008DAD1D /* LaunchScreen.storyboard */; };
 		4A62C3321DEBE665008DAD1D /* TriplanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C3311DEBE665008DAD1D /* TriplanTests.swift */; };
 		4A62C33D1DEBE665008DAD1D /* TriplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */; };
-		4AB1D4271DEBF71600160E09 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */; };
-		4AB1D4281DEBF71600160E09 /* MarqueeLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D4291DEBF71600160E09 /* MarqueeLabelSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */; };
-		4AB1D42A1DEBF71600160E09 /* MarqueeLabelSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D42B1DEBF71600160E09 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3561DEBF1E6008DAD1D /* Realm.framework */; };
-		4AB1D42C1DEBF71600160E09 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3561DEBF1E6008DAD1D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D42D1DEBF71600160E09 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */; };
-		4AB1D42E1DEBF71600160E09 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D42F1DEBF71600160E09 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */; };
-		4AB1D4301DEBF71600160E09 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D4311DEBF71600160E09 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */; };
-		4AB1D4321DEBF71600160E09 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D4331DEBF71600160E09 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */; };
-		4AB1D4341DEBF71600160E09 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D4351DEBF71600160E09 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */; };
-		4AB1D4361DEBF71600160E09 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AB1D4371DEBF71600160E09 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */; };
-		4AB1D4381DEBF71600160E09 /* SwiftyUserDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AF8926B1DEC7AB900E837E4 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892611DEC7AB900E837E4 /* CurrencyViewController.swift */; };
+		4AF8926C1DEC7AB900E837E4 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892621DEC7AB900E837E4 /* CurrencyCell.swift */; };
+		4AF8926D1DEC7AB900E837E4 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892641DEC7AB900E837E4 /* CurrencyViewModel.swift */; };
+		4AF8926E1DEC7AB900E837E4 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892651DEC7AB900E837E4 /* CalculatorViewModel.swift */; };
+		4AF8926F1DEC7AB900E837E4 /* CalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892661DEC7AB900E837E4 /* CalculatorManager.swift */; };
+		4AF892701DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892671DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift */; };
+		4AF892711DEC7AB900E837E4 /* CurrencyEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892681DEC7AB900E837E4 /* CurrencyEndPoint.swift */; };
+		4AF8927C1DEC848300E837E4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892771DEC848300E837E4 /* Currency.swift */; };
+		4AF8927D1DEC848300E837E4 /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892791DEC848300E837E4 /* CellPresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,45 +40,10 @@
 			remoteGlobalIDString = 4A62C3181DEBE664008DAD1D;
 			remoteInfo = Triplan;
 		};
-		4AB1D43C1DEBF89800160E09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A62C3111DEBE664008DAD1D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A62C32C1DEBE665008DAD1D;
-			remoteInfo = TriplanTests;
-		};
-		4AB1D43E1DEBF89A00160E09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A62C3111DEBE664008DAD1D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A62C3371DEBE665008DAD1D;
-			remoteInfo = TriplanUITests;
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		4AB1D4391DEBF71700160E09 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4AB1D4321DEBF71600160E09 /* RxCocoa.framework in Embed Frameworks */,
-				4AB1D42C1DEBF71600160E09 /* Realm.framework in Embed Frameworks */,
-				4AB1D4341DEBF71600160E09 /* RxSwift.framework in Embed Frameworks */,
-				4AB1D4381DEBF71600160E09 /* SwiftyUserDefaults.framework in Embed Frameworks */,
-				4AB1D4301DEBF71600160E09 /* RxBlocking.framework in Embed Frameworks */,
-				4AB1D42A1DEBF71600160E09 /* MarqueeLabelSwift.framework in Embed Frameworks */,
-				4AB1D42E1DEBF71600160E09 /* RealmSwift.framework in Embed Frameworks */,
-				4AB1D4361DEBF71600160E09 /* RxTest.framework in Embed Frameworks */,
-				4AB1D4281DEBF71600160E09 /* MarqueeLabel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		0F049FEB10B9690EB025276F /* Pods-Triplan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Triplan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Triplan/Pods-Triplan.debug.xcconfig"; sourceTree = "<group>"; };
 		4A62C3191DEBE664008DAD1D /* Triplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A62C3211DEBE664008DAD1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,15 +56,19 @@
 		4A62C3381DEBE665008DAD1D /* TriplanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriplanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriplanUITests.swift; sourceTree = "<group>"; };
 		4A62C33E1DEBE665008DAD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = "<group>"; };
-		4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabelSwift.framework; path = Carthage/Build/iOS/MarqueeLabelSwift.framework; sourceTree = "<group>"; };
-		4A62C3561DEBF1E6008DAD1D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
+		4AF892611DEC7AB900E837E4 /* CurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		4AF892621DEC7AB900E837E4 /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		4AF892641DEC7AB900E837E4 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		4AF892651DEC7AB900E837E4 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		4AF892661DEC7AB900E837E4 /* CalculatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorManager.swift; sourceTree = "<group>"; };
+		4AF892671DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFixerAPITrackerModel.swift; sourceTree = "<group>"; };
+		4AF892681DEC7AB900E837E4 /* CurrencyEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyEndPoint.swift; sourceTree = "<group>"; };
+		4AF892771DEC848300E837E4 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		4AF892791DEC848300E837E4 /* CellPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
+		5A4DB15DFA108EC2AB03AF37 /* Pods_TriplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13B8283680A6744640F5642 /* Pods_Triplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Triplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA31EDE2C4EC1752573C295F /* Pods_TriplanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D7659D2820995773CAC481 /* Pods-Triplan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Triplan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Triplan/Pods-Triplan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AB1D4311DEBF71600160E09 /* RxCocoa.framework in Frameworks */,
-				4AB1D42B1DEBF71600160E09 /* Realm.framework in Frameworks */,
-				4AB1D4331DEBF71600160E09 /* RxSwift.framework in Frameworks */,
-				4AB1D4371DEBF71600160E09 /* SwiftyUserDefaults.framework in Frameworks */,
-				4AB1D42F1DEBF71600160E09 /* RxBlocking.framework in Frameworks */,
-				4AB1D4291DEBF71600160E09 /* MarqueeLabelSwift.framework in Frameworks */,
-				4AB1D42D1DEBF71600160E09 /* RealmSwift.framework in Frameworks */,
-				4AB1D4351DEBF71600160E09 /* RxTest.framework in Frameworks */,
-				4AB1D4271DEBF71600160E09 /* MarqueeLabel.framework in Frameworks */,
+				07BFB31053B7AB4C36E96956 /* Pods_Triplan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +105,7 @@
 				4A62C33B1DEBE665008DAD1D /* TriplanUITests */,
 				4A62C31A1DEBE664008DAD1D /* Products */,
 				4A62C3531DEBF1E6008DAD1D /* Frameworks */,
+				89488C0D61BAAA6C4952AB73 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				4A62C34E1DEBED27008DAD1D /* 인터페이스 */,
+				4AF8926A1DEC7AB900E837E4 /* 환율 */,
+				4AF8927B1DEC848300E837E4 /* 모델 */,
 				4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */,
 			);
 			name = src;
@@ -207,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				4A62C3231DEBE664008DAD1D /* Assets.xcassets */,
-				4A62C3511DEBF0B1008DAD1D /* New Group */,
 			);
 			name = res;
 			sourceTree = "<group>";
@@ -236,35 +191,80 @@
 			name = "인터페이스";
 			sourceTree = "<group>";
 		};
-		4A62C3511DEBF0B1008DAD1D /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				4A62C3521DEBF0B2008DAD1D /* New Group */,
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
-		4A62C3521DEBF0B2008DAD1D /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		4A62C3531DEBF1E6008DAD1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4A62C3541DEBF1E6008DAD1D /* MarqueeLabel.framework */,
-				4A62C3551DEBF1E6008DAD1D /* MarqueeLabelSwift.framework */,
-				4A62C3561DEBF1E6008DAD1D /* Realm.framework */,
-				4A62C3571DEBF1E6008DAD1D /* RealmSwift.framework */,
-				4A62C3581DEBF1E6008DAD1D /* RxBlocking.framework */,
-				4A62C3591DEBF1E6008DAD1D /* RxCocoa.framework */,
-				4A62C35A1DEBF1E6008DAD1D /* RxSwift.framework */,
-				4A62C35B1DEBF1E6008DAD1D /* RxTest.framework */,
-				4A62C35C1DEBF1E6008DAD1D /* SwiftyUserDefaults.framework */,
+				B13B8283680A6744640F5642 /* Pods_Triplan.framework */,
+				CA31EDE2C4EC1752573C295F /* Pods_TriplanTests.framework */,
+				5A4DB15DFA108EC2AB03AF37 /* Pods_TriplanUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AF892631DEC7AB900E837E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AF892621DEC7AB900E837E4 /* CurrencyCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4AF892691DEC7AB900E837E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AF892641DEC7AB900E837E4 /* CurrencyViewModel.swift */,
+				4AF892651DEC7AB900E837E4 /* CalculatorViewModel.swift */,
+				4AF892661DEC7AB900E837E4 /* CalculatorManager.swift */,
+				4AF892671DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift */,
+				4AF892681DEC7AB900E837E4 /* CurrencyEndPoint.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4AF8926A1DEC7AB900E837E4 /* 환율 */ = {
+			isa = PBXGroup;
+			children = (
+				4AF892611DEC7AB900E837E4 /* CurrencyViewController.swift */,
+				4AF892631DEC7AB900E837E4 /* View */,
+				4AF892691DEC7AB900E837E4 /* Model */,
+			);
+			name = "환율";
+			path = ../../hwanewul/hwanewul;
+			sourceTree = "<group>";
+		};
+		4AF892781DEC848300E837E4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4AF892771DEC848300E837E4 /* Currency.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		4AF8927A1DEC848300E837E4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4AF892791DEC848300E837E4 /* CellPresentable.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		4AF8927B1DEC848300E837E4 /* 모델 */ = {
+			isa = PBXGroup;
+			children = (
+				4AF892781DEC848300E837E4 /* Data */,
+				4AF8927A1DEC848300E837E4 /* Protocol */,
+			);
+			name = "모델";
+			path = ../../hwanewul/hwanewul;
+			sourceTree = "<group>";
+		};
+		89488C0D61BAAA6C4952AB73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F049FEB10B9690EB025276F /* Pods-Triplan.debug.xcconfig */,
+				D2D7659D2820995773CAC481 /* Pods-Triplan.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,16 +274,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A62C3411DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "Triplan" */;
 			buildPhases = (
+				87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */,
 				4A62C3151DEBE664008DAD1D /* Sources */,
 				4A62C3161DEBE664008DAD1D /* Frameworks */,
 				4A62C3171DEBE664008DAD1D /* Resources */,
-				4AB1D4391DEBF71700160E09 /* Embed Frameworks */,
+				9C6F499ADEAD45F656DC5D98 /* [CP] Embed Pods Frameworks */,
+				A9A701BF0CAA797702721185 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4AB1D43F1DEBF89A00160E09 /* PBXTargetDependency */,
-				4AB1D43D1DEBF89800160E09 /* PBXTargetDependency */,
 			);
 			name = Triplan;
 			productName = Triplan;
@@ -402,12 +402,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C6F499ADEAD45F656DC5D98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Triplan/Pods-Triplan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9A701BF0CAA797702721185 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Triplan/Pods-Triplan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A62C3151DEBE664008DAD1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF8927C1DEC848300E837E4 /* Currency.swift in Sources */,
+				4AF8926C1DEC7AB900E837E4 /* CurrencyCell.swift in Sources */,
+				4AF8926F1DEC7AB900E837E4 /* CalculatorManager.swift in Sources */,
+				4AF8926D1DEC7AB900E837E4 /* CurrencyViewModel.swift in Sources */,
 				4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */,
+				4AF8927D1DEC848300E837E4 /* CellPresentable.swift in Sources */,
+				4AF892701DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift in Sources */,
+				4AF892711DEC7AB900E837E4 /* CurrencyEndPoint.swift in Sources */,
+				4AF8926B1DEC7AB900E837E4 /* CurrencyViewController.swift in Sources */,
+				4AF8926E1DEC7AB900E837E4 /* CalculatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,16 +496,6 @@
 			isa = PBXTargetDependency;
 			target = 4A62C3181DEBE664008DAD1D /* Triplan */;
 			targetProxy = 4A62C3391DEBE665008DAD1D /* PBXContainerItemProxy */;
-		};
-		4AB1D43D1DEBF89800160E09 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A62C32C1DEBE665008DAD1D /* TriplanTests */;
-			targetProxy = 4AB1D43C1DEBF89800160E09 /* PBXContainerItemProxy */;
-		};
-		4AB1D43F1DEBF89A00160E09 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A62C3371DEBE665008DAD1D /* TriplanUITests */;
-			targetProxy = 4AB1D43E1DEBF89A00160E09 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -491,6 +538,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -542,6 +590,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -569,7 +618,9 @@
 		};
 		4A62C3421DEBE665008DAD1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F049FEB10B9690EB025276F /* Pods-Triplan.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BV7V975A6K;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -586,7 +637,9 @@
 		};
 		4A62C3431DEBE665008DAD1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2D7659D2820995773CAC481 /* Pods-Triplan.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BV7V975A6K;
 				FRAMEWORK_SEARCH_PATHS = (

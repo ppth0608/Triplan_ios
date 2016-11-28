@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6D43F3AD834CFE4ED4EA24DAF01A9781EFAC1BA1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0D151574856E68D43EA0CE560DF2E06411BBA82C" : 9223372036854775807,
+    "6D43F3AD834CFE4ED4EA24DAF01A9781EFAC1BA1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "117C9292-B76A-4E06-9090-2A29360FD482",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0D151574856E68D43EA0CE560DF2E06411BBA82C" : "hwanewul\/",
+    "6D43F3AD834CFE4ED4EA24DAF01A9781EFAC1BA1" : "Triplan\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Triplan",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Triplan.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ppth0608\/Rx_CurrencyCalculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0D151574856E68D43EA0CE560DF2E06411BBA82C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ppth0608\/Triplan_ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6D43F3AD834CFE4ED4EA24DAF01A9781EFAC1BA1"
+    }
+  ]
+}
