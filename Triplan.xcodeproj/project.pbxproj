@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */; };
+		4A62C31F1DEBE664008DAD1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C31E1DEBE664008DAD1D /* ViewController.swift */; };
+		4A62C3221DEBE664008DAD1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3201DEBE664008DAD1D /* Main.storyboard */; };
+		4A62C3241DEBE664008DAD1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3231DEBE664008DAD1D /* Assets.xcassets */; };
+		4A62C3271DEBE664008DAD1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C3251DEBE664008DAD1D /* LaunchScreen.storyboard */; };
+		4A62C3321DEBE665008DAD1D /* TriplanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C3311DEBE665008DAD1D /* TriplanTests.swift */; };
+		4A62C33D1DEBE665008DAD1D /* TriplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A62C32E1DEBE665008DAD1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A62C3111DEBE664008DAD1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A62C3181DEBE664008DAD1D;
+			remoteInfo = Triplan;
+		};
+		4A62C3391DEBE665008DAD1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A62C3111DEBE664008DAD1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A62C3181DEBE664008DAD1D;
+			remoteInfo = Triplan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A62C3191DEBE664008DAD1D /* Triplan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triplan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A62C31E1DEBE664008DAD1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A62C3211DEBE664008DAD1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A62C3231DEBE664008DAD1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A62C3261DEBE664008DAD1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A62C3281DEBE664008DAD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A62C32D1DEBE665008DAD1D /* TriplanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriplanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A62C3311DEBE665008DAD1D /* TriplanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriplanTests.swift; sourceTree = "<group>"; };
+		4A62C3331DEBE665008DAD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A62C3381DEBE665008DAD1D /* TriplanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriplanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriplanUITests.swift; sourceTree = "<group>"; };
+		4A62C33E1DEBE665008DAD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A62C3161DEBE664008DAD1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A62C32A1DEBE665008DAD1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A62C3351DEBE665008DAD1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A62C3101DEBE664008DAD1D = {
+			isa = PBXGroup;
+			children = (
+				4A62C31B1DEBE664008DAD1D /* Triplan */,
+				4A62C3301DEBE665008DAD1D /* TriplanTests */,
+				4A62C33B1DEBE665008DAD1D /* TriplanUITests */,
+				4A62C31A1DEBE664008DAD1D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A62C31A1DEBE664008DAD1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A62C3191DEBE664008DAD1D /* Triplan.app */,
+				4A62C32D1DEBE665008DAD1D /* TriplanTests.xctest */,
+				4A62C3381DEBE665008DAD1D /* TriplanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A62C31B1DEBE664008DAD1D /* Triplan */ = {
+			isa = PBXGroup;
+			children = (
+				4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */,
+				4A62C31E1DEBE664008DAD1D /* ViewController.swift */,
+				4A62C3201DEBE664008DAD1D /* Main.storyboard */,
+				4A62C3231DEBE664008DAD1D /* Assets.xcassets */,
+				4A62C3251DEBE664008DAD1D /* LaunchScreen.storyboard */,
+				4A62C3281DEBE664008DAD1D /* Info.plist */,
+			);
+			path = Triplan;
+			sourceTree = "<group>";
+		};
+		4A62C3301DEBE665008DAD1D /* TriplanTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A62C3311DEBE665008DAD1D /* TriplanTests.swift */,
+				4A62C3331DEBE665008DAD1D /* Info.plist */,
+			);
+			path = TriplanTests;
+			sourceTree = "<group>";
+		};
+		4A62C33B1DEBE665008DAD1D /* TriplanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */,
+				4A62C33E1DEBE665008DAD1D /* Info.plist */,
+			);
+			path = TriplanUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A62C3181DEBE664008DAD1D /* Triplan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A62C3411DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "Triplan" */;
+			buildPhases = (
+				4A62C3151DEBE664008DAD1D /* Sources */,
+				4A62C3161DEBE664008DAD1D /* Frameworks */,
+				4A62C3171DEBE664008DAD1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Triplan;
+			productName = Triplan;
+			productReference = 4A62C3191DEBE664008DAD1D /* Triplan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A62C32C1DEBE665008DAD1D /* TriplanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A62C3441DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "TriplanTests" */;
+			buildPhases = (
+				4A62C3291DEBE665008DAD1D /* Sources */,
+				4A62C32A1DEBE665008DAD1D /* Frameworks */,
+				4A62C32B1DEBE665008DAD1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A62C32F1DEBE665008DAD1D /* PBXTargetDependency */,
+			);
+			name = TriplanTests;
+			productName = TriplanTests;
+			productReference = 4A62C32D1DEBE665008DAD1D /* TriplanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A62C3371DEBE665008DAD1D /* TriplanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A62C3471DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "TriplanUITests" */;
+			buildPhases = (
+				4A62C3341DEBE665008DAD1D /* Sources */,
+				4A62C3351DEBE665008DAD1D /* Frameworks */,
+				4A62C3361DEBE665008DAD1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A62C33A1DEBE665008DAD1D /* PBXTargetDependency */,
+			);
+			name = TriplanUITests;
+			productName = TriplanUITests;
+			productReference = 4A62C3381DEBE665008DAD1D /* TriplanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A62C3111DEBE664008DAD1D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Ben;
+				TargetAttributes = {
+					4A62C3181DEBE664008DAD1D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = BV7V975A6K;
+						ProvisioningStyle = Automatic;
+					};
+					4A62C32C1DEBE665008DAD1D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = BV7V975A6K;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4A62C3181DEBE664008DAD1D;
+					};
+					4A62C3371DEBE665008DAD1D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = BV7V975A6K;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4A62C3181DEBE664008DAD1D;
+					};
+				};
+			};
+			buildConfigurationList = 4A62C3141DEBE664008DAD1D /* Build configuration list for PBXProject "Triplan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A62C3101DEBE664008DAD1D;
+			productRefGroup = 4A62C31A1DEBE664008DAD1D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A62C3181DEBE664008DAD1D /* Triplan */,
+				4A62C32C1DEBE665008DAD1D /* TriplanTests */,
+				4A62C3371DEBE665008DAD1D /* TriplanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A62C3171DEBE664008DAD1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A62C3271DEBE664008DAD1D /* LaunchScreen.storyboard in Resources */,
+				4A62C3241DEBE664008DAD1D /* Assets.xcassets in Resources */,
+				4A62C3221DEBE664008DAD1D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A62C32B1DEBE665008DAD1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A62C3361DEBE665008DAD1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A62C3151DEBE664008DAD1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A62C31F1DEBE664008DAD1D /* ViewController.swift in Sources */,
+				4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A62C3291DEBE665008DAD1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A62C3321DEBE665008DAD1D /* TriplanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A62C3341DEBE665008DAD1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A62C33D1DEBE665008DAD1D /* TriplanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A62C32F1DEBE665008DAD1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A62C3181DEBE664008DAD1D /* Triplan */;
+			targetProxy = 4A62C32E1DEBE665008DAD1D /* PBXContainerItemProxy */;
+		};
+		4A62C33A1DEBE665008DAD1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A62C3181DEBE664008DAD1D /* Triplan */;
+			targetProxy = 4A62C3391DEBE665008DAD1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A62C3201DEBE664008DAD1D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A62C3211DEBE664008DAD1D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A62C3251DEBE664008DAD1D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A62C3261DEBE664008DAD1D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A62C33F1DEBE665008DAD1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A62C3401DEBE665008DAD1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A62C3421DEBE665008DAD1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BV7V975A6K;
+				INFOPLIST_FILE = Triplan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.Triplan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4A62C3431DEBE665008DAD1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BV7V975A6K;
+				INFOPLIST_FILE = Triplan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.Triplan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4A62C3451DEBE665008DAD1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BV7V975A6K;
+				INFOPLIST_FILE = TriplanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.TriplanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Triplan.app/Triplan";
+			};
+			name = Debug;
+		};
+		4A62C3461DEBE665008DAD1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BV7V975A6K;
+				INFOPLIST_FILE = TriplanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.TriplanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Triplan.app/Triplan";
+			};
+			name = Release;
+		};
+		4A62C3481DEBE665008DAD1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = BV7V975A6K;
+				INFOPLIST_FILE = TriplanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.TriplanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Triplan;
+			};
+			name = Debug;
+		};
+		4A62C3491DEBE665008DAD1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = BV7V975A6K;
+				INFOPLIST_FILE = TriplanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.TriplanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Triplan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A62C3141DEBE664008DAD1D /* Build configuration list for PBXProject "Triplan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A62C33F1DEBE665008DAD1D /* Debug */,
+				4A62C3401DEBE665008DAD1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A62C3411DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "Triplan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A62C3421DEBE665008DAD1D /* Debug */,
+				4A62C3431DEBE665008DAD1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4A62C3441DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "TriplanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A62C3451DEBE665008DAD1D /* Debug */,
+				4A62C3461DEBE665008DAD1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4A62C3471DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "TriplanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A62C3481DEBE665008DAD1D /* Debug */,
+				4A62C3491DEBE665008DAD1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A62C3111DEBE664008DAD1D /* Project object */;
+}
