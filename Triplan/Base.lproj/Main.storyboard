@@ -78,7 +78,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Triplan" id="BXY-NQ-tF6">
-                        <barButtonItem key="leftBarButtonItem" image="navi_menu" style="plain" id="WoN-qq-Od3">
+                        <barButtonItem key="leftBarButtonItem" image="navi_menu" id="WoN-qq-Od3">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="환율" id="SL4-Zl-Gbz">
@@ -532,8 +532,6 @@
         <image name="tab_second_on2" width="25" height="25"/>
         <image name="tab_third_off2" width="25" height="25"/>
         <image name="tab_third_on2" width="25" height="25"/>
-        <image name="menu" width="22" height="22"/>
-        <image name="set" width="22" height="22"/>
         <image name="uk" width="100" height="100"/>
     </resources>
 </document>
