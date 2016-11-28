@@ -1,0 +1,4 @@
+github "cbpowell/MarqueeLabel" "3.0.1"
+github "ReactiveX/RxSwift" "3.0.1"
+github "radex/SwiftyUserDefaults" "3.0.1"
+github "realm/realm-cocoa" "v2.1.0"
