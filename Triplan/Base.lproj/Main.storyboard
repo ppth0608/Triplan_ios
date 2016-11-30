@@ -162,7 +162,7 @@
                                             <frame key="frameInset" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uk" translatesAutoresizingMaskIntoConstraints="NO" id="bsh-0H-PHC" userLabel="country">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="korea" translatesAutoresizingMaskIntoConstraints="NO" id="bsh-0H-PHC" userLabel="country">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="E2S-HR-ZF2"/>
                                                         <constraint firstAttribute="width" constant="40" id="VoG-Zd-lFk"/>
@@ -525,6 +525,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="korea" width="100" height="100"/>
         <image name="navi_menu" width="22" height="22"/>
         <image name="tab_first_off2" width="25" height="25"/>
         <image name="tab_first_on2" width="25" height="25"/>
@@ -532,6 +533,5 @@
         <image name="tab_second_on2" width="25" height="25"/>
         <image name="tab_third_off2" width="25" height="25"/>
         <image name="tab_third_on2" width="25" height="25"/>
-        <image name="uk" width="100" height="100"/>
     </resources>
 </document>
