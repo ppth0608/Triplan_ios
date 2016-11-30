@@ -19,6 +19,8 @@ PODS:
   - Realm (2.1.0):
     - Realm/Headers (= 2.1.0)
   - Realm/Headers (2.1.0)
+  - RealmSwift (2.1.0):
+    - Realm (= 2.1.0)
   - Result (3.1.0)
   - RxCocoa (3.0.0-beta.2):
     - RxSwift (~> 3.0.0-beta.2)
@@ -30,7 +32,7 @@ PODS:
 DEPENDENCIES:
   - Moya-ModelMapper/RxSwift (= 4.0.0-beta.1)
   - Moya/RxSwift
-  - Realm
+  - RealmSwift
   - RxCocoa (= 3.0.0-beta.2)
   - RxOptional
   - RxSwift (= 3.0.0-beta.2)
@@ -41,11 +43,12 @@ SPEC CHECKSUMS:
   Moya: 920d40f738e6f4ece84010cec701bb9693be8251
   Moya-ModelMapper: 79671c17bed1e7943a5d11529ea61a1b6a266792
   Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
+  RealmSwift: a4d4abbf0088c337cab5b738054395842e4b3052
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
   RxOptional: b97b59183af80d1e729ac9e51d09a10be668d6a8
   RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
 
-PODFILE CHECKSUM: 5ffeec696b65665d55d55a62965598ce9ed18d0b
+PODFILE CHECKSUM: 2e3df672cf682c36a162899115ad61310bbeb861
 
 COCOAPODS: 1.1.0.rc.2

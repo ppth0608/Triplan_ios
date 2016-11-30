@@ -9,7 +9,7 @@ target 'Triplan' do
   pod 'RxOptional'
   pod 'RxSwift',    '3.0.0-beta.2'
   pod 'RxCocoa',    '3.0.0-beta.2'
-  pod 'Realm'
+  pod 'RealmSwift'
 end
 
 post_install do |installer|
