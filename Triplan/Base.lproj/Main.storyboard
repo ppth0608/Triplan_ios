@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vgx-Xb-6qG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vgx-Xb-6qG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,6 +78,74 @@
                     <view key="view" contentMode="scaleToFill" id="u3G-yl-TNY">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yo2-7H-9pY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hrh-Er-nKq">
+                                    <size key="itemSize" width="182" height="189"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="31" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WNt-bG-Rwi" userLabel="여행정보셀">
+                                        <rect key="frame" x="0.0" y="31" width="182" height="189"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="189"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stamp-1" translatesAutoresizingMaskIntoConstraints="NO" id="GAy-pM-B3i" userLabel="스탬프이미지">
+                                                    <rect key="frame" x="16" y="24" width="156" height="142"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="142" id="BMD-JM-L7w"/>
+                                                        <constraint firstAttribute="width" constant="156" id="vju-Aj-JvL"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVB-Om-8PG" userLabel="여행제목">
+                                                    <rect key="frame" x="26" y="107" width="156" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="4ru-v5-so5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="GAy-pM-B3i" firstAttribute="centerY" secondItem="WNt-bG-Rwi" secondAttribute="centerY" id="5KL-To-V5Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="GAy-pM-B3i" secondAttribute="trailing" constant="10" id="Gvi-TK-17N"/>
+                                            <constraint firstAttribute="bottom" secondItem="TVB-Om-8PG" secondAttribute="bottom" constant="61" id="MHe-9q-uBg"/>
+                                            <constraint firstAttribute="trailing" secondItem="TVB-Om-8PG" secondAttribute="trailing" id="aF9-SO-GPw"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1D9-c4-iQg" userLabel="여행정보추가셀">
+                                        <rect key="frame" x="193" y="31" width="182" height="189"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="189"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_stamp_add" translatesAutoresizingMaskIntoConstraints="NO" id="ZWK-0e-w5v">
+                                                    <rect key="frame" x="10" y="23" width="156" height="142"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="142" id="Iyb-6H-g7C"/>
+                                                        <constraint firstAttribute="width" constant="156" id="gQa-IF-WOh"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ZWK-0e-w5v" firstAttribute="centerY" secondItem="1D9-c4-iQg" secondAttribute="centerY" id="aCU-Uz-0ca"/>
+                                            <constraint firstItem="ZWK-0e-w5v" firstAttribute="leading" secondItem="1D9-c4-iQg" secondAttribute="leading" constant="10" id="w8I-nu-ioD"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Triplan" id="BXY-NQ-tF6">
@@ -91,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkr-VP-SVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1054" y="-118"/>
+            <point key="canvasLocation" x="-1055.2" y="-118.29085457271366"/>
         </scene>
         <!--환율-->
         <scene sceneID="gF4-8l-mtR">
@@ -106,19 +177,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y83-iM-kBJ" userLabel="headerView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCc-Xl-dzP">
+                                        <rect key="frame" x="28" y="15" width="39.5" height="30"/>
                                         <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.52156862749999999" green="0.53725490200000003" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8X4-b9-hD9" userLabel="Base Currency Label Container Button">
+                                        <rect key="frame" x="28" y="15" width="39.5" height="30"/>
                                         <connections>
                                             <action selector="baseCurrencySelectButtonTapped:" destination="EOP-Tq-W1w" eventType="touchUpInside" id="VX8-nO-6bU"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deo-qd-PnJ">
+                                        <rect key="frame" x="127" y="15" width="240" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6dx-TE-2op"/>
@@ -128,6 +203,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환율을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-N5-mpz">
+                                        <rect key="frame" x="225.5" y="19.5" width="141.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="UPC-RB-ci0"/>
                                         </constraints>
@@ -153,38 +229,44 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3Y-Tk-kdg" userLabel="currencyTableView">
+                                <rect key="frame" x="0.0" y="60" width="375" height="243"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" rowHeight="80" id="jDl-qA-k7n" userLabel="currencyCell" customClass="CurrencyCell" customModule="Triplan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jDl-qA-k7n" id="YzN-PT-6N9">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="korea" translatesAutoresizingMaskIntoConstraints="NO" id="bsh-0H-PHC" userLabel="country">
+                                                    <rect key="frame" x="28" y="20" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="E2S-HR-ZF2"/>
                                                         <constraint firstAttribute="width" constant="40" id="VoG-Zd-lFk"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1c-5q-Lx0" userLabel="countryCode">
+                                                    <rect key="frame" x="83" y="28" width="39" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                     <color key="textColor" red="0.52156862749999999" green="0.53725490200000003" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great Britian Pound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBL-gQ-jKs" userLabel="desc">
+                                                    <rect key="frame" x="230" y="50" width="117" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                     <color key="textColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27q-LF-nk7" userLabel="구분선">
+                                                    <rect key="frame" x="15" y="79" width="345" height="1"/>
                                                     <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="7wj-fP-73T"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-Kw-OrL">
+                                                    <rect key="frame" x="293" y="26" width="54" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" red="0.52156862749999999" green="0.53725490200000003" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -214,98 +296,115 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-zc-jlo" userLabel="keyPadContainerView">
+                                <rect key="frame" x="0.0" y="303" width="375" height="300"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV0-u8-PCz">
+                                        <rect key="frame" x="0.0" y="225" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lS-GT-6bH" userLabel="1">
+                                        <rect key="frame" x="0.0" y="150" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkH-eo-zdt" userLabel="2">
+                                        <rect key="frame" x="94" y="150" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv6-Gp-i4e" userLabel="3">
+                                        <rect key="frame" x="187.5" y="150" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGj-p8-Zwn" userLabel="4">
+                                        <rect key="frame" x="0.0" y="75" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAM-E9-5oZ" userLabel="5">
+                                        <rect key="frame" x="94" y="75" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXI-qf-p8t" userLabel="6">
+                                        <rect key="frame" x="187.5" y="75" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIy-Es-bKG" userLabel="7">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1F-pB-72l" userLabel="8">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNy-Oe-dY5" userLabel="9">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omU-Sc-Q25">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="/">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jd-pS-FQX">
+                                        <rect key="frame" x="281.5" y="75" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-7t-eHt">
+                                        <rect key="frame" x="281.5" y="150" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Br-xX-J4r">
+                                        <rect key="frame" x="94" y="225" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWk-Yw-HxP">
+                                        <rect key="frame" x="187.5" y="225" width="94" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="AC">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obM-iE-Ci2">
+                                        <rect key="frame" x="281.5" y="225" width="93.5" height="75"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.51764705879999995" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -526,7 +625,9 @@
     </scenes>
     <resources>
         <image name="korea" width="100" height="100"/>
+        <image name="main_stamp_add" width="445" height="392"/>
         <image name="navi_menu" width="22" height="22"/>
+        <image name="stamp-1" width="444" height="434"/>
         <image name="tab_first_off2" width="25" height="25"/>
         <image name="tab_first_on2" width="25" height="25"/>
         <image name="tab_second_off3" width="25" height="25"/>

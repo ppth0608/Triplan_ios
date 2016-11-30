@@ -15,6 +15,10 @@
 		4A62C3321DEBE665008DAD1D /* TriplanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C3311DEBE665008DAD1D /* TriplanTests.swift */; };
 		4A62C33D1DEBE665008DAD1D /* TriplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */; };
 		4A9DC8871DEF1A8A00989C71 /* 여행정보.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8861DEF1A8A00989C71 /* 여행정보.swift */; };
+		4A9DC8891DEF1EBB00989C71 /* 일정정보.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8881DEF1EBB00989C71 /* 일정정보.swift */; };
+		4A9DC8901DEF2EA700989C71 /* 메인뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC88F1DEF2EA700989C71 /* 메인뷰컨트롤러.swift */; };
+		4A9DC8921DEF2F4000989C71 /* 메인컬렉션뷰데이터소스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8911DEF2F4000989C71 /* 메인컬렉션뷰데이터소스.swift */; };
+		4A9DC8941DEF2F5000989C71 /* 메인컬렉션뷰델리게이트.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8931DEF2F5000989C71 /* 메인컬렉션뷰델리게이트.swift */; };
 		4AF8926B1DEC7AB900E837E4 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892611DEC7AB900E837E4 /* CurrencyViewController.swift */; };
 		4AF8926C1DEC7AB900E837E4 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892621DEC7AB900E837E4 /* CurrencyCell.swift */; };
 		4AF8926D1DEC7AB900E837E4 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF892641DEC7AB900E837E4 /* CurrencyViewModel.swift */; };
@@ -58,6 +62,10 @@
 		4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriplanUITests.swift; sourceTree = "<group>"; };
 		4A62C33E1DEBE665008DAD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A9DC8861DEF1A8A00989C71 /* 여행정보.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "여행정보.swift"; sourceTree = "<group>"; };
+		4A9DC8881DEF1EBB00989C71 /* 일정정보.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "일정정보.swift"; sourceTree = "<group>"; };
+		4A9DC88F1DEF2EA700989C71 /* 메인뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인뷰컨트롤러.swift"; sourceTree = "<group>"; };
+		4A9DC8911DEF2F4000989C71 /* 메인컬렉션뷰데이터소스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인컬렉션뷰데이터소스.swift"; sourceTree = "<group>"; };
+		4A9DC8931DEF2F5000989C71 /* 메인컬렉션뷰델리게이트.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인컬렉션뷰델리게이트.swift"; sourceTree = "<group>"; };
 		4AF892611DEC7AB900E837E4 /* CurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		4AF892621DEC7AB900E837E4 /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		4AF892641DEC7AB900E837E4 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
@@ -154,8 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				4A62C34E1DEBED27008DAD1D /* 인터페이스 */,
+				4A9DC88A1DEF2B8200989C71 /* 메인 */,
 				4AF8926A1DEC7AB900E837E4 /* 환율 */,
-				4AF8927B1DEC848300E837E4 /* 모델 */,
+				4AF8927B1DEC848300E837E4 /* 데이터 */,
 				4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */,
 			);
 			name = src;
@@ -203,23 +212,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4A9DC8851DEF19F600989C71 /* Object */ = {
+		4A9DC88A1DEF2B8200989C71 /* 메인 */ = {
+			isa = PBXGroup;
+			children = (
+				4A9DC88F1DEF2EA700989C71 /* 메인뷰컨트롤러.swift */,
+				4A9DC8911DEF2F4000989C71 /* 메인컬렉션뷰데이터소스.swift */,
+				4A9DC8931DEF2F5000989C71 /* 메인컬렉션뷰델리게이트.swift */,
+				4A9DC88C1DEF2C1100989C71 /* 뷰 */,
+				4A9DC88D1DEF2C1800989C71 /* 뷰모델 */,
+			);
+			name = "메인";
+			sourceTree = "<group>";
+		};
+		4A9DC88C1DEF2C1100989C71 /* 뷰 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "뷰";
+			sourceTree = "<group>";
+		};
+		4A9DC88D1DEF2C1800989C71 /* 뷰모델 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "뷰모델";
+			sourceTree = "<group>";
+		};
+		4A9DC88E1DEF2C7000989C71 /* 클래스 */ = {
 			isa = PBXGroup;
 			children = (
 				4A9DC8861DEF1A8A00989C71 /* 여행정보.swift */,
+				4A9DC8881DEF1EBB00989C71 /* 일정정보.swift */,
+				4AF892771DEC848300E837E4 /* Currency.swift */,
 			);
-			name = Object;
+			name = "클래스";
 			sourceTree = "<group>";
 		};
-		4AF892631DEC7AB900E837E4 /* View */ = {
+		4AF892631DEC7AB900E837E4 /* 뷰 */ = {
 			isa = PBXGroup;
 			children = (
 				4AF892621DEC7AB900E837E4 /* CurrencyCell.swift */,
 			);
-			name = View;
+			name = "뷰";
 			sourceTree = "<group>";
 		};
-		4AF892691DEC7AB900E837E4 /* Model */ = {
+		4AF892691DEC7AB900E837E4 /* 뷰모델 */ = {
 			isa = PBXGroup;
 			children = (
 				4AF892641DEC7AB900E837E4 /* CurrencyViewModel.swift */,
@@ -228,44 +265,35 @@
 				4AF892671DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift */,
 				4AF892681DEC7AB900E837E4 /* CurrencyEndPoint.swift */,
 			);
-			name = Model;
+			name = "뷰모델";
 			sourceTree = "<group>";
 		};
 		4AF8926A1DEC7AB900E837E4 /* 환율 */ = {
 			isa = PBXGroup;
 			children = (
 				4AF892611DEC7AB900E837E4 /* CurrencyViewController.swift */,
-				4AF892631DEC7AB900E837E4 /* View */,
-				4AF892691DEC7AB900E837E4 /* Model */,
+				4AF892631DEC7AB900E837E4 /* 뷰 */,
+				4AF892691DEC7AB900E837E4 /* 뷰모델 */,
 			);
 			name = "환율";
 			path = ../../hwanewul/hwanewul;
 			sourceTree = "<group>";
 		};
-		4AF892781DEC848300E837E4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				4AF892771DEC848300E837E4 /* Currency.swift */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
-		4AF8927A1DEC848300E837E4 /* Protocol */ = {
+		4AF8927A1DEC848300E837E4 /* 프로토콜 */ = {
 			isa = PBXGroup;
 			children = (
 				4AF892791DEC848300E837E4 /* CellPresentable.swift */,
 			);
-			name = Protocol;
+			name = "프로토콜";
 			sourceTree = "<group>";
 		};
-		4AF8927B1DEC848300E837E4 /* 모델 */ = {
+		4AF8927B1DEC848300E837E4 /* 데이터 */ = {
 			isa = PBXGroup;
 			children = (
-				4A9DC8851DEF19F600989C71 /* Object */,
-				4AF892781DEC848300E837E4 /* Data */,
-				4AF8927A1DEC848300E837E4 /* Protocol */,
+				4A9DC88E1DEF2C7000989C71 /* 클래스 */,
+				4AF8927A1DEC848300E837E4 /* 프로토콜 */,
 			);
-			name = "모델";
+			name = "데이터";
 			path = ../../hwanewul/hwanewul;
 			sourceTree = "<group>";
 		};
@@ -469,14 +497,18 @@
 				4AF8927C1DEC848300E837E4 /* Currency.swift in Sources */,
 				4AF8926C1DEC7AB900E837E4 /* CurrencyCell.swift in Sources */,
 				4AF8926F1DEC7AB900E837E4 /* CalculatorManager.swift in Sources */,
+				4A9DC8901DEF2EA700989C71 /* 메인뷰컨트롤러.swift in Sources */,
 				4AF8926D1DEC7AB900E837E4 /* CurrencyViewModel.swift in Sources */,
 				4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */,
+				4A9DC8921DEF2F4000989C71 /* 메인컬렉션뷰데이터소스.swift in Sources */,
 				4AF8927D1DEC848300E837E4 /* CellPresentable.swift in Sources */,
+				4A9DC8891DEF1EBB00989C71 /* 일정정보.swift in Sources */,
 				4AF892701DEC7AB900E837E4 /* CurrencyFixerAPITrackerModel.swift in Sources */,
 				4AF892711DEC7AB900E837E4 /* CurrencyEndPoint.swift in Sources */,
 				4A9DC8871DEF1A8A00989C71 /* 여행정보.swift in Sources */,
 				4AF8926B1DEC7AB900E837E4 /* CurrencyViewController.swift in Sources */,
 				4AF8926E1DEC7AB900E837E4 /* CalculatorViewModel.swift in Sources */,
+				4A9DC8941DEF2F5000989C71 /* 메인컬렉션뷰델리게이트.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
