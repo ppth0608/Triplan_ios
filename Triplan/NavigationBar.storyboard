@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="GOc-TN-8N0">
+            <objects>
+                <viewController id="VpG-sg-YL2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kEl-M5-7wb"/>
+                        <viewControllerLayoutGuide type="bottom" id="AFx-YO-fZ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QZa-rp-GHn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-9t-cSs" userLabel="메뉴버튼">
+                                <rect key="frame" x="0.0" y="20" width="76" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="M05-z3-7Bc"/>
+                                    <constraint firstAttribute="height" constant="45" id="qQe-ST-HmB"/>
+                                </constraints>
+                                <state key="normal" image="navi_menu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52F-Lt-wsR">
+                                <rect key="frame" x="299" y="20" width="76" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aNn-o1-OS3"/>
+                                    <constraint firstAttribute="width" constant="76" id="ati-Id-I52"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X91-3P-TQM">
+                                <rect key="frame" x="88" y="33" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="p50-D7-ATI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="52F-Lt-wsR" secondAttribute="trailing" id="4hF-lL-k5B"/>
+                            <constraint firstItem="lpV-9t-cSs" firstAttribute="leading" secondItem="QZa-rp-GHn" secondAttribute="leading" id="EhA-AV-Ki4"/>
+                            <constraint firstItem="X91-3P-TQM" firstAttribute="centerX" secondItem="QZa-rp-GHn" secondAttribute="centerX" id="KFp-WE-cMe"/>
+                            <constraint firstItem="AFx-YO-fZ3" firstAttribute="top" secondItem="52F-Lt-wsR" secondAttribute="bottom" id="TlA-KR-OIw"/>
+                            <constraint firstItem="X91-3P-TQM" firstAttribute="centerY" secondItem="QZa-rp-GHn" secondAttribute="centerY" constant="11" id="Tx2-8q-pRc"/>
+                            <constraint firstItem="lpV-9t-cSs" firstAttribute="top" secondItem="kEl-M5-7wb" secondAttribute="bottom" id="XPQ-2q-9Zc"/>
+                            <constraint firstItem="AFx-YO-fZ3" firstAttribute="top" secondItem="lpV-9t-cSs" secondAttribute="bottom" id="ZQ9-hx-rNH"/>
+                            <constraint firstItem="52F-Lt-wsR" firstAttribute="top" secondItem="kEl-M5-7wb" secondAttribute="bottom" id="ZqD-WW-OLW"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="65"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5H-sk-ux7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="194.75262368815595"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="navi_menu" width="22" height="22"/>
+    </resources>
+</document>
