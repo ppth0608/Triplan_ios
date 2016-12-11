@@ -13,18 +13,31 @@ import RealmSwift
 
 class 메인_뷰모델 {
     
-    var 여행정보목록: Variable<[여행정보]>?
+    var 여행정보목록: Results<여행정보>?
+    var 여행정보목록감시자: Observable<Results<여행정보>>?
     
     init() {
         데이터갱신()
+        감시자세팅()
+    }
+    
+    deinit {
+        print(";;;")
+    }
+}
+
+private extension 메인_뷰모델 {
+    
+    func 데이터갱신() {
+        여행정보목록 = try! Realm().objects(여행정보.self)
+    }
+    
+    func 감시자세팅() {
+        여행정보목록감시자 = 여행정보목록?.asObservable().map { $0 }
     }
 }
 
 extension 메인_뷰모델 {
-    
-    func 데이터갱신() {
-        여행정보목록?.value = try! Realm().objects(여행정보.self).map { $0 }
-    }
     
     var 컬렉션뷰너비: CGFloat {
         return 여행정보.cellWidth
@@ -35,13 +48,13 @@ extension 메인_뷰모델 {
     }
     
     func 여행정보목록갯수() -> Int {
-        return 여행정보목록?.value.count ?? 0
+        return 여행정보목록?.count ?? 0
     }
     
     func 여행정보데이터(인덱스: Int) -> 여행정보? {
-        guard let 여행정보목록 = 여행정보목록, 인덱스 < 여행정보목록.value.count else {
+        guard let 여행정보목록 = 여행정보목록, 인덱스 < 여행정보목록.count else {
             return nil
         }
-        return 여행정보목록.value[인덱스]
+        return 여행정보목록[인덱스]
     }
 }

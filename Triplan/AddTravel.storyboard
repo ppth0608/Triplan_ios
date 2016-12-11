@@ -56,6 +56,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="qc9-3M-4O5" id="TyS-U0-z60"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-ZZ-Qck">
                                                     <rect key="frame" x="16" y="63" width="343" height="1"/>
@@ -246,6 +249,7 @@
                         <outlet property="여행제목입력창" destination="Zwc-mA-w8k" id="1xo-bf-Ysf"/>
                         <outlet property="출발날짜" destination="fN0-Me-RvU" id="CSO-uc-zPG"/>
                         <outlet property="출발데이트피커" destination="Aea-2D-fMc" id="67d-kg-xrL"/>
+                        <outlet property="확인버튼" destination="9sG-uY-ynr" id="bli-67-d0v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEM-fn-Pxj" userLabel="First Responder" sceneMemberID="firstResponder"/>

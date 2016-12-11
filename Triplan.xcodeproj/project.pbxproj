@@ -37,6 +37,7 @@
 		4A62C33D1DEBE665008DAD1D /* TriplanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C33C1DEBE665008DAD1D /* TriplanUITests.swift */; };
 		4A9DC8901DEF2EA700989C71 /* 메인_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */; };
 		4A9DC8921DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */; };
+		4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		4A62C33E1DEBE665008DAD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_컬렉션뷰_데이터소스.swift"; sourceTree = "<group>"; };
+		4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		5A4DB15DFA108EC2AB03AF37 /* Pods_TriplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B8283680A6744640F5642 /* Pods_Triplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Triplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA31EDE2C4EC1752573C295F /* Pods_TriplanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 				4A60A50C1DF441DD00F28495 /* 여행추가 */,
 				4A1E2C111DFD471E00E66DAC /* 환율 */,
 				4A1E2C121DFD472A00E66DAC /* 모델 */,
+				4AB709991DFDAEAA00933FBF /* 유틸 */,
 				4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */,
 			);
 			name = src;
@@ -336,6 +339,14 @@
 				4A60A5161DF461F600F28495 /* 메인_뷰모델.swift */,
 			);
 			name = "뷰모델";
+			sourceTree = "<group>";
+		};
+		4AB709991DFDAEAA00933FBF /* 유틸 */ = {
+			isa = PBXGroup;
+			children = (
+				4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */,
+			);
+			name = "유틸";
 			sourceTree = "<group>";
 		};
 		89488C0D61BAAA6C4952AB73 /* Pods */ = {
@@ -539,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A3F97F11DF2927800F74DD8 /* 여행정보_셀.swift in Sources */,
+				4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */,
 				4A1E2C301DFD47C300E66DAC /* 환율_API트레커모델.swift in Sources */,
 				4A60A5061DF2B22D00F28495 /* 공통_뷰컨트롤러.swift in Sources */,
 				4A1E2C2E1DFD47B900E66DAC /* 환율_셀.swift in Sources */,
@@ -722,7 +734,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F049FEB10B9690EB025276F /* Pods-Triplan.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BV7V975A6K;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -741,7 +753,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2D7659D2820995773CAC481 /* Pods-Triplan.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BV7V975A6K;
 				FRAMEWORK_SEARCH_PATHS = (

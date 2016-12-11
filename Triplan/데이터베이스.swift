@@ -7,16 +7,8 @@
 //
 
 import Foundation
+import RxSwift
 import RealmSwift
-
-class RealmHelper {
-    
-    static func object<T: Object>(type: T.Type) -> Results<T>? {
-        let realm = try? Realm()
-        
-        return realm?.objects(type)
-    }
-}
 
 extension Object {
     
@@ -41,4 +33,48 @@ extension Object {
             realm?.delete(self)
         }
     }
+}
+
+extension Results {
+
+    func asObservable() -> Observable<Results<Element>> {
+        return Observable.create { observer in
+            var token: NotificationToken? = nil
+            token = self.addNotificationBlock { changes in
+                switch changes {
+                case .initial(let results):
+                    observer.onNext(results)
+                case .update(let results, _, _, _):
+                    observer.onNext(results)
+                case .error(let error):
+                    observer.onError(error)
+                    break
+                }
+            }
+            return Disposables.create {
+                token?.stop()
+            }
+        }
+    }
+
+    func asObservableArray() -> Observable<[Element]> {
+        return Observable.create { observer in
+            var token: NotificationToken? = nil
+            token = self.addNotificationBlock { changes in
+                switch changes {
+                case .initial(let results):
+                    observer.onNext(Array(results))
+                case .update(let results, _, _, _):
+                    observer.onNext(Array(results))
+                case .error(let error):
+                    observer.onError(error)
+                    break
+                }
+            }
+            return Disposables.create {
+                token?.stop()
+            }
+        }
+    }
+    
 }

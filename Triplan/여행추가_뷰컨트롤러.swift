@@ -21,6 +21,7 @@ class 여행추가_뷰컨트롤러: 고�
     @IBOutlet weak var 도착날짜: UILabel!
     @IBOutlet weak var 출발데이트피커: UIDatePicker!
     @IBOutlet weak var 도착데이트피커: UIDatePicker!
+    @IBOutlet weak var 확인버튼: UIBarButtonItem!
     
     var 출발데이터피커숨겨짐 = true {
         didSet {
@@ -65,6 +66,16 @@ fileprivate extension 여행추가_뷰컨트롤
                 self?.도착날짜.text = $0.element
             }
             .addDisposableTo(disposeBag)
+        
+        여행추가뷰모델.여행추가유효성감시자?
+            .subscribe { [weak self] in
+                self?.확인버튼유효상태갱신(유효: $0.element ?? false)
+            }
+            .addDisposableTo(disposeBag)
+    }
+    
+    func 확인버튼유효상태갱신(유효: Bool) {
+        확인버튼.isEnabled = 유효
     }
     
     func 피커토글(셀인덱스: Int) {
@@ -90,15 +101,24 @@ fileprivate extension 여행추가_뷰컨트롤
 extension 여행추가_뷰컨트롤러 {
     
     @IBAction func 출발피커값변화됨(_ sender: UIDatePicker) {
-        여행추가뷰모델.출발날짜.value = sender.date
+        여행추가뷰모델.출발날짜.value = sender.date as NSDate
     }
     
     @IBAction func 도착피커값변화됨(_ sender: UIDatePicker) {
-        여행추가뷰모델.도착날짜.value = sender.date
+        여행추가뷰모델.도착날짜.value = sender.date as NSDate
     }
     
     @IBAction override func 확인버튼_탭(sender: UIButton) {
-        print(#function)
+        여행추가뷰모델.여행추가()
+        _ = navigationController?.popViewController(animated: true)
+    }
+}
+
+extension 여행추가_뷰컨트롤러: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        여행추가뷰모델.여행제목.value = textField.text ?? ""
+        return true
     }
 }
 
@@ -119,16 +139,3 @@ extension 여행추가_뷰컨트롤러 {
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
 }
-
-/*
- protocol CellPresentable {
- func type() -> BasicContents.Type
- 
- var cellIndentifier: String { get }
- var cellHeight: CGFloat { get }
- 
- func cell(from tableView: UITableView, with indexPath: NSIndexPath) -> UITableViewCell?
- 
- func updateUI(with cell: UITableViewCell, contents: BasicContents)
- }
-*/

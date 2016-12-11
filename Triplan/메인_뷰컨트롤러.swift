@@ -38,8 +38,7 @@ extension 메인_뷰컨트롤러 {
     }
     
     fileprivate func 옵져버세팅() {
-        메인뷰모델.여행정보목록?
-            .asObservable()
+        메인뷰모델.여행정보목록감시자?
             .subscribe { [weak self] _ in
                 self?.컬렉션뷰.reloadData()
             }.addDisposableTo(disposeBag)
@@ -63,4 +62,3 @@ extension 메인_뷰컨트롤러: UICollectionViewDelegateFlow
         return CGSize(width: 메인뷰모델.컬렉션뷰너비, height: 메인뷰모델.컬렉션뷰높이)
     }
 }
-

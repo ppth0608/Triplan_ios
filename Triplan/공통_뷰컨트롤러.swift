@@ -48,5 +48,3 @@ class 공통_뷰컨트롤러: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
-
-

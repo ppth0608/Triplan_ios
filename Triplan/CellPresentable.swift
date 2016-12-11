@@ -27,4 +27,3 @@ protocol CollectionViewCellPresentable: CellPresentable {
     func cell(from collectionView: UICollectionView, with indexPath: IndexPath) -> UICollectionViewCell
     func updateUI(with cell: UICollectionViewCell, contents: Self)
 }
-

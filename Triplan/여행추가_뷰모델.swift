@@ -13,11 +13,13 @@ import RealmSwift
 
 class 여행추가_뷰모델 {
     
-    var 출발날짜 = Variable<Date>(Date())
-    var 도착날짜 = Variable<Date>(Date())
+    var 여행제목 = Variable<String>("")
+    var 출발날짜 = Variable<NSDate>(NSDate())
+    var 도착날짜 = Variable<NSDate>(NSDate())
     
     var 출발날짜감시자: Observable<String>?
     var 도착날짜감시자: Observable<String>?
+    var 여행추가유효성감시자: Observable<Bool>?
     
     var 날짜포멧: DateFormatter = {
         let 포멧 = DateFormatter()
@@ -30,10 +32,24 @@ class 여행추가_뷰모델 {
     }
 }
 
+extension 여행추가_뷰모델 {
+    
+    func 여행추가() {
+        let 추가할여행정보 = 여행정보()
+        추가할여행정보.여행제목 = 여행제목.value
+        추가할여행정보.시작일 = 출발날짜.value
+        추가할여행정보.종료일 = 출발날짜.value
+        추가할여행정보.추가()
+    }
+}
+
 private extension 여행추가_뷰모델 {
     
     func 감시자세팅() {
-        출발날짜감시자 = 출발날짜.asObservable().map { self.날짜포멧.string(from: $0) }
-        도착날짜감시자 = 도착날짜.asObservable().map { self.날짜포멧.string(from: $0) }
+        출발날짜감시자 = 출발날짜.asObservable().map { self.날짜포멧.string(from: $0 as Date) }
+        도착날짜감시자 = 도착날짜.asObservable().map { self.날짜포멧.string(from: $0 as Date) }
+        여행추가유효성감시자 = Observable.combineLatest(여행제목.asObservable(), 출발날짜.asObservable(), 도착날짜.asObservable()) { 여행제목, 출발날짜, 도착날짜 in
+            return 여행제목 != "" && 출발날짜 < 도착날짜
+        }
     }
 }

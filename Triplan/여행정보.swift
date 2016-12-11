@@ -28,7 +28,7 @@ class 여행정보: Object {
         }
     }
     var 스탬프썸네일: String {
-        return ""
+        return "stamp-1"
     }
     
     let 여행계획목록 = List<여행계획>()
@@ -41,7 +41,7 @@ class 여행정보: Object {
 extension 여행정보: CollectionViewCellPresentable {
     
     var cellIndentifier: String {
-        return "여행정보셀"
+        return "여행정보"
     }
     
     static var cellHeight: CGFloat {
