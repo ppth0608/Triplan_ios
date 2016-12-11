@@ -119,3 +119,16 @@ extension 여행추가_뷰컨트롤러 {
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
 }
+
+/*
+ protocol CellPresentable {
+ func type() -> BasicContents.Type
+ 
+ var cellIndentifier: String { get }
+ var cellHeight: CGFloat { get }
+ 
+ func cell(from tableView: UITableView, with indexPath: NSIndexPath) -> UITableViewCell?
+ 
+ func updateUI(with cell: UITableViewCell, contents: BasicContents)
+ }
+*/

@@ -27,7 +27,7 @@ extension 여행정보_셀 {
             return
         }
         
-        스탬프이미지뷰.image = UIImage(named: 여행정보.여행스탬프썸네일)
+        스탬프이미지뷰.image = UIImage(named: 여행정보.스탬프썸네일)
         여행제목.text = 여행정보.여행제목
     }
 }
