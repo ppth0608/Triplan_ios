@@ -13,7 +13,7 @@ import RealmSwift
 
 class 메인_뷰모델 {
     
-    var 여행정보목록: Variable<Results<여행정보>>?
+    var 여행정보목록: Variable<[여행정보]>?
     
     init() {
         데이터갱신()
@@ -23,7 +23,15 @@ class 메인_뷰모델 {
 extension 메인_뷰모델 {
     
     func 데이터갱신() {
-        여행정보목록?.value = try! Realm().objects(여행정보.self)
+        여행정보목록?.value = try! Realm().objects(여행정보.self).map { $0 }
+    }
+    
+    var 컬렉션뷰너비: CGFloat {
+        return 여행정보.cellWidth
+    }
+    
+    var 컬렉션뷰높이: CGFloat {
+        return 여행정보.cellHeight
     }
     
     func 여행정보목록갯수() -> Int {

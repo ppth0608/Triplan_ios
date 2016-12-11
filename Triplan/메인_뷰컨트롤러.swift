@@ -28,14 +28,6 @@ extension 메인_뷰컨트롤러 {
         디폴트세팅()
         옵져버세팅()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-    }
 }
 
 // MARK: - Private
@@ -62,6 +54,13 @@ extension 메인_뷰컨트롤러: UICollectionViewDelegate {
             let 뷰컨트롤러 = 여행추가_뷰컨트롤러.인스턴스
             show(뷰컨트롤러, sender: self)
         }
+    }
+}
+
+extension 메인_뷰컨트롤러: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 메인뷰모델.컬렉션뷰너비, height: 메인뷰모델.컬렉션뷰높이)
     }
 }
 

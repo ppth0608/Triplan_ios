@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="APL-hp-zGq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qc9-3M-4O5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,23 +9,252 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--뷰컨트롤러-->
-        <scene sceneID="hic-XE-d3k">
+        <!--추가하기-->
+        <scene sceneID="u8t-hF-oRg">
             <objects>
-                <viewController storyboardIdentifier="여행추가" id="APL-hp-zGq" customClass="여행추가_뷰컨트롤러" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eR2-wJ-cEm"/>
-                        <viewControllerLayoutGuide type="bottom" id="d9C-sq-BxW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nRf-3a-mKr">
+                <tableViewController storyboardIdentifier="여행추가" id="qc9-3M-4O5" customClass="여행추가_뷰컨트롤러" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y6o-R6-aaU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cy0-N3-kWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection id="34o-fC-kdD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="182" id="7x4-Ru-3Vc" userLabel="로고셀">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7x4-Ru-3Vc" id="60a-Jr-6io">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addtrip_logo" translatesAutoresizingMaskIntoConstraints="NO" id="DI4-Ln-tl3" userLabel="로고이미지">
+                                                    <rect key="frame" x="87.5" y="50" width="200" height="106"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="3dc-KP-vnV"/>
+                                                        <constraint firstAttribute="height" constant="106" id="DHp-TV-hrB"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DI4-Ln-tl3" firstAttribute="centerX" secondItem="60a-Jr-6io" secondAttribute="centerX" id="TQP-Ak-Y9R"/>
+                                                <constraint firstItem="DI4-Ln-tl3" firstAttribute="top" secondItem="60a-Jr-6io" secondAttribute="top" constant="50" id="bvO-K0-067"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="64" id="RiR-fk-4Cr" userLabel="여행제목셀">
+                                        <rect key="frame" x="0.0" y="182" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RiR-fk-4Cr" id="kUW-dB-VZ0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="여행 제목을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwc-mA-w8k">
+                                                    <rect key="frame" x="16" y="9.5" width="343" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="QVG-OT-FQw"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-ZZ-Qck">
+                                                    <rect key="frame" x="16" y="63" width="343" height="1"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="COM-GB-XjW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Zwc-mA-w8k" secondAttribute="trailing" constant="16" id="2ed-G2-RPP"/>
+                                                <constraint firstItem="Zwc-mA-w8k" firstAttribute="centerY" secondItem="kUW-dB-VZ0" secondAttribute="centerY" id="Dqk-BB-ufP"/>
+                                                <constraint firstAttribute="trailing" secondItem="BFm-ZZ-Qck" secondAttribute="trailing" constant="16" id="bwY-ua-PAV"/>
+                                                <constraint firstItem="Zwc-mA-w8k" firstAttribute="leading" secondItem="kUW-dB-VZ0" secondAttribute="leading" constant="16" id="lRZ-nN-dc7"/>
+                                                <constraint firstAttribute="bottom" secondItem="BFm-ZZ-Qck" secondAttribute="bottom" id="rbO-7b-Xiq"/>
+                                                <constraint firstItem="BFm-ZZ-Qck" firstAttribute="leading" secondItem="kUW-dB-VZ0" secondAttribute="leading" constant="16" id="vdz-dp-T6c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="55" id="KdP-cn-U8p" userLabel="출발일셀">
+                                        <rect key="frame" x="0.0" y="246" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdP-cn-U8p" id="XxA-Of-D3o">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출발일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMv-Qq-ox6" userLabel="출발일">
+                                                    <rect key="frame" x="16" y="17" width="44.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2010. 01. 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN0-Me-RvU" userLabel="출발날짜">
+                                                    <rect key="frame" x="268" y="17" width="91" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9s-fR-A43" userLabel="구분선">
+                                                    <rect key="frame" x="16" y="54" width="343" height="1"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="0FQ-z3-qfI"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fN0-Me-RvU" firstAttribute="centerY" secondItem="XxA-Of-D3o" secondAttribute="centerY" id="57P-BS-Qr8"/>
+                                                <constraint firstAttribute="bottom" secondItem="a9s-fR-A43" secondAttribute="bottom" id="BmE-xU-TcK"/>
+                                                <constraint firstAttribute="trailing" secondItem="fN0-Me-RvU" secondAttribute="trailing" constant="16" id="EJx-u0-7hP"/>
+                                                <constraint firstItem="a9s-fR-A43" firstAttribute="leading" secondItem="XxA-Of-D3o" secondAttribute="leading" constant="16" id="Ufc-03-cUG"/>
+                                                <constraint firstItem="OMv-Qq-ox6" firstAttribute="leading" secondItem="XxA-Of-D3o" secondAttribute="leading" constant="16" id="V2k-72-g2u"/>
+                                                <constraint firstItem="OMv-Qq-ox6" firstAttribute="centerY" secondItem="XxA-Of-D3o" secondAttribute="centerY" id="ma8-cd-szy"/>
+                                                <constraint firstAttribute="trailing" secondItem="a9s-fR-A43" secondAttribute="trailing" constant="16" id="rDs-WU-cdv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="221" id="Qf4-5I-q10" userLabel="출발피커셀">
+                                        <rect key="frame" x="0.0" y="301" width="375" height="221"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qf4-5I-q10" id="UiV-k8-6zU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-2D-fMc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="503130492.54926199">
+                                                        <!--2016-12-11 06:28:12 +0000-->
+                                                    </date>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="284036400">
+                                                        <!--2010-01-01 11:00:00 +0000-->
+                                                    </date>
+                                                    <date key="maximumDate" timeIntervalSinceReferenceDate="599482800">
+                                                        <!--2019-12-31 11:00:00 +0000-->
+                                                    </date>
+                                                    <locale key="locale" localeIdentifier="ko_KR"/>
+                                                    <connections>
+                                                        <action selector="출발피커값변화됨:" destination="qc9-3M-4O5" eventType="valueChanged" id="9wd-Ef-nZ3"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Aea-2D-fMc" firstAttribute="leading" secondItem="UiV-k8-6zU" secondAttribute="leading" id="O8K-gu-2R5"/>
+                                                <constraint firstItem="Aea-2D-fMc" firstAttribute="top" secondItem="UiV-k8-6zU" secondAttribute="top" id="Pmg-7w-hmP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Aea-2D-fMc" secondAttribute="trailing" id="YgA-a6-rmb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Aea-2D-fMc" secondAttribute="bottom" constant="1" id="nXE-Ym-wHS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="55" id="Aje-4i-DKw" userLabel="도착일셀">
+                                        <rect key="frame" x="0.0" y="522" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aje-4i-DKw" id="X02-E2-qeY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYz-sP-bTf" userLabel="도착일">
+                                                    <rect key="frame" x="16" y="17" width="44.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2010. 01. 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39k-SN-cdI" userLabel="도착날짜">
+                                                    <rect key="frame" x="268" y="17" width="91" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-P9-YWR" userLabel="구분선">
+                                                    <rect key="frame" x="16" y="54" width="343" height="1"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="VXt-Cx-02e"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="zLs-yp-L5H"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="39k-SN-cdI" firstAttribute="centerY" secondItem="X02-E2-qeY" secondAttribute="centerY" id="0Te-ut-QjS"/>
+                                                <constraint firstAttribute="bottom" secondItem="aS6-P9-YWR" secondAttribute="bottom" id="9hT-BQ-FzY"/>
+                                                <constraint firstItem="eYz-sP-bTf" firstAttribute="centerY" secondItem="X02-E2-qeY" secondAttribute="centerY" id="KIW-Sl-TcU"/>
+                                                <constraint firstItem="aS6-P9-YWR" firstAttribute="leading" secondItem="X02-E2-qeY" secondAttribute="leading" constant="16" id="aqE-Ll-REf"/>
+                                                <constraint firstItem="eYz-sP-bTf" firstAttribute="leading" secondItem="X02-E2-qeY" secondAttribute="leading" constant="16" id="dLS-rb-Zl9"/>
+                                                <constraint firstAttribute="trailing" secondItem="39k-SN-cdI" secondAttribute="trailing" constant="16" id="hgm-AS-XeL"/>
+                                                <constraint firstAttribute="trailing" secondItem="aS6-P9-YWR" secondAttribute="trailing" constant="16" id="wkX-Wj-zRk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="221" id="Asp-zB-GMo" userLabel="도착피커셀">
+                                        <rect key="frame" x="0.0" y="577" width="375" height="221"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Asp-zB-GMo" id="Cna-Zx-GdN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VUr-r5-beE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="503130492.54926199">
+                                                        <!--2016-12-11 06:28:12 +0000-->
+                                                    </date>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="284036400">
+                                                        <!--2010-01-01 11:00:00 +0000-->
+                                                    </date>
+                                                    <date key="maximumDate" timeIntervalSinceReferenceDate="599482800">
+                                                        <!--2019-12-31 11:00:00 +0000-->
+                                                    </date>
+                                                    <locale key="locale" localeIdentifier="ko_KR"/>
+                                                    <connections>
+                                                        <action selector="도착피커값변화됨:" destination="qc9-3M-4O5" eventType="valueChanged" id="bgU-eo-U6n"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VUr-r5-beE" firstAttribute="top" secondItem="Cna-Zx-GdN" secondAttribute="top" id="GqH-rH-BIg"/>
+                                                <constraint firstAttribute="trailing" secondItem="VUr-r5-beE" secondAttribute="trailing" id="KKf-DU-FHw"/>
+                                                <constraint firstAttribute="bottom" secondItem="VUr-r5-beE" secondAttribute="bottom" constant="1" id="M66-0z-RAv"/>
+                                                <constraint firstItem="VUr-r5-beE" firstAttribute="leading" secondItem="Cna-Zx-GdN" secondAttribute="leading" id="nqM-aa-mXX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="qc9-3M-4O5" id="Hz2-kX-OIf"/>
+                            <outlet property="delegate" destination="qc9-3M-4O5" id="e3n-gJ-i6Z"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="추가하기" id="dNd-uC-lJx">
+                        <barButtonItem key="leftBarButtonItem" image="navi_back" id="0tH-1I-xDf">
+                            <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="푸시_뒤로가기버튼_탭WithSender:" destination="qc9-3M-4O5" id="mdh-84-OTV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="9sG-uY-ynr">
+                            <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="확인버튼_탭WithSender:" destination="qc9-3M-4O5" id="w4k-5m-Nfi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="도착날짜" destination="39k-SN-cdI" id="ivY-GU-vBZ"/>
+                        <outlet property="도착데이트피커" destination="VUr-r5-beE" id="IMz-pY-Q3M"/>
+                        <outlet property="여행제목입력창" destination="Zwc-mA-w8k" id="1xo-bf-Ysf"/>
+                        <outlet property="출발날짜" destination="fN0-Me-RvU" id="CSO-uc-zPG"/>
+                        <outlet property="출발데이트피커" destination="Aea-2D-fMc" id="67d-kg-xrL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEM-fn-Pxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="161"/>
+            <point key="canvasLocation" x="415.19999999999999" y="152.47376311844079"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addtrip_logo" width="666" height="309"/>
+        <image name="navi_back" width="22" height="22"/>
+    </resources>
 </document>
