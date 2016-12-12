@@ -10,6 +10,9 @@ target 'Triplan' do
   pod 'RxSwift',    '3.0.0-beta.2'
   pod 'RxCocoa',    '3.0.0-beta.2'
   pod 'RealmSwift'
+  pod 'CVCalendar', '~> 1.4.1'
+  pod 'PKHUD', '~> 4.0'
+  pod "JDropDownAlert"
 end
 
 post_install do |installer|
