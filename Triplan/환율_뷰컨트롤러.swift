@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 class CurrencyViewController: 공통_뷰컨트롤러 {
     
@@ -47,6 +48,7 @@ extension CurrencyViewController {
         super.viewDidLoad()
         
         네비게이션바세팅(타이틀: "환율")
+        로딩중인디케이터세팅()
         
         setupCurrencyViewModel()
         setupCalculatorViewModel()
@@ -61,11 +63,18 @@ extension CurrencyViewController {
 // MARK: setup Function
 private extension CurrencyViewController {
     
+    func 로딩중인디케이터세팅() {
+        currencyViewModel.로딩중인디케이터감시자?
+            .asObservable()
+            .bindTo(PKHUD.sharedHUD.rx_로딩뷰애니메이션)
+            .addDisposableTo(disposeBag)
+    }
+    
     func setupCurrencyViewModel() {
         currencyViewModel.exchangeObservable?
             .asObservable()
-            .subscribe { _ in
-                self.tableView.reloadData()
+            .subscribe { [weak self] in
+                self?.tableView.reloadData()
             }
             .addDisposableTo(disposeBag)
         
@@ -78,15 +87,15 @@ private extension CurrencyViewController {
         
         currencyViewModel.ratesVariable
             .asObservable()
-            .subscribe { _ in
-                self.tableView.reloadData()
+            .subscribe { [weak self] in
+                self?.tableView.reloadData()
             }
             .addDisposableTo(disposeBag)
         
         currencyViewModel.baseCountryVariable
             .asObservable()
-            .subscribe {
-                self.baseCurrencyLabel.text = $0.element
+            .subscribe { [weak self] in
+                self?.baseCurrencyLabel.text = $0.element
             }
             .addDisposableTo(disposeBag)
     }

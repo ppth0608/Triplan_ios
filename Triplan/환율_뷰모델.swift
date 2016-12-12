@@ -14,6 +14,7 @@ import Moya
 class CurrencyViewModel {
     
     var ratesVariable = Variable<[Rate]>([])
+    var 환율값감시자: Observable<[String: Double]?>?
     var baseCountryVariable = Variable<String>("KRW")
     
     var exchangeVariable = Variable<String>("")
@@ -23,6 +24,8 @@ class CurrencyViewModel {
     
     var provider: RxMoyaProvider<FixerAPI>?
     var currencyAPITracker: CurrencyFixerAPITrackerModel?
+    
+    var 로딩중인디케이터감시자: Observable<Bool>?
     
     let disposeBag = DisposeBag()
     
@@ -38,7 +41,11 @@ extension CurrencyViewModel {
         provider = RxMoyaProvider<FixerAPI>()
         currencyAPITracker = CurrencyFixerAPITrackerModel(provider: provider!, baseCountryVariable: baseCountryVariable)
         
-        currencyAPITracker?.trackCurrency()
+        let 로딩중인디케이터 = ActivityIndicator()
+        로딩중인디케이터감시자 = 로딩중인디케이터.asObservable()
+        
+        환율값감시자 = currencyAPITracker?.trackCurrency().trackActivity(로딩중인디케이터).map { $0 }
+        환율값감시자?
             .subscribe { dictionary in
                 self.ratesVariable.value = []
                 dictionary.element?.flatMap { $0 }?.forEach { key, value in

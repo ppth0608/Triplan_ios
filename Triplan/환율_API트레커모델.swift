@@ -23,7 +23,7 @@ struct CurrencyFixerAPITrackerModel {
             .observeOn(MainScheduler.instance)
             .flatMapLatest { baseCountry -> Observable<[String: Double]?> in
                 self.currecy(baseCountry: baseCountry)
-        }
+            }
     }
     
     fileprivate func currecy(baseCountry: String) -> Observable<[String: Double]?> {
