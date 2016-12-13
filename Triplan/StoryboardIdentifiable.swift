@@ -13,11 +13,8 @@ protocol StoryboardIdentifiable {
     static var storyboardIdentifier: String { get }
 }
 
-extension StoryboardIdentifiable {
-    
-    static var storyboardIdentifier: String {
-        return String(describing: Self.self)
+extension UIViewController: StoryboardIdentifiable {
+    internal static var storyboardIdentifier: String {
+        return String(describing: self.self)
     }
-}
-
-extension UIViewController: StoryboardIdentifiable { }
+ }
