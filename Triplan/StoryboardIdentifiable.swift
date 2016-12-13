@@ -19,3 +19,5 @@ extension StoryboardIdentifiable {
         return String(describing: Self.self)
     }
 }
+
+extension UIViewController: StoryboardIdentifiable { }
