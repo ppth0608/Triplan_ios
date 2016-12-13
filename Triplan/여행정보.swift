@@ -16,6 +16,7 @@ enum 스탬프종류: String {
 
 class 여행정보: Object {
     
+    dynamic var 여행정보키 = NSUUID().uuidString
     dynamic var 여행제목 = ""
     dynamic var 시작일 = NSDate()
     dynamic var 종료일 = NSDate()
@@ -34,7 +35,7 @@ class 여행정보: Object {
     let 여행계획목록 = List<여행계획>()
     
     override static func primaryKey() -> String? {
-        return "여행제목"
+        return "여행정보키"
     }
 }
 

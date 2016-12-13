@@ -15,7 +15,7 @@ enum 계획세부종류: String {
 
 class 여행계획: Object {
     
-    dynamic var 순서 = 0
+    dynamic var 여행계획키 = NSUUID().uuidString
     dynamic var 여행제목 = ""
     dynamic var 계획날짜 = NSDate()
     dynamic var 세부카테고리값 = 계획세부종류.교통.rawValue
@@ -31,6 +31,6 @@ class 여행계획: Object {
     dynamic var 메모 = ""
     
     override static func primaryKey() -> String? {
-        return "순서"
+        return "여행계획키"
     }
 }

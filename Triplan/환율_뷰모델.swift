@@ -44,7 +44,7 @@ extension CurrencyViewModel {
         let 로딩중인디케이터 = ActivityIndicator()
         로딩중인디케이터감시자 = 로딩중인디케이터.asObservable()
         
-        환율값감시자 = currencyAPITracker?.trackCurrency().trackActivity(로딩중인디케이터).map { $0 }
+        환율값감시자 = currencyAPITracker?.trackCurrency().map { $0 }
         환율값감시자?
             .subscribe { dictionary in
                 self.ratesVariable.value = []

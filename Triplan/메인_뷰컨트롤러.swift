@@ -24,9 +24,13 @@ extension 메인_뷰컨트롤러 {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        네비게이션바세팅(타이틀: "Triplan")
         디폴트세팅()
         옵져버세팅()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        네비게이션바세팅(타이틀: "Triplan")
     }
 }
 
@@ -41,7 +45,14 @@ extension 메인_뷰컨트롤러 {
         메인뷰모델.여행정보목록감시자?
             .subscribe { [weak self] _ in
                 self?.컬렉션뷰.reloadData()
-            }.addDisposableTo(disposeBag)
+            }
+            .addDisposableTo(disposeBag)
+        
+        메인뷰모델.여행정보업데이트감시자?
+            .subscribe { [weak self] _ in
+                self?.알림창표시(메세지: "여행을 추가하였습니다!")
+            }
+            .addDisposableTo(disposeBag)
     }
 }
 
@@ -50,7 +61,7 @@ extension 메인_뷰컨트롤러: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 메인뷰모델.여행정보목록갯수() {
-            let 뷰컨트롤러 = 여행추가_뷰컨트롤러.인스턴스
+            let 뷰컨트롤러 = 여행추가_뷰컨트롤러.뷰컨트롤러생성(of: .addTravel)
             show(뷰컨트롤러, sender: self)
         }
     }

@@ -13,10 +13,6 @@ import PKHUD
 
 class CurrencyViewController: 공통_뷰컨트롤러 {
     
-    static var 인스턴스: CurrencyViewController {
-        return UIStoryboard(name: "Currency", bundle: nil).instantiateViewController(withIdentifier: "환율") as! CurrencyViewController
-    }
-    
     //Currency
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var baseCurrencyLabel: UILabel!

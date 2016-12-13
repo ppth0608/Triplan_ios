@@ -11,6 +11,12 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 
+enum 여행추가유효성결과 {
+    case 성공
+    case 제목없음
+    case 날짜비매칭
+}
+
 class 여행추가_뷰모델 {
     
     var 여행제목 = Variable<String>("")
@@ -19,7 +25,7 @@ class 여행추가_뷰모델 {
     
     var 출발날짜감시자: Observable<String>?
     var 도착날짜감시자: Observable<String>?
-    var 여행추가유효성감시자: Observable<Bool>?
+    var 여행추가유효성감시자: Observable<여행추가유효성결과>?
     
     var 날짜포멧: DateFormatter = {
         let 포멧 = DateFormatter()
@@ -49,7 +55,20 @@ private extension 여행추가_뷰모델 {
         출발날짜감시자 = 출발날짜.asObservable().map { self.날짜포멧.string(from: $0 as Date) }
         도착날짜감시자 = 도착날짜.asObservable().map { self.날짜포멧.string(from: $0 as Date) }
         여행추가유효성감시자 = Observable.combineLatest(여행제목.asObservable(), 출발날짜.asObservable(), 도착날짜.asObservable()) { 여행제목, 출발날짜, 도착날짜 in
-            return 여행제목 != "" && 출발날짜 < 도착날짜
+            guard !여행제목.isEmpty else {
+                return .제목없음
+            }
+            guard 출발날짜 < 도착날짜 else {
+                return .날짜비매칭
+            }
+            return .성공
         }
     }
 }
+
+
+
+
+
+
+

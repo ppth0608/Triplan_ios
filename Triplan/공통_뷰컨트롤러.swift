@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JDropDownAlert
 
 class 공통_뷰컨트롤러: UIViewController {
     
@@ -32,6 +33,13 @@ class 공통_뷰컨트롤러: UIViewController {
         title = 타이틀
     }
     
+    func 알림창표시(메세지: String) {
+        DispatchQueue.main.async {
+            let 알림창 = JDropDownAlert(position: .top, direction: .normal)
+            알림창.alertWith(메세지, delay: 2)
+        }
+    }
+    
     @IBAction func 푸시_뒤로가기버튼_탭(sender: UIButton) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -40,7 +48,7 @@ class 공통_뷰컨트롤러: UIViewController {
     }
     
     @IBAction func 푸시_환율버튼_탭(sender: UIButton) {
-        let 뷰컨트롤러 = CurrencyViewController.인스턴스
+        let 뷰컨트롤러 = CurrencyViewController.뷰컨트롤러생성(of: .currency)
         show(뷰컨트롤러, sender: self)
     }
     

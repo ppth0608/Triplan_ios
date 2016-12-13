@@ -12,7 +12,7 @@
         <!--추가하기-->
         <scene sceneID="u8t-hF-oRg">
             <objects>
-                <tableViewController storyboardIdentifier="여행추가" id="qc9-3M-4O5" customClass="여행추가_뷰컨트롤러" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="여행추가_뷰컨트롤러" id="qc9-3M-4O5" customClass="여행추가_뷰컨트롤러" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y6o-R6-aaU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

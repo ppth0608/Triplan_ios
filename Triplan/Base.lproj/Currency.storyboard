@@ -13,7 +13,7 @@
         <!--환율-->
         <scene sceneID="gF4-8l-mtR">
             <objects>
-                <viewController storyboardIdentifier="환율" id="EOP-Tq-W1w" customClass="CurrencyViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyViewController" id="EOP-Tq-W1w" customClass="CurrencyViewController" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ppF-vi-uxH"/>
                         <viewControllerLayoutGuide type="bottom" id="uN8-fm-mrx"/>

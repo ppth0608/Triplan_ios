@@ -35,17 +35,24 @@ extension Object {
     }
 }
 
-extension Results {
+enum DB노티피케이션상태 {
+    case 초기화
+    case 업데이트
+}
 
-    func asObservable() -> Observable<Results<Element>> {
+extension Results {
+    
+    typealias NotificationResult = (Results<T>, DB노티피케이션상태)
+
+    func asObservable() -> Observable<NotificationResult> {
         return Observable.create { observer in
-            var token: NotificationToken? = nil
+            var token: NotificationToken?
             token = self.addNotificationBlock { changes in
                 switch changes {
-                case .initial(let results):
-                    observer.onNext(results)
-                case .update(let results, _, _, _):
-                    observer.onNext(results)
+                case .initial(let 결과):
+                    observer.onNext((결과, .초기화))
+                case .update(let 결과, _, _, _):
+                    observer.onNext((결과, .업데이트))
                 case .error(let error):
                     observer.onError(error)
                     break
@@ -59,7 +66,7 @@ extension Results {
 
     func asObservableArray() -> Observable<[Element]> {
         return Observable.create { observer in
-            var token: NotificationToken? = nil
+            var token: NotificationToken?
             token = self.addNotificationBlock { changes in
                 switch changes {
                 case .initial(let results):
