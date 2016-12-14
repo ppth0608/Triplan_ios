@@ -1,5 +1,5 @@
 //
-//  StoryboardInstantiable.swift
+//  UIViewControllerCreatable.swift
 //  Triplan
 //
 //  Created by Naver on 2016. 12. 14..
@@ -8,12 +8,13 @@
 
 import UIKit
 
-public protocol StoryboardInstantiable { }
+public protocol UIViewControllerCreatable { }
 
-extension StoryboardInstantiable where Self: UIViewController {
+extension UIViewControllerCreatable where Self: UIViewController {
+    
     static func 뷰컨트롤러생성(of storyboard: Storyboard) -> Self {
         return UIStoryboard(storyboard: storyboard).instantiateViewController()
     }
 }
 
-extension UIViewController: StoryboardInstantiable { }
+extension UIViewController: UIViewControllerCreatable { }

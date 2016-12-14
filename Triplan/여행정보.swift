@@ -41,10 +41,6 @@ class 여행정보: Object {
 
 extension 여행정보: CollectionViewCellPresentable {
     
-    var cellIndentifier: String {
-        return "여행정보"
-    }
-    
     static var cellHeight: CGFloat {
         return 160
     }
@@ -53,13 +49,9 @@ extension 여행정보: CollectionViewCellPresentable {
         return UIScreen.main.bounds.width / 2 - 10
     }
     
-    func cell(from collectionView: UICollectionView, with indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath) as! 여행정보_셀
-    }
-    
     func updateUI(with cell: UICollectionViewCell, contents: 여행정보) {
         if let cell = cell as? 여행정보_셀 {
-            cell.여행정보 = contents
+            cell.여행정보  = contents
         }
     }
 }

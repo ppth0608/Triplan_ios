@@ -36,6 +36,7 @@ extension Object {
 }
 
 enum DB노티피케이션상태 {
+    
     case 초기화
     case 업데이트
 }

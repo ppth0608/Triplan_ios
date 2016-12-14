@@ -6,14 +6,12 @@
 //  Copyright © 2016년 Ben. All rights reserved.
 //
 
-
 import Foundation
-#if !RX_NO_MODULE
-    import RxSwift
-    import RxCocoa
-#endif
+import RxSwift
+import RxCocoa
 
 private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
+    
     private let _source: Observable<E>
     private let _dispose: Cancelable
     
@@ -37,6 +35,7 @@ private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
  When all activities complete `false` will be sent.
  */
 public class ActivityIndicator : SharedSequenceConvertibleType {
+    
     public typealias E = Bool
     public typealias SharingStrategy = DriverSharingStrategy
     
@@ -77,6 +76,7 @@ public class ActivityIndicator : SharedSequenceConvertibleType {
 }
 
 extension ObservableConvertibleType {
+    
     public func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<E> {
         return activityIndicator.trackActivityOfObservable(self)
     }

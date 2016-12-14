@@ -12,6 +12,7 @@ import RxCocoa
 import RealmSwift
 
 enum 여행추가유효성결과 {
+    
     case 성공
     case 제목없음
     case 날짜비매칭
@@ -65,10 +66,3 @@ private extension 여행추가_뷰모델 {
         }
     }
 }
-
-
-
-
-
-
-
