@@ -48,10 +48,4 @@ extension 여행정보: CollectionViewCellPresentable {
     static var cellWidth: CGFloat {
         return UIScreen.main.bounds.width / 2 - 10
     }
-    
-    func updateUI(with cell: UICollectionViewCell, contents: 여행정보) {
-        if let cell = cell as? 여행정보_셀 {
-            cell.여행정보  = contents
-        }
-    }
 }

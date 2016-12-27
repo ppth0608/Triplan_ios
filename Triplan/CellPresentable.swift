@@ -10,8 +10,7 @@ import UIKit
 
 // CellPresentable
 protocol CellPresentable {
-    
-    var cellIndentifier: String { get }
+    // 테이블뷰 또는 컬렉션뷰의 cell로 표현될 수 있는 객체들의 프로토콜
     static var cellHeight: CGFloat { get }
 }
 
@@ -20,14 +19,15 @@ extension CellPresentable {
     var cellIndentifier: String {
         return String(describing: Self.self)
     }
+    
+    func 셀컨텐츠세팅(with cell: ContentsCell, contents: Self) {
+        var customCell = cell
+        customCell.contents = contents
+    }
 }
 
-// TableViewCellPresentable
-protocol TableViewCellPresentable: CellPresentable {
-    
-    func cell(from tableView: UITableView, with indexPath: IndexPath) -> UITableViewCell
-    func updateUI(with cell: UITableViewCell, contents: Self)
-}
+
+protocol TableViewCellPresentable: CellPresentable { }
 
 extension TableViewCellPresentable {
     
@@ -36,13 +36,10 @@ extension TableViewCellPresentable {
     }
 }
 
-// CollectionViewCellPresentable
+
 protocol CollectionViewCellPresentable: CellPresentable {
     
     static var cellWidth: CGFloat { get }
-    
-    func cell(from collectionView: UICollectionView, with indexPath: IndexPath) -> UICollectionViewCell
-    func updateUI(with cell: UICollectionViewCell, contents: Self)
 }
 
 extension CollectionViewCellPresentable {
@@ -51,3 +48,4 @@ extension CollectionViewCellPresentable {
         return collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath) as! T
     }
 }
+

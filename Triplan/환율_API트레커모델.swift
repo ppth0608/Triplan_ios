@@ -29,7 +29,6 @@ struct CurrencyFixerAPITrackerModel {
     fileprivate func currecy(baseCountry: String) -> Observable<[String: Double]?> {
         return provider
             .request(FixerAPI.latestCurrency(base: baseCountry))
-            .debug()
             .mapObjectOptional(type: Currency.self)
             .map { $0?.rates }
     }

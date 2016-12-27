@@ -47,4 +47,8 @@ class 공통_테이블뷰컨트롤ᄅ�
     @IBAction func 확인버튼_탭(sender: UIButton) {
         // override
     }
+    
+    deinit {
+        NSLog("deinit -- 공통_테이블뷰컨트롤러")
+    }
 }

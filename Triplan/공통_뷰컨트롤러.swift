@@ -55,4 +55,8 @@ class 공통_뷰컨트롤러: UIViewController {
     @IBAction func 모달_닫기버튼_탭(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    deinit {
+        NSLog("deinit -- 공통_뷰컨트롤러")
+    }
 }

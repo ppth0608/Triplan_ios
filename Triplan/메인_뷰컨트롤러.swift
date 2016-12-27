@@ -17,6 +17,10 @@ class 메인_뷰컨트롤러: 공통_뷰컨트롤러 {
     let 메인뷰모델 = 메인_뷰모델()
     let 컬렉션뷰데이터소스 = 메인_컬렉션뷰_데이터소스()
     let disposeBag = DisposeBag()
+    
+    deinit {
+        NSLog("deinit -- 메인_뷰컨트롤러")
+    }
 }
 
 // MARK: - UIViewController
@@ -60,10 +64,9 @@ extension 메인_뷰컨트롤러 {
 extension 메인_뷰컨트롤러: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == 메인뷰모델.여행정보목록갯수() {
-            let 뷰컨트롤러 = 여행추가_뷰컨트롤러.뷰컨트롤러생성(of: .addTravel)
-            show(뷰컨트롤러, sender: self)
-        }
+        let 여행정보추가눌림 = indexPath.item == 메인뷰모델.여행정보목록갯수()
+        let 뷰컨트롤러 = 여행정보추가눌림 ? 여행추가_뷰컨트롤러.뷰컨트롤러생성(of: .addition) : 탭_뷰컨트롤러.뷰컨트롤러생성(of: .detail)
+        show(뷰컨트롤러, sender: self)
     }
 }
 

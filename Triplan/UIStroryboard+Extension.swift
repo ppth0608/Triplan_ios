@@ -9,16 +9,14 @@
 import UIKit
 
 enum Storyboard: String {
+    
     case main
-    case addTravel
+    case addition
     case currency
+    case detail
     
     var filename: String {
-        switch self {
-        case .main: return "Main"
-        case .addTravel: return "AddTravel"
-        case .currency: return "Currency"
-        }
+        return self.rawValue.capitalized
     }
 }
 

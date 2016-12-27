@@ -42,6 +42,10 @@ class 여행추가_뷰컨트롤러: 고�
     
     let 여행추가뷰모델 = 여행추가_뷰모델()
     let disposeBag = DisposeBag()
+    
+    deinit {
+        NSLog("deinit -- 여행추가_뷰컨트롤러")
+    }
 }
 
 extension 여행추가_뷰컨트롤러 {

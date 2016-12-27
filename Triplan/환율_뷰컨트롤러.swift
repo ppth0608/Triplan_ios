@@ -35,6 +35,10 @@ class CurrencyViewController: 공통_뷰컨트롤러 {
     
     //RxSwift
     let disposeBag = DisposeBag()
+    
+    deinit {
+        NSLog("deinit -- CurrencyViewController")
+    }
 }
 
 // MARK: Life Cycle
@@ -105,8 +109,8 @@ private extension CurrencyViewController {
     }
     
     func setupExchangeVariable() {
-        exchangeTextView.rx.text.subscribe {
-            self.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
+        exchangeTextView.rx.text.subscribe { [weak self] in
+            self?.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
             }.addDisposableTo(disposeBag)
         
         exchangeTextView.rx.text
@@ -127,9 +131,8 @@ private extension CurrencyViewController {
     
     func setupACButton() {
         acButton.rx.tap
-            .subscribe {
-                print($0)
-                self.calculatorViewModel.clearValue()
+            .subscribe { [weak self] _ in
+                self?.calculatorViewModel.clearValue()
             }
             .addDisposableTo(disposeBag)
     }
