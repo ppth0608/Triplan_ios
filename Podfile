@@ -13,7 +13,6 @@ target 'Triplan' do
   pod 'CVCalendar', '~> 1.4.1'
   pod 'PKHUD', '~> 4.0'
   pod "JDropDownAlert"
-  pod 'SwiftyUserDefaults'
 end
 
 post_install do |installer|

@@ -62,8 +62,6 @@ static BOOL isValidRealmURL(NSURL *url) {
 
 @implementation RLMSyncConfiguration
 
-@dynamic stopPolicy;
-
 - (instancetype)initWithRawConfig:(realm::SyncConfig)config {
     if (self = [super init]) {
         _config = std::make_unique<realm::SyncConfig>(config);
@@ -91,10 +89,6 @@ static BOOL isValidRealmURL(NSURL *url) {
 
 - (RLMSyncStopPolicy)stopPolicy {
     return translateStopPolicy(_config->stop_policy);
-}
-
-- (void)setStopPolicy:(RLMSyncStopPolicy)stopPolicy {
-    _config->stop_policy = translateStopPolicy(stopPolicy);
 }
 
 - (NSURL *)realmURL {

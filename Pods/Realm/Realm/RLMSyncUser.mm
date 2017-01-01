@@ -123,8 +123,7 @@ using namespace realm;
     if (!_user) {
         return nil;
     }
-    auto path = SyncManager::shared().path_for_realm(_user->identity(), [url.absoluteString UTF8String]);
-    return [[RLMSyncSession alloc] initWithSyncSession:_user->session_for_on_disk_path(path)];
+    return [[RLMSyncSession alloc] initWithSyncSession:_user->session_for_url([[url absoluteString] UTF8String])];
 }
 
 - (NSArray<RLMSyncSession *> *)allSessions {
@@ -262,9 +261,17 @@ using namespace realm;
                authServerURL:(NSURL *)authServerURL
                      timeout:(NSTimeInterval)timeout
              completionBlock:(RLMUserCompletionBlock)completion {
+    // Wrap the completion block.
+    RLMUserCompletionBlock theBlock = ^(RLMSyncUser *user, NSError *error){
+        if (!completion) { return; }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(user, error);
+        });
+    };
+
     // Special credential login should be treated differently.
     if (credentials.provider == RLMIdentityProviderAccessToken) {
-        [self _performLoginForDirectAccessTokenCredentials:credentials user:user completionBlock:completion];
+        [self _performLoginForDirectAccessTokenCredentials:credentials user:user completionBlock:theBlock];
         return;
     }
 
@@ -291,7 +298,7 @@ using namespace realm;
                 error = [NSError errorWithDomain:RLMSyncErrorDomain
                                             code:RLMSyncErrorBadResponse
                                         userInfo:@{kRLMSyncErrorJSONKey: json}];
-                completion(nil, error);
+                theBlock(nil, error);
                 return;
             } else {
                 std::string server_url = authServerURL.absoluteString.UTF8String;
@@ -309,7 +316,7 @@ using namespace realm;
             }
         } else {
             // Something else went wrong
-            completion(nil, error);
+            theBlock(nil, error);
         }
     };
     [RLMNetworkClient postRequestToEndpoint:RLMServerEndpointAuth

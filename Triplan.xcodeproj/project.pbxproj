@@ -58,7 +58,6 @@
 		4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */; };
 		4AC4C9351DFEF76700DB79F0 /* 로딩뷰.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4C9341DFEF76700DB79F0 /* 로딩뷰.swift */; };
 		4AC4C9371DFEFB6D00DB79F0 /* 인디케이터뷰.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4C9361DFEFB6D00DB79F0 /* 인디케이터뷰.swift */; };
-		4AE205EE1E194B2700B12A46 /* 유저디폴츠세팅.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE205ED1E194B2700B12A46 /* 유저디폴츠세팅.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +135,6 @@
 		4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		4AC4C9341DFEF76700DB79F0 /* 로딩뷰.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "로딩뷰.swift"; sourceTree = "<group>"; };
 		4AC4C9361DFEFB6D00DB79F0 /* 인디케이터뷰.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "인디케이터뷰.swift"; sourceTree = "<group>"; };
-		4AE205ED1E194B2700B12A46 /* 유저디폴츠세팅.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "유저디폴츠세팅.swift"; sourceTree = "<group>"; };
 		5A4DB15DFA108EC2AB03AF37 /* Pods_TriplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B8283680A6744640F5642 /* Pods_Triplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Triplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA31EDE2C4EC1752573C295F /* Pods_TriplanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +191,6 @@
 		4A1E2BE81DFC574E00E66DAC /* 기능 */ = {
 			isa = PBXGroup;
 			children = (
-				4AE205EC1E194B1B00B12A46 /* 유저디폴츠 */,
 				4AC4C9331DFEF74800DB79F0 /* 로딩뷰 */,
 				4A1E2BE91DFC575500E66DAC /* 데이터베이스 */,
 			);
@@ -436,14 +433,6 @@
 			name = "로딩뷰";
 			sourceTree = "<group>";
 		};
-		4AE205EC1E194B1B00B12A46 /* 유저디폴츠 */ = {
-			isa = PBXGroup;
-			children = (
-				4AE205ED1E194B2700B12A46 /* 유저디폴츠세팅.swift */,
-			);
-			name = "유저디폴츠";
-			sourceTree = "<group>";
-		};
 		89488C0D61BAAA6C4952AB73 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,7 +653,6 @@
 				4A0512731E004206005D7DD9 /* UIColor+Extension.swift in Sources */,
 				4A0512771E004C4E005D7DD9 /* StoryboardIdentifiable.swift in Sources */,
 				4A62C2891E162C540080780F /* 상세_설정_뷰모델.swift in Sources */,
-				4AE205EE1E194B2700B12A46 /* 유저디폴츠세팅.swift in Sources */,
 				4A62C31D1DEBE664008DAD1D /* AppDelegate.swift in Sources */,
 				4A62C28D1E163C9F0080780F /* String+Extension.swift in Sources */,
 				4A1E2C371DFD487E00E66DAC /* 여행계획.swift in Sources */,

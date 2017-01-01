@@ -44,16 +44,10 @@ struct SyncClient {
     {
     }
 
-    void stop()
-    {
-        client.stop();
-        if (m_thread.joinable())
-            m_thread.join();
-    }
-
     ~SyncClient()
     {
-        stop();
+        client.stop();
+        m_thread.join();
     }
 
 private:

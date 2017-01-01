@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyUserDefaults
 
 class 상세_계획_뷰컨트롤러: 공통_뷰컨트롤러 {
     
@@ -27,7 +26,6 @@ extension 상세_계획_뷰컨트롤러 {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        여행정보키값 = Defaults[.활성화여행정보키]
     }
     
     override func viewWillAppear(_ animated: Bool) {
