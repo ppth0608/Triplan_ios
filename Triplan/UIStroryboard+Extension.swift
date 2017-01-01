@@ -13,7 +13,10 @@ enum Storyboard: String {
     case main
     case addition
     case currency
-    case detail
+    case tabbar
+    case schedule
+    case statistics
+    case setting
     
     var filename: String {
         return self.rawValue.capitalized

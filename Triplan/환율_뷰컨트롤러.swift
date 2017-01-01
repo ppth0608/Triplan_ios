@@ -47,7 +47,6 @@ extension CurrencyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        네비게이션바세팅(타이틀: "환율")
         로딩중인디케이터세팅()
         
         setupCurrencyViewModel()
@@ -57,6 +56,10 @@ extension CurrencyViewController {
         
         setupDigitButtons()
         setupACButton()
+    }
+    
+    override func 네비게이션바세팅() {
+        title = "환율"
     }
 }
 

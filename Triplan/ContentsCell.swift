@@ -31,7 +31,7 @@ extension UITableViewCell: ContentsCell {
 }
 
 extension UICollectionViewCell: ContentsCell {
-    
+        
     var contents: CellPresentable? {
         set {
             object = newValue

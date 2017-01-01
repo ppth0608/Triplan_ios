@@ -58,7 +58,10 @@ extension 여행추가_뷰컨트롤러 {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        네비게이션바세팅(타이틀: "추가하기")
+    }
+    
+    override func 네비게이션바세팅() {
+        title = "여행추가"
     }
 }
 

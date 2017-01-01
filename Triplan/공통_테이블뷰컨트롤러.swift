@@ -10,6 +10,10 @@ import UIKit
 import JDropDownAlert
 
 class 공통_테이블뷰컨트롤러: UITableViewController {
+    
+    override func viewDidLoad() {
+        네비게이션바세팅()
+    }
  
     override var shouldAutorotate: Bool {
         return false
@@ -21,16 +25,6 @@ class 공통_테이블뷰컨트롤ᄅ�
     
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
         return .portrait
-    }
-    
-    override var title: String? {
-        didSet {
-            navigationController?.navigationBar.topItem?.title = self.title
-        }
-    }
-    
-    func 네비게이션바세팅(타이틀: String) {
-        title = 타이틀
     }
     
     func 알림창표시(메세지: String) {
@@ -50,5 +44,12 @@ class 공통_테이블뷰컨트롤ᄅ�
     
     deinit {
         NSLog("deinit -- 공통_테이블뷰컨트롤러")
+    }
+}
+
+extension 공통_테이블뷰컨트롤러: ViewControllerContainNavigationBar {
+    
+    func 네비게이션바세팅() {
+        // noop
     }
 }

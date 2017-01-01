@@ -20,9 +20,9 @@ extension CellPresentable {
         return String(describing: Self.self)
     }
     
-    func 셀컨텐츠세팅(with cell: ContentsCell, contents: Self) {
+    func 셀컨텐츠세팅(with cell: ContentsCell) {
         var customCell = cell
-        customCell.contents = contents
+        customCell.contents = self
     }
 }
 

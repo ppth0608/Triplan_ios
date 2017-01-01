@@ -9,7 +9,16 @@
 import UIKit
 import JDropDownAlert
 
+protocol ViewControllerContainNavigationBar {
+    
+    func 네비게이션바세팅()
+}
+
 class 공통_뷰컨트롤러: UIViewController {
+    
+    override func viewDidLoad() {
+        네비게이션바세팅()
+    }
     
     override var shouldAutorotate: Bool {
         return false
@@ -21,16 +30,6 @@ class 공통_뷰컨트롤러: UIViewController {
     
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
         return .portrait
-    }
-    
-    override var title: String? {
-        didSet {
-            navigationController?.navigationBar.topItem?.title = self.title
-        }
-    }
-    
-    func 네비게이션바세팅(타이틀: String) {
-        title = 타이틀
     }
     
     func 알림창표시(메세지: String) {
@@ -58,5 +57,12 @@ class 공통_뷰컨트롤러: UIViewController {
     
     deinit {
         NSLog("deinit -- 공통_뷰컨트롤러")
+    }
+}
+
+extension 공통_뷰컨트롤러: ViewControllerContainNavigationBar {
+    
+    func 네비게이션바세팅() {
+        // noop
     }
 }

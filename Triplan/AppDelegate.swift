@@ -16,12 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // TODO: 삭제
-        let 여행정보목록 = try! Realm().objects(여행정보.self)
-        for i in 여행정보목록 {
-            i.삭제()
-        }
-        
         return true
     }
 

@@ -45,8 +45,15 @@ extension 메인_뷰모델 {
         return 여행정보.cellHeight
     }
     
-    func 여행정보목록갯수() -> Int {
+    var 여행정보목록갯수: Int {
         return 여행정보목록?.count ?? 0
+    }
+    
+    func 여행정보키값(인덱스: Int) -> String? {
+        guard let 여행정보데이터 = 여행정보데이터(인덱스: 인덱스) else {
+            return nil
+        }
+        return 여행정보데이터.여행정보키
     }
     
     func 여행정보데이터(인덱스: Int) -> 여행정보? {
