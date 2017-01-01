@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftyUserDefaults
 
 class 메인_뷰컨트롤러: 공통_뷰컨트롤러 {
     
@@ -67,16 +68,18 @@ extension 메인_뷰컨트롤러 {
 extension 메인_뷰컨트롤러: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let 여행정보추가눌림 = indexPath.item == 메인뷰모델.여행정보목록갯수
-        
-        if 여행정보추가눌림 {
+        let 선택된인덱스 = indexPath.item
+        switch 선택된인덱스 {
+        case let 인덱스 where 인덱스 < 메인뷰모델.여행정보목록갯수:
+            if let 눌린여행정보키 = 메인뷰모델.여행정보키값(인덱스: indexPath.item) {
+                Defaults[.활성화여행정보키] = 눌린여행정보키
+                present(탭_뷰컨트롤러.뷰컨트롤러생성(of: .tabbar), animated: true, completion: nil)
+            }
+        case let 인덱스 where 인덱스 == 메인뷰모델.여행정보목록갯수:
             show(여행추가_뷰컨트롤러.뷰컨트롤러생성(of: .addition), sender: self)
-            return
+        default:
+            fatalError("여행정보 목록 갯수와 collectionview 인덱스 비매칭")
         }
-        
-        let 뷰컨트롤러 = 탭_뷰컨트롤러.뷰컨트롤러생성(of: .tabbar)
-        // 유저디폴츠 저장
-        present(뷰컨트롤러, animated: true, completion: nil)
     }
 }
 
