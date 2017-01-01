@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SwiftyUserDefaults
 
-class 메인_뷰컨트롤러: 공통_뷰컨트롤러 {
+class 메인_뷰컨트롤러: 공통_네비게이션뷰컨트롤러 {
     
     @IBOutlet weak var 컬렉션뷰: UICollectionView!
     

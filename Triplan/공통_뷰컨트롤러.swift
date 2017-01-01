@@ -9,15 +9,10 @@
 import UIKit
 import JDropDownAlert
 
-protocol ViewControllerContainNavigationBar {
-    
-    func 네비게이션바세팅()
-}
-
 class 공통_뷰컨트롤러: UIViewController {
     
     override func viewDidLoad() {
-        네비게이션바세팅()
+        super.viewDidLoad()
     }
     
     override var shouldAutorotate: Bool {
@@ -57,12 +52,5 @@ class 공통_뷰컨트롤러: UIViewController {
     
     deinit {
         NSLog("deinit -- 공통_뷰컨트롤러")
-    }
-}
-
-extension 공통_뷰컨트롤러: ViewControllerContainNavigationBar {
-    
-    func 네비게이션바세팅() {
-        // noop
     }
 }

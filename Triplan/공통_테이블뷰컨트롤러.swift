@@ -12,6 +12,7 @@ import JDropDownAlert
 class 공통_테이블뷰컨트롤러: UITableViewController {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         네비게이션바세팅()
     }
  

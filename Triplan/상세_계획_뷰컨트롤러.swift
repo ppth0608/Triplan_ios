@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyUserDefaults
 
-class 상세_계획_뷰컨트롤러: 공통_뷰컨트롤러 {
+class 상세_계획_뷰컨트롤러: 공통_네비게이션뷰컨트롤러 {
     
     var 여행정보키값: String? {
         didSet {

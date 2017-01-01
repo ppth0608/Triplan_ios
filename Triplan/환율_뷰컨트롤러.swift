@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import PKHUD
 
-class CurrencyViewController: 공통_뷰컨트롤러 {
+class CurrencyViewController: 공통_네비게이션뷰컨트롤러 {
     
     //Currency
     @IBOutlet weak var tableView: UITableView!
