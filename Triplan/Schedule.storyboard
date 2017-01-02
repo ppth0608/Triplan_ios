@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--계획 뷰컨트롤러-->
+        <!--Animator Delegate-->
         <scene sceneID="FqT-7p-MOx">
             <objects>
                 <viewController storyboardIdentifier="상세_계획_뷰컨트롤러" id="iLW-Wt-yzi" customClass="상세_계획_뷰컨트롤러" customModule="Triplan" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,12 +20,48 @@
                     <view key="view" contentMode="scaleToFill" id="3CL-UA-0hq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTx-2r-8Hm" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="gBn-8v-Gtl"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="iLW-Wt-yzi" id="L3c-nq-ShF"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPX-zR-iHo" customClass="CVCalendarView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="23" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="s7i-5C-Ho2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="animatorDelegate" destination="iLW-Wt-yzi" id="Xip-ee-XEx"/>
+                                    <outlet property="calendarAppearanceDelegate" destination="iLW-Wt-yzi" id="rUN-tw-Swb"/>
+                                    <outlet property="calendarDelegate" destination="iLW-Wt-yzi" id="OLb-O6-yQE"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bTx-2r-8Hm" firstAttribute="leading" secondItem="3CL-UA-0hq" secondAttribute="leading" id="Ggh-Qn-ZCc"/>
+                            <constraint firstItem="bTx-2r-8Hm" firstAttribute="top" secondItem="3CL-UA-0hq" secondAttribute="top" id="Ioy-SB-EDZ"/>
+                            <constraint firstItem="oPX-zR-iHo" firstAttribute="top" secondItem="bTx-2r-8Hm" secondAttribute="bottom" id="OZ6-AX-Wcj"/>
+                            <constraint firstAttribute="trailing" secondItem="bTx-2r-8Hm" secondAttribute="trailing" id="Un4-xx-ptD"/>
+                            <constraint firstItem="oPX-zR-iHo" firstAttribute="leading" secondItem="3CL-UA-0hq" secondAttribute="leading" id="mq7-Cd-ETT"/>
+                            <constraint firstAttribute="trailing" secondItem="oPX-zR-iHo" secondAttribute="trailing" id="o8V-Oh-1jL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="캘린더메뉴뷰" destination="bTx-2r-8Hm" id="gMa-gx-5X5"/>
+                        <outlet property="캘린더주단위뷰" destination="oPX-zR-iHo" id="FQp-QT-Gtc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="St1-Q3-Zls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="144"/>
+            <point key="canvasLocation" x="-4" y="138.0809595202399"/>
         </scene>
     </scenes>
 </document>
