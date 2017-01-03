@@ -10,11 +10,7 @@ import UIKit
 
 class 상세_통계_뷰컨트롤러: 공통_네비게이션뷰컨트롤러 {
     
-    var 여행정보키값: String? {
-        didSet {
-            print(여행정보키값)
-        }
-    }
+    var 여행정보키값: String?
     
     deinit {
         NSLog("deinit -- 상세_통계_뷰컨트롤러")
