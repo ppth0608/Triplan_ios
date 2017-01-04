@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07BFB31053B7AB4C36E96956 /* Pods_Triplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B8283680A6744640F5642 /* Pods_Triplan.framework */; };
+		07BFB31053B7AB4C36E96956 /* Pods_Triplan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13B8283680A6744640F5642 /* Pods_Triplan.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4A0512731E004206005D7DD9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0512721E004206005D7DD9 /* UIColor+Extension.swift */; };
 		4A0512771E004C4E005D7DD9 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0512761E004C4E005D7DD9 /* StoryboardIdentifiable.swift */; };
 		4A0512791E004CDA005D7DD9 /* UIStroryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0512781E004CDA005D7DD9 /* UIStroryboard+Extension.swift */; };
