@@ -56,7 +56,7 @@ extension 메인_뷰컨트롤러 {
             }
             .addDisposableTo(disposeBag)
         
-        메인뷰모델.여행정보업데이트감시자?
+        메인뷰모델.여행정보목록업데이트감시자?
             .subscribe { [weak self] _ in
                 self?.알림창표시(메세지: "여행을 추가하였습니다!")
             }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ContentsCell {
-    // CellPresentable 프로토콜을 통해 표현될 수 있는 Cell의 프로토콜
+    
     var contents: CellPresentable? { get set }
 }
 

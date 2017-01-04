@@ -8,20 +8,16 @@
 
 import UIKit
 
-protocol ViewControllerContainNavigationBar {
-    
-    func 네비게이션바세팅()
-}
-
 class 공통_네비게이션뷰컨트롤러: 공통_뷰컨트롤러 {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        네비게이션바세팅()
     }
 }
 
-extension 공통_네비게이션뷰컨트롤러: ViewControllerContainNavigationBar {
+extension 공통_네비게이션뷰컨트롤러 {
     
     func 네비게이션바세팅() {
         // noop

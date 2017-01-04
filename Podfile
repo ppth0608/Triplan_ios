@@ -10,7 +10,6 @@ target 'Triplan' do
   pod 'RxSwift',    '3.0.0-beta.2'
   pod 'RxCocoa',    '3.0.0-beta.2'
   pod 'RealmSwift'
-  pod 'FSCalendar'
   pod 'PKHUD', '~> 4.0'
   pod "JDropDownAlert"
   pod 'SwiftyUserDefaults'
