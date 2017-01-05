@@ -43,20 +43,130 @@
                                     <outlet property="calendarDelegate" destination="iLW-Wt-yzi" id="BFQ-Xp-5jA"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDI-A1-LVW">
+                                <rect key="frame" x="31" y="70" width="2" height="38"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="6IC-bK-9Rx"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-x1-DWh" userLabel="테이블뷰">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="여행계획" rowHeight="100" id="82t-8n-23D" userLabel="상세계획셀" customClass="상세_계획_셀" customModule="Triplan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="82t-8n-23D" id="7gc-p9-VTS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addplan_train_selected" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-QY-qMu" userLabel="카테고리이미지">
+                                                    <rect key="frame" x="20" y="0.0" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="4gt-UM-Oxb"/>
+                                                        <constraint firstAttribute="height" constant="24" id="BJh-TE-Vcu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-0g-Hcb" userLabel="구분선">
+                                                    <rect key="frame" x="31" y="24" width="2" height="76"/>
+                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="2" id="9lD-K3-iee"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김포공항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TB4-in-xPX">
+                                                    <rect key="frame" x="59" y="0.0" width="59" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.12549019610000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70,000원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-bo-bAz">
+                                                    <rect key="frame" x="62" y="24" width="50" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아침 6시 비행기, 이스타항공 70,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shf-th-Xfx">
+                                                    <rect key="frame" x="62" y="46" width="233.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.12549019610000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Shf-th-Xfx" firstAttribute="top" secondItem="3MC-bo-bAz" secondAttribute="bottom" constant="8" id="0mk-Ej-sh8"/>
+                                                <constraint firstItem="TB4-in-xPX" firstAttribute="top" secondItem="HXf-QY-qMu" secondAttribute="top" id="5op-7U-RYG"/>
+                                                <constraint firstItem="pDE-0g-Hcb" firstAttribute="leading" secondItem="7gc-p9-VTS" secondAttribute="leading" constant="31" id="97C-ig-0A5"/>
+                                                <constraint firstItem="3MC-bo-bAz" firstAttribute="leading" secondItem="TB4-in-xPX" secondAttribute="leading" constant="3" id="GEW-fI-Cji"/>
+                                                <constraint firstItem="TB4-in-xPX" firstAttribute="height" secondItem="HXf-QY-qMu" secondAttribute="height" id="Lnj-2p-g49"/>
+                                                <constraint firstItem="HXf-QY-qMu" firstAttribute="leading" secondItem="7gc-p9-VTS" secondAttribute="leading" constant="20" id="QSQ-yj-wam"/>
+                                                <constraint firstItem="pDE-0g-Hcb" firstAttribute="top" secondItem="HXf-QY-qMu" secondAttribute="bottom" id="YP0-kY-eLw"/>
+                                                <constraint firstAttribute="bottom" secondItem="pDE-0g-Hcb" secondAttribute="bottom" id="cz2-8w-rtR"/>
+                                                <constraint firstItem="Shf-th-Xfx" firstAttribute="leading" secondItem="3MC-bo-bAz" secondAttribute="leading" id="eEx-ip-0NM"/>
+                                                <constraint firstItem="HXf-QY-qMu" firstAttribute="top" secondItem="7gc-p9-VTS" secondAttribute="top" id="jDT-j2-TFJ"/>
+                                                <constraint firstItem="TB4-in-xPX" firstAttribute="leading" secondItem="HXf-QY-qMu" secondAttribute="trailing" constant="15" id="jdx-rd-Tbl"/>
+                                                <constraint firstItem="3MC-bo-bAz" firstAttribute="top" secondItem="TB4-in-xPX" secondAttribute="bottom" id="xwZ-wy-Qkm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="메모" destination="Shf-th-Xfx" id="UKK-X9-wgH"/>
+                                            <outlet property="예산" destination="3MC-bo-bAz" id="rib-5J-FLg"/>
+                                            <outlet property="장소이름" destination="TB4-in-xPX" id="x0x-wU-UdK"/>
+                                            <outlet property="카테고리이미지뷰" destination="HXf-QY-qMu" id="i45-CN-QsH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="여행계획추가" rowHeight="88" id="6ue-LX-QVY" userLabel="상세계획추가셀" customClass="상세_계획_추가_셀" customModule="Triplan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ue-LX-QVY" id="fkm-9M-xn7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_addplan" translatesAutoresizingMaskIntoConstraints="NO" id="02d-6S-doW">
+                                                    <rect key="frame" x="20" y="0.0" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="dYm-lB-rA3"/>
+                                                        <constraint firstAttribute="width" constant="24" id="hRi-dn-twf"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="02d-6S-doW" firstAttribute="leading" secondItem="fkm-9M-xn7" secondAttribute="leading" constant="20" id="8by-BP-ak6"/>
+                                                <constraint firstItem="02d-6S-doW" firstAttribute="top" secondItem="fkm-9M-xn7" secondAttribute="top" id="NUO-dq-5ou"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="계획추가이미지뷰" destination="02d-6S-doW" id="uas-Ut-QOo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="iLW-Wt-yzi" id="OVb-Do-lC2"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q3p-gJ-ZQt" firstAttribute="leading" secondItem="3CL-UA-0hq" secondAttribute="leading" id="1az-pq-eSH"/>
                             <constraint firstItem="4bn-rc-LOX" firstAttribute="top" secondItem="3CL-UA-0hq" secondAttribute="top" id="9EY-70-Egc"/>
                             <constraint firstAttribute="trailing" secondItem="q3p-gJ-ZQt" secondAttribute="trailing" id="Ae7-bN-oAo"/>
+                            <constraint firstAttribute="trailing" secondItem="wSV-x1-DWh" secondAttribute="trailing" id="BP2-FJ-Kls"/>
                             <constraint firstAttribute="trailing" secondItem="4bn-rc-LOX" secondAttribute="trailing" id="GEC-UO-vpe"/>
+                            <constraint firstItem="wSV-x1-DWh" firstAttribute="top" secondItem="q3p-gJ-ZQt" secondAttribute="bottom" constant="38" id="JQZ-W5-Hvb"/>
+                            <constraint firstItem="wSV-x1-DWh" firstAttribute="top" secondItem="ZDI-A1-LVW" secondAttribute="bottom" id="NXU-uW-1Wb"/>
+                            <constraint firstItem="wSV-x1-DWh" firstAttribute="leading" secondItem="3CL-UA-0hq" secondAttribute="leading" id="PY0-me-92Q"/>
+                            <constraint firstItem="ZDI-A1-LVW" firstAttribute="leading" secondItem="3CL-UA-0hq" secondAttribute="leading" constant="31" id="SZR-FM-mlt"/>
                             <constraint firstItem="q3p-gJ-ZQt" firstAttribute="top" secondItem="4bn-rc-LOX" secondAttribute="bottom" id="Vcc-SZ-Q43"/>
+                            <constraint firstItem="ZDI-A1-LVW" firstAttribute="top" secondItem="q3p-gJ-ZQt" secondAttribute="bottom" id="Xg4-wz-V89"/>
                             <constraint firstItem="4bn-rc-LOX" firstAttribute="leading" secondItem="3CL-UA-0hq" secondAttribute="leading" id="kv0-kv-yaU"/>
+                            <constraint firstItem="O2t-Gh-iM0" firstAttribute="top" secondItem="wSV-x1-DWh" secondAttribute="bottom" id="ujN-Eq-rP4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="캘린더메뉴뷰" destination="4bn-rc-LOX" id="6Dc-ar-dLY"/>
                         <outlet property="캘린더뷰" destination="q3p-gJ-ZQt" id="4Qx-Z9-Shj"/>
+                        <outlet property="테이블뷰" destination="wSV-x1-DWh" id="maH-pY-aZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="St1-Q3-Zls" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,4 +174,8 @@
             <point key="canvasLocation" x="72.799999999999997" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addplan_train_selected" width="40" height="40"/>
+        <image name="plan_addplan" width="40" height="40"/>
+    </resources>
 </document>

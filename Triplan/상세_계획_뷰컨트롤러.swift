@@ -13,7 +13,10 @@ class 상세_계획_뷰컨트롤러: 공통_네비게이
     
     @IBOutlet weak var 캘린더메뉴뷰: CVCalendarMenuView!
     @IBOutlet weak var 캘린더뷰: CVCalendarView!
+    @IBOutlet weak var 테이블뷰: UITableView!
+    
     let 상세계획뷰모델 = 상세_계획_뷰모델()
+    let 테이블뷰데이터소스 = 상세_계획_테이블뷰_데이터소스()
 
     deinit {
         NSLog("deinit -- 상세_계획_뷰컨트롤러")
@@ -25,6 +28,8 @@ extension 상세_계획_뷰컨트롤러 {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        디폴트세팅()
+        옵져버세팅()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +44,18 @@ extension 상세_계획_뷰컨트롤러 {
     
     override func 네비게이션바세팅() {
         title = 상세계획뷰모델.네비게이션바타이틀
+    }
+}
+
+// MARK: - Private
+fileprivate extension 상세_계획_뷰컨트롤러 {
+    
+    func 디폴트세팅() {
+        테이블뷰.dataSource = 테이블뷰데이터소스
+    }
+    
+    func 옵져버세팅() {
+        
     }
 }
 

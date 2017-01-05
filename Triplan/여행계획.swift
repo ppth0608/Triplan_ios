@@ -39,6 +39,6 @@ class 여행계획: Object {
 extension 여행계획: TableViewCellPresentable {
     
     static var cellHeight: CGFloat {
-        return 70
+        return 100
     }
 }

@@ -90,6 +90,9 @@
 		4AFC95171E1D4CE8005DECCD /* CVStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC94F91E1D4CE8005DECCD /* CVStatus.swift */; };
 		4AFC95181E1D4CE8005DECCD /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC94FA1E1D4CE8005DECCD /* CVWeekdaySymbolType.swift */; };
 		4AFC95191E1D4CE8005DECCD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC94FB1E1D4CE8005DECCD /* Info.plist */; };
+		4AFC95231E1EBC64005DECCD /* 상세_계획_셀.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC95221E1EBC64005DECCD /* 상세_계획_셀.swift */; };
+		4AFC95251E1EBC74005DECCD /* 상세_계획_추가_셀.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC95241E1EBC74005DECCD /* 상세_계획_추가_셀.swift */; };
+		4AFC95271E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC95261E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +203,9 @@
 		4AFC94F91E1D4CE8005DECCD /* CVStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVStatus.swift; sourceTree = "<group>"; };
 		4AFC94FA1E1D4CE8005DECCD /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
 		4AFC94FB1E1D4CE8005DECCD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AFC95221E1EBC64005DECCD /* 상세_계획_셀.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_계획_셀.swift"; sourceTree = "<group>"; };
+		4AFC95241E1EBC74005DECCD /* 상세_계획_추가_셀.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_계획_추가_셀.swift"; sourceTree = "<group>"; };
+		4AFC95261E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_계획_테이블뷰_데이터소스.swift"; sourceTree = "<group>"; };
 		5A4DB15DFA108EC2AB03AF37 /* Pods_TriplanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13B8283680A6744640F5642 /* Pods_Triplan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Triplan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA31EDE2C4EC1752573C295F /* Pods_TriplanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriplanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -444,7 +450,10 @@
 			isa = PBXGroup;
 			children = (
 				4A673E071E077FBA007587B1 /* 상세_계획_뷰컨트롤러.swift */,
+				4AFC95261E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift */,
 				4A62C2841E162C400080780F /* 상세_계획_뷰모델.swift */,
+				4AFC95221E1EBC64005DECCD /* 상세_계획_셀.swift */,
+				4AFC95241E1EBC74005DECCD /* 상세_계획_추가_셀.swift */,
 			);
 			name = "계획";
 			sourceTree = "<group>";
@@ -756,6 +765,7 @@
 				4A673E141E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift in Sources */,
 				4A62C28B1E1634EC0080780F /* Optional_Extension.swift in Sources */,
 				4A673E0A1E07A5D2007587B1 /* 탭_뷰컨트롤러.swift in Sources */,
+				4AFC95251E1EBC74005DECCD /* 상세_계획_추가_셀.swift in Sources */,
 				4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */,
 				4AFC94FE1E1D4CE8005DECCD /* CVCalendarDayView.swift in Sources */,
 				4AFC95051E1D4CE8005DECCD /* CVCalendarTouchController.swift in Sources */,
@@ -815,6 +825,8 @@
 				4AC4C9371DFEFB6D00DB79F0 /* 인디케이터뷰.swift in Sources */,
 				4AFC950D1E1D4CE8005DECCD /* CVCalendarWeekContentViewController.swift in Sources */,
 				4A62C2871E162C4C0080780F /* 상세_통계_뷰모델.swift in Sources */,
+				4AFC95271E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift in Sources */,
+				4AFC95231E1EBC64005DECCD /* 상세_계획_셀.swift in Sources */,
 				4AFC95161E1D4CE8005DECCD /* CVShape.swift in Sources */,
 				4A60A50E1DF441F000F28495 /* 여행추가_뷰컨트롤러.swift in Sources */,
 				4A60A5171DF461F600F28495 /* 메인_뷰모델.swift in Sources */,

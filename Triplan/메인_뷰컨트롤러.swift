@@ -45,11 +45,11 @@ extension 메인_뷰컨트롤러 {
 // MARK: - Private
 extension 메인_뷰컨트롤러 {
     
-    fileprivate func 디폴트세팅() {
+    func 디폴트세팅() {
         컬렉션뷰.dataSource = 컬렉션뷰데이터소스
     }
     
-    fileprivate func 옵져버세팅() {
+    func 옵져버세팅() {
         메인뷰모델.여행정보목록감시자?
             .subscribe { [weak self] _ in
                 self?.컬렉션뷰.reloadData()
