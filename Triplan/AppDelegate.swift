@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // test
 //        let 여행정보목록 = try! Realm().objects(여행정보.self)
 //        여행정보목록.전체삭제()
         return true
