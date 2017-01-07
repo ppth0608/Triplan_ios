@@ -56,6 +56,10 @@
 		4A673E141E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A673E131E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift */; };
 		4A7068F61E2130E5006C3F07 /* AddSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7068F51E2130E5006C3F07 /* AddSchedule.storyboard */; };
 		4A7068F91E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7068F81E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift */; };
+		4A70690A1E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7069071E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift */; };
+		4A70690B1E213E35006C3F07 /* BPCircleTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7069081E213E35006C3F07 /* BPCircleTransitionSegue.swift */; };
+		4A70690C1E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7069091E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift */; };
+		4A70690F1E2148E6006C3F07 /* 공통_탭뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A70690E1E2148E6006C3F07 /* 공통_탭뷰컨트롤러.swift */; };
 		4A9DC8901DEF2EA700989C71 /* 메인_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */; };
 		4A9DC8921DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */; };
 		4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */; };
@@ -170,6 +174,10 @@
 		4A673E131E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_설정_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A7068F51E2130E5006C3F07 /* AddSchedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddSchedule.storyboard; sourceTree = "<group>"; };
 		4A7068F81E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_계획_추가_뷰컨트롤러.swift"; sourceTree = "<group>"; };
+		4A7069071E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPCircleTransionUnwindSegue.swift; sourceTree = "<group>"; };
+		4A7069081E213E35006C3F07 /* BPCircleTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPCircleTransitionSegue.swift; sourceTree = "<group>"; };
+		4A7069091E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContainBPCircleTransion.swift; sourceTree = "<group>"; };
+		4A70690E1E2148E6006C3F07 /* 공통_탭뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "공통_탭뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_컬렉션뷰_데이터소스.swift"; sourceTree = "<group>"; };
 		4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
@@ -308,6 +316,7 @@
 			children = (
 				4A60A5051DF2B22D00F28495 /* 공통_뷰컨트롤러.swift */,
 				4A371BBE1E195C4F0033CF8E /* 공통_네비게이션뷰컨트롤러.swift */,
+				4A70690E1E2148E6006C3F07 /* 공통_탭뷰컨트롤러.swift */,
 				4A1E2BF31DFD3EA900E66DAC /* 공통_테이블뷰컨트롤러.swift */,
 			);
 			name = "공통";
@@ -413,6 +422,10 @@
 		4A62C34D1DEBECF7008DAD1D /* external */ = {
 			isa = PBXGroup;
 			children = (
+				4A70690D1E213E38006C3F07 /* BPCircleTransion */,
+				4A7069071E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift */,
+				4A7069081E213E35006C3F07 /* BPCircleTransitionSegue.swift */,
+				4A7069091E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift */,
 				4AFC94DC1E1D4CE8005DECCD /* CVCalendar */,
 			);
 			name = external;
@@ -488,6 +501,13 @@
 				4A7068F81E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift */,
 			);
 			name = "계획추가";
+			sourceTree = "<group>";
+		};
+		4A70690D1E213E38006C3F07 /* BPCircleTransion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BPCircleTransion;
 			sourceTree = "<group>";
 		};
 		4A9DC88A1DEF2B8200989C71 /* 메인 */ = {
@@ -839,7 +859,11 @@
 				4A1E2BF41DFD3EA900E66DAC /* 공통_테이블뷰컨트롤러.swift in Sources */,
 				4AFC95111E1D4CE8005DECCD /* CVPresent.swift in Sources */,
 				4AC4C9371DFEFB6D00DB79F0 /* 인디케이터뷰.swift in Sources */,
+				4A70690F1E2148E6006C3F07 /* 공통_탭뷰컨트롤러.swift in Sources */,
+				4A70690B1E213E35006C3F07 /* BPCircleTransitionSegue.swift in Sources */,
+				4A70690C1E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift in Sources */,
 				4AFC950D1E1D4CE8005DECCD /* CVCalendarWeekContentViewController.swift in Sources */,
+				4A70690A1E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift in Sources */,
 				4A62C2871E162C4C0080780F /* 상세_통계_뷰모델.swift in Sources */,
 				4AFC95271E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift in Sources */,
 				4AFC95231E1EBC64005DECCD /* 상세_계획_셀.swift in Sources */,

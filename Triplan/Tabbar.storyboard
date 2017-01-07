@@ -41,12 +41,16 @@
                         <barButtonItem key="leftBarButtonItem" image="navi_close" id="MRK-Vh-0Pi">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="모달_닫기버튼_탭WithSender:" destination="xEF-bP-Roc" id="9Ci-vF-dUN"/>
+                                <action selector="커스텀_트랜지션_닫기버튼_탭WithSender:" destination="xEF-bP-Roc" id="CGS-zS-NHK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="xEW-kl-7LU" kind="unwind" identifier="커스텀트랜지션언와인드" customClass="BPCircleTransionUnwindSegue" customModule="Triplan" customModuleProvider="target" unwindAction="언와인드세그_여행추가WithSegue:" id="eI8-j6-Xko"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdC-bx-SUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xEW-kl-7LU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1952.8" y="-627.4362818590705"/>
         </scene>
@@ -57,6 +61,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3U-Tr-0NR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2599.1999999999998" y="-628.78560719640188"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="vij-7i-e6g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="R3g-hl-cp8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJ7-Bd-uCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="148"/>
         </scene>
         <!--뷰컨트롤러-->
         <scene sceneID="TD1-4w-fuA">
@@ -112,13 +124,17 @@
                         <barButtonItem key="leftBarButtonItem" image="navi_close" id="yif-Wo-LhO">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="모달_닫기버튼_탭WithSender:" destination="yI1-iN-K6D" id="pDT-da-gRV"/>
+                                <action selector="커스텀_트랜지션_닫기버튼_탭WithSender:" destination="yI1-iN-K6D" id="28l-3p-Uuf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="bIe-NH-sVn" kind="unwind" identifier="커스텀트랜지션언와인드" customClass="BPCircleTransionUnwindSegue" customModule="Triplan" customModuleProvider="target" unwindAction="언와인드세그_여행추가WithSegue:" id="vii-X0-v42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZv-y7-YER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bIe-NH-sVn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1952.8" y="148.87556221889056"/>
         </scene>
@@ -154,13 +170,17 @@
                         <barButtonItem key="leftBarButtonItem" image="navi_close" id="Dgd-aA-cnO">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="모달_닫기버튼_탭WithSender:" destination="gaE-Mn-2Bj" id="cnK-8x-im6"/>
+                                <action selector="커스텀_트랜지션_닫기버튼_탭WithSender:" destination="gaE-Mn-2Bj" id="MiG-RJ-H8B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="t08-OS-F6Z" kind="unwind" identifier="커스텀트랜지션언와인드" customClass="BPCircleTransionUnwindSegue" customModule="Triplan" customModuleProvider="target" unwindAction="언와인드세그_여행추가WithSegue:" id="EXE-pU-bAC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w96-GG-yR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="t08-OS-F6Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1952.8" y="908.9955022488756"/>
         </scene>
@@ -186,7 +206,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cn9-jB-oZF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="여행" image="tab_first_off2" selectedImage="tab_first_on2" id="Ac3-Wl-t4d"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X8x-hT-cL8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X8x-hT-cL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,7 +229,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zxT-hM-YsD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="통계" image="tab_second_off3" selectedImage="tab_second_on2" id="gNQ-rh-hDj"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="spP-jq-Z5w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="spP-jq-Z5w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,7 +252,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wca-gl-Ovr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="설정" image="tab_third_off2" selectedImage="tab_third_on2" id="6C7-9l-5cG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cxu-QT-GAR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cxu-QT-GAR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

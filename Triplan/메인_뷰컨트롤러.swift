@@ -11,13 +11,18 @@ import RxSwift
 import RxCocoa
 import SwiftyUserDefaults
 
-class 메인_뷰컨트롤러: 공통_네비게이션뷰컨트롤러 {
+class 메인_뷰컨트롤러: 공통_네비게이션뷰컨트롤러, ViewControllerContainCircleTransition {
     
     @IBOutlet weak var 컬렉션뷰: UICollectionView!
     
     let 메인뷰모델 = 메인_뷰모델()
     let 컬렉션뷰데이터소스 = 메인_컬렉션뷰_데이터소스()
     let disposeBag = DisposeBag()
+    
+    var 커스텀트랜지션시작영역: UIView?
+    var circleTransitionTriggerView: UIView? {
+        return 커스텀트랜지션시작영역
+    }
     
     deinit {
         NSLog("deinit -- 메인_뷰컨트롤러")
@@ -40,10 +45,18 @@ extension 메인_뷰컨트롤러 {
     override func 네비게이션바세팅() {
         title = "Triplan"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "커스텀트랜지션" {
+            if let 선택된셀 = sender as? UICollectionViewCell {
+                커스텀트랜지션시작영역 = 선택된셀
+            }
+        }
+    }
 }
 
 // MARK: - Private
-extension 메인_뷰컨트롤러 {
+fileprivate extension 메인_뷰컨트롤러 {
     
     func 디폴트세팅() {
         컬렉션뷰.dataSource = 컬렉션뷰데이터소스
@@ -64,7 +77,15 @@ extension 메인_뷰컨트롤러 {
     }
 }
 
-// MARK: - Delegate
+// MARK: - IBAction
+extension 메인_뷰컨트롤러 {
+    
+    @IBAction func 언와인드세그_여행추가(segue: UIStoryboardSegue) {
+        // noop
+    }
+}
+
+// MARK: - UICollectionViewDelegate
 extension 메인_뷰컨트롤러: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -73,7 +94,8 @@ extension 메인_뷰컨트롤러: UICollectionViewDelegate {
         case let 인덱스 where 인덱스 < 메인뷰모델.여행정보목록갯수:
             if let 눌린여행정보키 = 메인뷰모델.여행정보키값(인덱스: indexPath.item) {
                 Defaults[.활성화여행정보키] = 눌린여행정보키
-                present(탭_뷰컨트롤러.뷰컨트롤러생성(of: .tabbar), animated: true, completion: nil)
+                let 선택된셀 = collectionView.cellForItem(at: indexPath)
+                performSegue(withIdentifier: "커스텀트랜지션", sender: 선택된셀)
             }
         case let 인덱스 where 인덱스 == 메인뷰모델.여행정보목록갯수:
             show(여행추가_뷰컨트롤러.뷰컨트롤러생성(of: .addition), sender: self)
@@ -83,6 +105,7 @@ extension 메인_뷰컨트롤러: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension 메인_뷰컨트롤러: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

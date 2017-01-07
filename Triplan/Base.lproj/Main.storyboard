@@ -111,13 +111,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="컬렉션뷰" destination="yo2-7H-9pY" id="RY5-L0-HZo"/>
-                        <segue destination="1dL-ze-u22" kind="show" identifier="푸시_환율" id="E2i-BJ-r2U"/>
-                        <segue destination="kzg-Ms-7T1" kind="show" identifier="푸시_여행추가" id="b9l-al-24i"/>
+                        <segue destination="Dyh-u1-JAx" kind="custom" identifier="커스텀트랜지션" customClass="BPCircleTransitionSegue" customModule="Triplan" customModuleProvider="target" id="zA4-VM-3pK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkr-VP-SVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1055.2" y="-118.29085457271366"/>
+        </scene>
+        <!--Tabbar-->
+        <scene sceneID="u8P-Qr-WSw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tabbar" id="Dyh-u1-JAx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06F-AR-iAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="-119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eTi-NC-l8m">
@@ -140,22 +147,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7O-7O-SHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1993" y="-118"/>
-        </scene>
-        <!--Currency-->
-        <scene sceneID="ZZj-ja-P18">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Currency" id="1dL-ze-u22" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aN6-kZ-owU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-466" y="-243"/>
-        </scene>
-        <!--Addition-->
-        <scene sceneID="eB7-lq-MWW">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Addition" id="kzg-Ms-7T1" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HGc-XQ-vVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-463" y="-6"/>
         </scene>
     </scenes>
     <resources>
