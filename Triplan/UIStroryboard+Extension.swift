@@ -17,9 +17,14 @@ enum Storyboard: String {
     case schedule
     case statistics
     case setting
+    case addSchedule
     
     var filename: String {
-        return self.rawValue.capitalized
+        var 파일이름 = self.rawValue
+        let 첫번째알파벳 = String(파일이름.remove(at: 파일이름.startIndex))
+        let 소문자로변환된첫번째알파벳 = Character(첫번째알파벳.uppercased())
+        파일이름.insert(소문자로변환된첫번째알파벳, at: 파일이름.startIndex)
+        return 파일이름
     }
 }
 

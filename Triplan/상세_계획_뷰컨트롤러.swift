@@ -59,6 +59,24 @@ fileprivate extension 상세_계획_뷰컨트롤러 {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension 상세_계획_뷰컨트롤러: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let 선택된인덱스 = indexPath.row
+        switch 선택된인덱스 {
+        case let 인덱스 where 인덱스 < 상세계획뷰모델.여행계획목록갯수:
+            // TODO: 디페일 페이지 이동
+            break
+        case let 인덱스 where 인덱스 == 상세계획뷰모델.여행계획목록갯수:
+            show(상세_계획_추가_뷰컨트롤러.뷰컨트롤러생성(of: .addSchedule), sender: nil)
+        default:
+            fatalError("여행정보 목록 갯수와 collectionview 인덱스 비매칭")
+        }
+    }
+}
+
+// MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
 extension 상세_계획_뷰컨트롤러: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     func presentationMode() -> CalendarMode {

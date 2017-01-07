@@ -54,6 +54,8 @@
 		4A673E0A1E07A5D2007587B1 /* 탭_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A673E091E07A5D2007587B1 /* 탭_뷰컨트롤러.swift */; };
 		4A673E121E07ACF1007587B1 /* 상세_통계_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A673E111E07ACF1007587B1 /* 상세_통계_뷰컨트롤러.swift */; };
 		4A673E141E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A673E131E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift */; };
+		4A7068F61E2130E5006C3F07 /* AddSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7068F51E2130E5006C3F07 /* AddSchedule.storyboard */; };
+		4A7068F91E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7068F81E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift */; };
 		4A9DC8901DEF2EA700989C71 /* 메인_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */; };
 		4A9DC8921DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */; };
 		4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */; };
@@ -166,6 +168,8 @@
 		4A673E091E07A5D2007587B1 /* 탭_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "탭_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A673E111E07ACF1007587B1 /* 상세_통계_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_통계_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A673E131E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_설정_뷰컨트롤러.swift"; sourceTree = "<group>"; };
+		4A7068F51E2130E5006C3F07 /* AddSchedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddSchedule.storyboard; sourceTree = "<group>"; };
+		4A7068F81E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "상세_계획_추가_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_컬렉션뷰_데이터소스.swift"; sourceTree = "<group>"; };
 		4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				4A60A50C1DF441DD00F28495 /* 여행추가 */,
 				4A673E061E077F9B007587B1 /* 탭바 */,
 				4A673E0D1E07A613007587B1 /* 계획 */,
+				4A7068F71E21310A006C3F07 /* 계획추가 */,
 				4A673E0F1E07A621007587B1 /* 통계 */,
 				4A673E101E07A626007587B1 /* 설정 */,
 				4A1E2C111DFD471E00E66DAC /* 환율 */,
@@ -422,6 +427,7 @@
 				4A60A5071DF4418D00F28495 /* Currency.storyboard */,
 				4A673E041E077F6E007587B1 /* Tabbar.storyboard */,
 				4A62C27E1E1604C20080780F /* Schedule.storyboard */,
+				4A7068F51E2130E5006C3F07 /* AddSchedule.storyboard */,
 				4A62C2801E1604D70080780F /* Statistics.storyboard */,
 				4A62C2821E1604E50080780F /* Setting.storyboard */,
 			);
@@ -474,6 +480,14 @@
 				4A62C2881E162C540080780F /* 상세_설정_뷰모델.swift */,
 			);
 			name = "설정";
+			sourceTree = "<group>";
+		};
+		4A7068F71E21310A006C3F07 /* 계획추가 */ = {
+			isa = PBXGroup;
+			children = (
+				4A7068F81E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift */,
+			);
+			name = "계획추가";
 			sourceTree = "<group>";
 		};
 		4A9DC88A1DEF2B8200989C71 /* 메인 */ = {
@@ -685,6 +699,7 @@
 				4A673E051E077F6E007587B1 /* Tabbar.storyboard in Resources */,
 				4A62C2831E1604E50080780F /* Setting.storyboard in Resources */,
 				4A60A50B1DF441BB00F28495 /* Addition.storyboard in Resources */,
+				4A7068F61E2130E5006C3F07 /* AddSchedule.storyboard in Resources */,
 				4A62C3221DEBE664008DAD1D /* Main.storyboard in Resources */,
 				4AFC95191E1D4CE8005DECCD /* Info.plist in Resources */,
 				4A62C2811E1604D70080780F /* Statistics.storyboard in Resources */,
@@ -803,6 +818,7 @@
 				4A673E121E07ACF1007587B1 /* 상세_통계_뷰컨트롤러.swift in Sources */,
 				4A62C2711E1222B10080780F /* ContentsCell.swift in Sources */,
 				4AFC95181E1D4CE8005DECCD /* CVWeekdaySymbolType.swift in Sources */,
+				4A7068F91E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift in Sources */,
 				4A9DC8921DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift in Sources */,
 				4AFC950A1E1D4CE8005DECCD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				4A1E2C2A1DFD47A100E66DAC /* 환율.swift in Sources */,
