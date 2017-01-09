@@ -423,9 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				4A70690D1E213E38006C3F07 /* BPCircleTransion */,
-				4A7069071E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift */,
-				4A7069081E213E35006C3F07 /* BPCircleTransitionSegue.swift */,
-				4A7069091E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift */,
 				4AFC94DC1E1D4CE8005DECCD /* CVCalendar */,
 			);
 			name = external;
@@ -506,6 +503,9 @@
 		4A70690D1E213E38006C3F07 /* BPCircleTransion */ = {
 			isa = PBXGroup;
 			children = (
+				4A7069071E213E35006C3F07 /* BPCircleTransionUnwindSegue.swift */,
+				4A7069081E213E35006C3F07 /* BPCircleTransitionSegue.swift */,
+				4A7069091E213E35006C3F07 /* ViewControllerContainBPCircleTransion.swift */,
 			);
 			name = BPCircleTransion;
 			sourceTree = "<group>";
