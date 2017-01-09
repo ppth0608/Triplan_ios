@@ -1,6 +1,10 @@
 PODS:
   - Alamofire (4.0.1)
-  - CVCalendar (1.4.1)
+  - GoogleMaps (2.1.1):
+    - GoogleMaps/Maps (= 2.1.1)
+  - GoogleMaps/Base (2.1.1)
+  - GoogleMaps/Maps (2.1.1):
+    - GoogleMaps/Base
   - JDropDownAlert (1.0.2)
   - ModelMapper (5.0.0)
   - Moya (8.0.0-beta.2):
@@ -19,11 +23,11 @@ PODS:
     - Moya/Core
     - RxSwift
   - PKHUD (4.1.0)
-  - Realm (2.1.1):
-    - Realm/Headers (= 2.1.1)
-  - Realm/Headers (2.1.1)
-  - RealmSwift (2.1.1):
-    - Realm (= 2.1.1)
+  - Realm (2.1.2):
+    - Realm/Headers (= 2.1.2)
+  - Realm/Headers (2.1.2)
+  - RealmSwift (2.1.2):
+    - Realm (= 2.1.2)
   - Result (3.1.0)
   - RxCocoa (3.0.0-beta.2):
     - RxSwift (~> 3.0.0-beta.2)
@@ -31,9 +35,10 @@ PODS:
     - RxCocoa
     - RxSwift
   - RxSwift (3.0.0-beta.2)
+  - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
-  - CVCalendar (~> 1.4.1)
+  - GoogleMaps
   - JDropDownAlert
   - Moya-ModelMapper/RxSwift (= 4.0.0-beta.1)
   - Moya/RxSwift
@@ -42,22 +47,24 @@ DEPENDENCIES:
   - RxCocoa (= 3.0.0-beta.2)
   - RxOptional
   - RxSwift (= 3.0.0-beta.2)
+  - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  CVCalendar: 61912eb5dc39c3bcfe22a731147a559a696fbc15
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   JDropDownAlert: ae5f11d1fafa97313d745ef84556ae8a35c86bd0
   ModelMapper: 89ced1f51ec6360e93f6889d08c818d4cad526a3
   Moya: 920d40f738e6f4ece84010cec701bb9693be8251
   Moya-ModelMapper: 79671c17bed1e7943a5d11529ea61a1b6a266792
   PKHUD: a0ecdee9f67d9b462c0c5e4ba38400292ea6ae6e
-  Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
-  RealmSwift: 749fd955bf8d6471c21d218b9389a47aaeccfe3f
+  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
+  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
   RxOptional: b97b59183af80d1e729ac9e51d09a10be668d6a8
   RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: ce1d06a73ba6896c73ba6b74cadf973a07ac8abd
+PODFILE CHECKSUM: 175e5264053b114ca16f0e2b908bf26754f14be7
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.0.beta.3

@@ -24,6 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## GoogleMaps
+
+Copyright 2016 Google
+
 ## JDropDownAlert
 
 Copyright (c) 2016 Steve Jo <trilliwon.io@gmail.com>

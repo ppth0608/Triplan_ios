@@ -30,7 +30,6 @@ extension 공통_네비게이션뷰컨ᄐ
         if 네비게이션뷰컨트롤러.viewControllers.count > 1 {
             return true
         }
-        
         return false
     }
 }

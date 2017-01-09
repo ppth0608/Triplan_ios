@@ -13,6 +13,7 @@ target 'Triplan' do
   pod 'PKHUD', '~> 4.0'
   pod "JDropDownAlert"
   pod 'SwiftyUserDefaults'
+  pod 'GoogleMaps'
 end
 
 post_install do |installer|
