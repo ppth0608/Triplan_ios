@@ -5,6 +5,7 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
+  - Hero (0.1.0)
   - JDropDownAlert (1.0.2)
   - ModelMapper (5.0.0)
   - Moya (8.0.0-beta.2):
@@ -39,6 +40,7 @@ PODS:
 
 DEPENDENCIES:
   - GoogleMaps
+  - Hero
   - JDropDownAlert
   - Moya-ModelMapper/RxSwift (= 4.0.0-beta.1)
   - Moya/RxSwift
@@ -52,6 +54,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  Hero: 14038043c41ea53ba1aa43b4d3655f377d78bea6
   JDropDownAlert: ae5f11d1fafa97313d745ef84556ae8a35c86bd0
   ModelMapper: 89ced1f51ec6360e93f6889d08c818d4cad526a3
   Moya: 920d40f738e6f4ece84010cec701bb9693be8251
@@ -65,6 +68,6 @@ SPEC CHECKSUMS:
   RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 175e5264053b114ca16f0e2b908bf26754f14be7
+PODFILE CHECKSUM: c2f0b82938650bc0a13b5bdef89e63e3ea76247d
 
 COCOAPODS: 1.2.0.beta.3

@@ -14,6 +14,7 @@ target 'Triplan' do
   pod "JDropDownAlert"
   pod 'SwiftyUserDefaults'
   pod 'GoogleMaps'
+  pod "Hero"
 end
 
 post_install do |installer|
