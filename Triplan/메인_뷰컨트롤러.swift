@@ -51,6 +51,11 @@ extension 메인_뷰컨트롤러 {
             if let 선택된셀 = sender as? UICollectionViewCell {
                 커스텀트랜지션시작영역 = 선택된셀
             }
+        } else if segue.identifier == "메뉴세그웨이" {
+            if let destination = segue.destination as? 사이드메뉴_뷰컨트롤러,
+                let 스냅샷 = view.snapshotView(afterScreenUpdates: true) {
+                destination.스냅샷 = 스냅샷
+            }
         }
     }
 }
