@@ -32,11 +32,11 @@ class BPSideMenuTransion: UIStoryboardSegue, UIViewControllerTransitioningDelega
         let scaleTransform = offSetTransform.scaledBy(x: 0.6, y: 0.6)
         
         if let snapShot = fromView.snapshotView(afterScreenUpdates: true) {
+            toView.addSubview(snapShot)
             transitionContext.containerView.addSubview(toView)
-            transitionContext.containerView.addSubview(snapShot)
             let duration = transitionDuration(using: transitionContext)
             
-            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: {
                 snapShot.transform = scaleTransform
             }) { _ in
                 transitionContext.completeTransition(true)

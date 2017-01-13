@@ -22,37 +22,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sidemenu_bg" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-Y4-f4T">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sidemenu_bg" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-Y4-f4T">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66X-X3-5TX">
-                                <rect key="frame" x="255" y="150" width="120" height="343"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="343" id="08k-Em-1gQ"/>
-                                    <constraint firstAttribute="width" constant="120" id="E3F-m4-0BK"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="toView"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LFr-Y4-f4T" firstAttribute="leading" secondItem="aFn-eT-U6e" secondAttribute="leading" id="2FC-Nc-LE4"/>
                             <constraint firstAttribute="trailing" secondItem="LFr-Y4-f4T" secondAttribute="trailing" id="GMJ-OL-JHn"/>
-                            <constraint firstAttribute="trailing" secondItem="66X-X3-5TX" secondAttribute="trailing" id="az5-8L-PfO"/>
                             <constraint firstAttribute="bottomMargin" secondItem="LFr-Y4-f4T" secondAttribute="bottom" id="vlG-gc-jjg"/>
                             <constraint firstAttribute="topMargin" secondItem="LFr-Y4-f4T" secondAttribute="top" id="xoc-6Y-yNp"/>
-                            <constraint firstItem="66X-X3-5TX" firstAttribute="centerY" secondItem="aFn-eT-U6e" secondAttribute="centerY" constant="-12" id="zO0-ix-mea"/>
                         </constraints>
                     </view>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="메인뷰컨트롤러스냅샷뷰" destination="66X-X3-5TX" id="myK-Oy-cgf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-zN-j9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,15 +131,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="toView"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Triplan" id="BXY-NQ-tF6">
                         <barButtonItem key="leftBarButtonItem" image="navi_menu" id="WoN-qq-Od3">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Ooa-g3-jAD" kind="presentation" identifier="메뉴세그웨이" id="SW3-E7-7v0"/>
+                                <segue destination="Ooa-g3-jAD" kind="presentation" identifier="메뉴세그웨이" customClass="BPSideMenuTransion" customModule="Triplan" customModuleProvider="target" id="SW3-E7-7v0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="환율" id="SL4-Zl-Gbz">
@@ -164,9 +146,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="컬렉션뷰" destination="yo2-7H-9pY" id="RY5-L0-HZo"/>
                         <segue destination="Dyh-u1-JAx" kind="custom" identifier="커스텀트랜지션" customClass="BPCircleTransitionSegue" customModule="Triplan" customModuleProvider="target" id="zA4-VM-3pK"/>
@@ -189,7 +168,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgx-Xb-6qG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="MOq-P2-LET">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="MOq-P2-LET">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
