@@ -22,7 +22,7 @@ class 사이드메뉴_뷰컨트롤러: UIVie
     }
     
     func 메인으로이동(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "언와인드사이드메뉴", sender: nil)
     }
 }
 

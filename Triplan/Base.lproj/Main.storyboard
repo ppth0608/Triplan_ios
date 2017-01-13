@@ -38,8 +38,12 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="jlv-Ht-rU1" kind="unwind" identifier="언와인드사이드메뉴" customClass="BPSideMenuUnwindTransition" customModule="Triplan" customModuleProvider="target" unwindAction="언와인드세그_사이드메뉴WithSegue:" id="Jar-yl-YHT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-zN-j9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jlv-Ht-rU1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1055.2" y="-830.73463268365822"/>
         </scene>

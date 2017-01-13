@@ -206,7 +206,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cn9-jB-oZF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="여행" image="tab_first_off2" selectedImage="tab_first_on2" id="Ac3-Wl-t4d"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X8x-hT-cL8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X8x-hT-cL8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,7 +229,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zxT-hM-YsD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="통계" image="tab_second_off3" selectedImage="tab_second_on2" id="gNQ-rh-hDj"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="spP-jq-Z5w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="spP-jq-Z5w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,7 +252,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wca-gl-Ovr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="설정" image="tab_third_off2" selectedImage="tab_third_on2" id="6C7-9l-5cG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cxu-QT-GAR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cxu-QT-GAR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

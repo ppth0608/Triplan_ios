@@ -84,6 +84,10 @@ extension 메인_뷰컨트롤러 {
     @IBAction func 언와인드세그_여행추가(segue: UIStoryboardSegue) {
         // noop
     }
+    
+    @IBAction func 언와인드세그_사이드메뉴(segue: UIStoryboardSegue) {
+        // noop
+    }
 }
 
 // MARK: - UICollectionViewDelegate
