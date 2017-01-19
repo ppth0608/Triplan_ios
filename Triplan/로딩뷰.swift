@@ -11,7 +11,7 @@ import RxSwift
 import PKHUD
 
 extension PKHUD {
-    
+
     var rx_로딩뷰애니메이션: AnyObserver<Bool> {
         return AnyObserver { 이벤트 in
             MainScheduler.ensureExecutingOnScheduler()

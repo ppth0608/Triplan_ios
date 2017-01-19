@@ -9,12 +9,12 @@
 import UIKit
 
 class CurrencyCell: UITableViewCell {
-    
+
     @IBOutlet weak var countryThumbnailImageView: UIImageView?
     @IBOutlet weak var currencyCodeLabel: UILabel?
     @IBOutlet weak var currencyLabel: UILabel?
     @IBOutlet weak var currencyDescriptionLabel: UILabel?
-    
+
     var rate: Rate? {
         didSet {
             updateUI()
@@ -23,7 +23,7 @@ class CurrencyCell: UITableViewCell {
 }
 
 extension CurrencyCell {
-    
+
     func updateUI() {
         //TODO: 이미지처리
         currencyCodeLabel?.text = rate?.currencyCode ?? ""

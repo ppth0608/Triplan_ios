@@ -11,7 +11,7 @@ import Foundation
 private var AssociationKey: UInt8 = 0
 
 extension NSObject {
-    
+
     var object: CellPresentable? {
         set {
             objc_setAssociatedObject(self, &AssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)

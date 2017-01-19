@@ -9,12 +9,12 @@
 import UIKit
 
 protocol StoryboardIdentifiable {
-    
+
     static var storyboardIdentifier: String { get }
 }
 
 extension UIViewController: StoryboardIdentifiable {
-    
+
     static var storyboardIdentifier: String {
         return String(describing: self)
     }

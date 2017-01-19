@@ -10,6 +10,6 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    
+
     static let 활성화여행정보키 = DefaultsKey<String>("활성화여행정보키")
 }

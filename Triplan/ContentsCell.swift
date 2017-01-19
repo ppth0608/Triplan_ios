@@ -9,12 +9,12 @@
 import UIKit
 
 protocol ContentsCell {
-    
+
     var contents: CellPresentable? { get set }
 }
 
 extension UITableViewCell: ContentsCell {
-    
+
     var contents: CellPresentable? {
         set {
             object = newValue
@@ -24,14 +24,14 @@ extension UITableViewCell: ContentsCell {
             return object
         }
     }
-    
+
     func 셀UI갱신() {
         // noop
     }
 }
 
 extension UICollectionViewCell: ContentsCell {
-        
+
     var contents: CellPresentable? {
         set {
             object = newValue
@@ -41,7 +41,7 @@ extension UICollectionViewCell: ContentsCell {
             return object
         }
     }
-    
+
     func 셀UI갱신() {
         // noop
     }

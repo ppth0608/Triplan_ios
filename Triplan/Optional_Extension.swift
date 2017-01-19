@@ -12,14 +12,14 @@ protocol StringOptionalProtocol { }
 extension String: StringOptionalProtocol { }
 
 extension Optional where Wrapped: StringOptionalProtocol {
-    
+
     var isEmpty: Bool {
         guard let str = self as? String else {
             return true
         }
         return str.isEmpty
     }
-    
+
     var isNotEmpty: Bool {
         return !isEmpty
     }

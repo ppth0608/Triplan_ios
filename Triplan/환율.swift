@@ -10,17 +10,17 @@ import Foundation
 import Mapper
 
 struct Currency: Mappable {
-    
+
     let baseCurrency: String
     let date: String
     var rates: [String: Double]
-    
+
     init() {
         baseCurrency = "KRW"
         date = "2015-01-01"
         rates = [:]
     }
-    
+
     init(map: Mapper) throws {
         try baseCurrency = map.from("base")
         try date = map.from("date")
@@ -29,7 +29,7 @@ struct Currency: Mappable {
 }
 
 struct Rate {
-    
+
     let currencyCode: String
     var rate: Double
 }

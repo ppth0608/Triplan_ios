@@ -22,9 +22,9 @@ class 여행추가_뷰컨트롤러: 고�
     @IBOutlet weak var 출발데이트피커: UIDatePicker!
     @IBOutlet weak var 도착데이트피커: UIDatePicker!
     @IBOutlet weak var 확인버튼: UIBarButtonItem!
-    
+
     var 여행추가유효성값 = 여행추가유효성결과.제목없음
-    
+
     var 출발데이터피커숨겨짐 = true {
         didSet {
             if !출발데이터피커숨겨짐 && !도착데이터피커숨겨짐 {
@@ -39,10 +39,10 @@ class 여행추가_뷰컨트롤러: 고�
             }
         }
     }
-    
+
     let 여행추가뷰모델 = 여행추가_뷰모델()
     let disposeBag = DisposeBag()
-    
+
     deinit {
         NSLog("deinit -- 여행추가_뷰컨트롤러")
     }
@@ -50,16 +50,16 @@ class 여행추가_뷰컨트롤러: 고�
 
 // MARK: - UIViewController
 extension 여행추가_뷰컨트롤러 {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         옵져버세팅()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+
     override func 네비게이션바세팅() {
         title = "여행추가"
     }
@@ -67,20 +67,20 @@ extension 여행추가_뷰컨트롤러 {
 
 // MARK: - Private
 fileprivate extension 여행추가_뷰컨트롤러 {
-    
+
     func 옵져버세팅() {
         여행추가뷰모델.출발날짜감시자?
             .subscribe { [weak self] in
                 self?.출발날짜.text = $0.element
             }
             .addDisposableTo(disposeBag)
-        
+
         여행추가뷰모델.도착날짜감시자?
             .subscribe { [weak self] in
                 self?.도착날짜.text = $0.element
             }
             .addDisposableTo(disposeBag)
-        
+
         여행추가뷰모델.여행추가유효성감시자?
             .subscribe { [weak self] in
                 self?.확인버튼상태갱신(결과: $0.element ?? .성공)
@@ -88,7 +88,7 @@ fileprivate extension 여행추가_뷰컨트롤
             }
             .addDisposableTo(disposeBag)
     }
-    
+
     func 확인버튼상태갱신(결과: 여행추가유효성결과) {
         switch 결과 {
         case .성공:
@@ -97,21 +97,21 @@ fileprivate extension 여행추가_뷰컨트롤
             확인버튼.tintColor = UIColor.비활성화컬러
         }
     }
-    
+
     func 피커토글(셀인덱스: Int) {
         guard 셀인덱스 < tableView.numberOfRows(inSection: 0) else {
             return
         }
-        
+
         switch 셀인덱스 {
         case 2: 출발데이터피커숨겨짐 = !출발데이터피커숨겨짐
         case 4: 도착데이터피커숨겨짐 = !도착데이터피커숨겨짐
         default: return
         }
-        
+
         테이블뷰UI업데이트()
     }
-    
+
     func 테이블뷰UI업데이트() {
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -119,15 +119,15 @@ fileprivate extension 여행추가_뷰컨트롤
 }
 
 extension 여행추가_뷰컨트롤러 {
-    
+
     @IBAction func 출발피커값변화됨(_ sender: UIDatePicker) {
         여행추가뷰모델.출발날짜.value = sender.date as NSDate
     }
-    
+
     @IBAction func 도착피커값변화됨(_ sender: UIDatePicker) {
         여행추가뷰모델.도착날짜.value = sender.date as NSDate
     }
-    
+
     @IBAction override func 확인버튼_탭(sender: UIButton) {
         switch 여행추가유효성값 {
         case .성공:
@@ -142,11 +142,11 @@ extension 여행추가_뷰컨트롤러 {
 }
 
 extension 여행추가_뷰컨트롤러 {
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         피커토글(셀인덱스: indexPath.item)
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if 출발데이터피커숨겨짐 && indexPath.row == 3 {
             return 0
@@ -154,7 +154,7 @@ extension 여행추가_뷰컨트롤러 {
         if 도착데이터피커숨겨짐 && indexPath.row == 5 {
             return 0
         }
-        
+
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
 }

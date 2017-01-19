@@ -12,14 +12,14 @@ import RxCocoa
 import PKHUD
 
 class CurrencyViewController: 공통_네비게이션뷰컨트롤러 {
-    
+
     //Currency
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var baseCurrencyLabel: UILabel!
     @IBOutlet weak var baseCurrencySelectButton: UIButton!
     @IBOutlet weak var exchangeTextView: UITextView!
     @IBOutlet weak var exchangeTextViewPlaceholderLabel: UILabel!
-    
+
     //Calculator
     @IBOutlet var digitButtons: [UIButton]!
     @IBOutlet weak var dotButton: UIButton!
@@ -28,14 +28,14 @@ class CurrencyViewController: 공통_네비게이셔�
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var subtractionButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    
+
     //ViewModel
     let currencyViewModel = CurrencyViewModel()
     let calculatorViewModel = CalculatorViewModel()
-    
+
     //RxSwift
     let disposeBag = DisposeBag()
-    
+
     deinit {
         NSLog("deinit -- CurrencyViewController")
     }
@@ -43,21 +43,21 @@ class CurrencyViewController: 공통_네비게이셔�
 
 // MARK: Life Cycle
 extension CurrencyViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         로딩중인디케이터세팅()
-        
+
         setupCurrencyViewModel()
         setupCalculatorViewModel()
-        
+
         setupExchangeVariable()
-        
+
         setupDigitButtons()
         setupACButton()
     }
-    
+
     override func 네비게이션바세팅() {
         title = "환율"
     }
@@ -65,14 +65,14 @@ extension CurrencyViewController {
 
 // MARK: setup Function
 private extension CurrencyViewController {
-    
+
     func 로딩중인디케이터세팅() {
         currencyViewModel.로딩중인디케이터감시자?
             .asObservable()
             .bindTo(PKHUD.sharedHUD.rx_로딩뷰애니메이션)
             .addDisposableTo(disposeBag)
     }
-    
+
     func setupCurrencyViewModel() {
         currencyViewModel.exchangeObservable?
             .asObservable()
@@ -80,21 +80,21 @@ private extension CurrencyViewController {
                 self?.tableView.reloadData()
             }
             .addDisposableTo(disposeBag)
-        
+
         currencyViewModel.ratesVariable
             .asObservable()
             .bindTo(tableView.rx.items(cellIdentifier: "CurrencyCell")) { (index, item, cell: CurrencyCell) in
                 cell.rate = Rate(currencyCode: item.currencyCode, rate: item.rate)
             }
             .addDisposableTo(disposeBag)
-        
+
         currencyViewModel.ratesVariable
             .asObservable()
             .subscribe { [weak self] in
                 self?.tableView.reloadData()
             }
             .addDisposableTo(disposeBag)
-        
+
         currencyViewModel.baseCountryVariable
             .asObservable()
             .subscribe { [weak self] in
@@ -102,7 +102,7 @@ private extension CurrencyViewController {
             }
             .addDisposableTo(disposeBag)
     }
-    
+
     func setupCalculatorViewModel() {
         calculatorViewModel
             .appendedInputVariable
@@ -110,18 +110,17 @@ private extension CurrencyViewController {
             .bindTo(exchangeTextView.rx.text)
             .addDisposableTo(disposeBag)
     }
-    
+
     func setupExchangeVariable() {
         exchangeTextView.rx.text.subscribe { [weak self] in
             self?.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
             }.addDisposableTo(disposeBag)
-        
+
         exchangeTextView.rx.text
             .bindTo(currencyViewModel.exchangeVariable)
             .addDisposableTo(disposeBag)
     }
-    
-    
+
     func setupDigitButtons() {
         digitButtons.forEach { button in
             button.rx.tap.map {
@@ -131,7 +130,7 @@ private extension CurrencyViewController {
                 .addDisposableTo(disposeBag)
         }
     }
-    
+
     func setupACButton() {
         acButton.rx.tap
             .subscribe { [weak self] _ in
@@ -143,7 +142,7 @@ private extension CurrencyViewController {
 
 // MARK: IBAction function
 private extension CurrencyViewController {
-    
+
     @IBAction func baseCurrencySelectButtonTapped(_ sender: UIButton) {
         presentActionSheet()
     }
@@ -151,21 +150,21 @@ private extension CurrencyViewController {
 
 // MARK: private function
 private extension CurrencyViewController {
-    
+
     func presentActionSheet() {
         let alertController = UIAlertController(title: "Base Country", message: "Choose Base Country", preferredStyle: .actionSheet)
         let baseCountryItems = ["KRW", "USD", "GBP"]
-        
+
         baseCountryItems.forEach { codeName in
             let alertAction = UIAlertAction(title: codeName, style: .default) { _ in
                 self.currencyViewModel.baseCountryVariable.value = codeName
             }
             alertController.addAction(alertAction)
         }
-        
+
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelButton)
-        
+
         self.navigationController?.present(alertController, animated: true, completion: nil)
     }
 }

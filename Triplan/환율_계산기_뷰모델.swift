@@ -11,25 +11,25 @@ import RxSwift
 import RxCocoa
 
 class CalculatorViewModel {
-    
+
     var inputVariable = Variable<String>("")
     var appendedInputVariable = Variable<String>("")
     var inputObservable: Observable<Double>?
-    
+
     let disposeBag = DisposeBag()
-    
+
     init() {
         setupInputObservable()
     }
 }
 
 extension CalculatorViewModel {
-    
+
     func clearValue() {
         inputVariable.value = ""
         appendedInputVariable.value = ""
     }
-    
+
     func setupInputObservable() {
         inputVariable
             .asObservable()
@@ -37,8 +37,7 @@ extension CalculatorViewModel {
                 self.appendedInputVariable.value.append($0.element!)
             }
             .addDisposableTo(disposeBag)
-        
-        
+
         inputObservable = appendedInputVariable
             .asObservable()
             .map {

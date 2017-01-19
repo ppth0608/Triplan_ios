@@ -643,6 +643,7 @@
 			buildConfigurationList = 4A62C3411DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "Triplan" */;
 			buildPhases = (
 				87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */,
+				4A6A7C351E30C33100ED1E81 /* ShellScript */,
 				4A6A7BF51E30BDFB00ED1E81 /* ShellScript */,
 				4A62C3151DEBE664008DAD1D /* Sources */,
 				4A62C3161DEBE664008DAD1D /* Frameworks */,
@@ -792,6 +793,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint lint --path ./Triplan\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		4A6A7C351E30C33100ED1E81 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftlint autocorrect --path ./Triplan";
 		};
 		87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

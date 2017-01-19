@@ -9,5 +9,5 @@
 import Foundation
 
 class 상세_통계_뷰모델 {
-    
+
 }

@@ -11,7 +11,7 @@ import UIKit
 protocol UIViewControllerCreatable { }
 
 extension UIViewControllerCreatable where Self: UIViewController {
-    
+
     static func 뷰컨트롤러생성(of storyboard: Storyboard) -> Self {
         return UIStoryboard(storyboard: storyboard).instantiateViewController()
     }

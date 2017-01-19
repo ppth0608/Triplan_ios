@@ -9,6 +9,6 @@
 import UIKit
 
 public protocol ViewControllerContainCircleTransition {
-    
+
     var circleTransitionTriggerView: UIView? { get }
 }

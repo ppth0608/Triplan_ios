@@ -14,12 +14,12 @@ import RxOptional
 import RxSwift
 
 struct CurrencyFixerAPITrackerModel {
-    
+
     let provider: RxMoyaProvider<FixerAPI>
     let baseCountryVariable: Variable<String>
     let currencyValue = Variable<[String: Double]>([:])
     let disposeBag = DisposeBag()
-    
+
     func trackCurrency2() -> Observable<[String: Double]> {
         return Observable.create { observer in
             let obsevableCurrency = self.baseCountryVariable.asObservable()
@@ -31,13 +31,13 @@ struct CurrencyFixerAPITrackerModel {
             print(self.currencyValue.value)
             observer.onNext(self.currencyValue.value)
             observer.onCompleted()
-            
+
             return Disposables.create {
-                
+
             }
         }
     }
-    
+
     func trackCurrency() -> Observable<[String: Double]> {
         return baseCountryVariable.asObservable()
             .observeOn(MainScheduler.instance)
@@ -45,7 +45,7 @@ struct CurrencyFixerAPITrackerModel {
                 self.currecy(baseCountry: baseCountry)
             }
     }
-    
+
     fileprivate func currecy(baseCountry: String) -> Observable<[String: Double]> {
         return provider
             .request(FixerAPI.latestCurrency(base: baseCountry))
