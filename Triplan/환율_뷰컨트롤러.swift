@@ -14,20 +14,20 @@ import PKHUD
 class CurrencyViewController: 공통_네비게이션뷰컨트롤러 {
 
     //Currency
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var baseCurrencyLabel: UILabel!
-    @IBOutlet weak var baseCurrencySelectButton: UIButton!
-    @IBOutlet weak var exchangeTextView: UITextView!
-    @IBOutlet weak var exchangeTextViewPlaceholderLabel: UILabel!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var baseCurrencyLabel: UILabel!
+    @IBOutlet fileprivate weak var baseCurrencySelectButton: UIButton!
+    @IBOutlet fileprivate weak var exchangeTextView: UITextView!
+    @IBOutlet fileprivate weak var exchangeTextViewPlaceholderLabel: UILabel!
 
     //Calculator
-    @IBOutlet var digitButtons: [UIButton]!
-    @IBOutlet weak var dotButton: UIButton!
-    @IBOutlet weak var divisionButton: UIButton!
-    @IBOutlet weak var acButton: UIButton!
-    @IBOutlet weak var multiplyButton: UIButton!
-    @IBOutlet weak var subtractionButton: UIButton!
-    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet fileprivate var digitButtons: [UIButton]!
+    @IBOutlet fileprivate weak var dotButton: UIButton!
+    @IBOutlet fileprivate weak var divisionButton: UIButton!
+    @IBOutlet fileprivate weak var acButton: UIButton!
+    @IBOutlet fileprivate weak var multiplyButton: UIButton!
+    @IBOutlet fileprivate weak var subtractionButton: UIButton!
+    @IBOutlet fileprivate weak var plusButton: UIButton!
 
     //ViewModel
     let currencyViewModel = CurrencyViewModel()

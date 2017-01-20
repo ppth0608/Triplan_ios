@@ -10,7 +10,7 @@ import UIKit
 
 class 여행추가_셀: UICollectionViewCell {
 
-    @IBOutlet weak var 스탬프이미지: UIImageView! {
+    @IBOutlet fileprivate weak var 스탬프이미지: UIImageView! {
         didSet {
             스탬프이미지.image = UIImage(named: "main_stamp_add")
         }

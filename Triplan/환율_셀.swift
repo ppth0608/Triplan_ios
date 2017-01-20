@@ -10,10 +10,10 @@ import UIKit
 
 class CurrencyCell: UITableViewCell {
 
-    @IBOutlet weak var countryThumbnailImageView: UIImageView?
-    @IBOutlet weak var currencyCodeLabel: UILabel?
-    @IBOutlet weak var currencyLabel: UILabel?
-    @IBOutlet weak var currencyDescriptionLabel: UILabel?
+    @IBOutlet fileprivate weak var countryThumbnailImageView: UIImageView?
+    @IBOutlet fileprivate weak var currencyCodeLabel: UILabel?
+    @IBOutlet fileprivate weak var currencyLabel: UILabel?
+    @IBOutlet fileprivate weak var currencyDescriptionLabel: UILabel?
 
     var rate: Rate? {
         didSet {

@@ -11,9 +11,9 @@ import SwiftyUserDefaults
 
 class 상세_계획_뷰컨트롤러: 공통_네비게이션뷰컨트롤러 {
 
-    @IBOutlet weak var 캘린더메뉴뷰: CVCalendarMenuView!
-    @IBOutlet weak var 캘린더뷰: CVCalendarView!
-    @IBOutlet weak var 테이블뷰: UITableView!
+    @IBOutlet fileprivate weak var 캘린더메뉴뷰: CVCalendarMenuView!
+    @IBOutlet fileprivate weak var 캘린더뷰: CVCalendarView!
+    @IBOutlet fileprivate weak var 테이블뷰: UITableView!
 
     let 상세계획뷰모델 = 상세_계획_뷰모델()
     let 테이블뷰데이터소스 = 상세_계획_테이블뷰_데이터소스()

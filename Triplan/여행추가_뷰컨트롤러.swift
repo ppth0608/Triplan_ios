@@ -12,16 +12,16 @@ import RxCocoa
 
 class 여행추가_뷰컨트롤러: 공통_테이블뷰컨트롤러 {
 
-    @IBOutlet weak var 여행제목입력창: UITextField! {
+    @IBOutlet fileprivate weak var 여행제목입력창: UITextField! {
         didSet {
             여행제목입력창.rx.text.asObservable().bindTo(여행추가뷰모델.여행제목).addDisposableTo(disposeBag)
         }
     }
-    @IBOutlet weak var 출발날짜: UILabel!
-    @IBOutlet weak var 도착날짜: UILabel!
-    @IBOutlet weak var 출발데이트피커: UIDatePicker!
-    @IBOutlet weak var 도착데이트피커: UIDatePicker!
-    @IBOutlet weak var 확인버튼: UIBarButtonItem!
+    @IBOutlet fileprivate weak var 출발날짜: UILabel!
+    @IBOutlet fileprivate weak var 도착날짜: UILabel!
+    @IBOutlet fileprivate weak var 출발데이트피커: UIDatePicker!
+    @IBOutlet fileprivate weak var 도착데이트피커: UIDatePicker!
+    @IBOutlet fileprivate weak var 확인버튼: UIBarButtonItem!
 
     var 여행추가유효성값 = 여행추가유효성결과.제목없음
 

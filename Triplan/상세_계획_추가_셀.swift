@@ -10,5 +10,5 @@ import UIKit
 
 class 상세_계획_추가_셀: UITableViewCell {
 
-    @IBOutlet weak var 계획추가이미지뷰: UIImageView!
+    @IBOutlet fileprivate weak var 계획추가이미지뷰: UIImageView!
 }
