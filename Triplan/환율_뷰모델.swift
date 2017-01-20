@@ -30,16 +30,22 @@ class CurrencyViewModel {
     let disposeBag = DisposeBag()
 
     init() {
+        setupRxMoyaProvider()
         setupCurrencyAPITracker()
         setupExchangeObservable()
     }
 }
 
 extension CurrencyViewModel {
+    fileprivate func setupRxMoyaProvider() {
+        provider = RxMoyaProvider<FixerAPI>()
+    }
 
     fileprivate func setupCurrencyAPITracker() {
-        provider = RxMoyaProvider<FixerAPI>()
-        currencyAPITracker = CurrencyFixerAPITrackerModel(provider: provider!, baseCountryVariable: baseCountryVariable)
+        guard let provider = provider else {
+            return
+        }
+        currencyAPITracker = CurrencyFixerAPITrackerModel(provider: provider, baseCountryVariable: baseCountryVariable)
 
         let 로딩중인디케이터 = ActivityIndicator()
         로딩중인디케이터감시자 = 로딩중인디케이터.asObservable()

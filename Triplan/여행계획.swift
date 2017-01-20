@@ -22,7 +22,7 @@ class 여행계획: Object {
     dynamic var 세부카테고리값 = 계획세부종류.교통.rawValue
     var 세부카테고리: 계획세부종류 {
         get {
-            return 계획세부종류(rawValue: 세부카테고리값)!
+            return 계획세부종류(rawValue: 세부카테고리값) ?? 계획세부종류.기타
         } set {
             세부카테고리값 = newValue.rawValue
         }

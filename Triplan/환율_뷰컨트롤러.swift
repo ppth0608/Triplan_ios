@@ -112,8 +112,9 @@ private extension CurrencyViewController {
     }
 
     func setupExchangeVariable() {
-        exchangeTextView.rx.text.subscribe { [weak self] in
-            self?.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
+        exchangeTextView.rx.text
+            .subscribe { [weak self] in
+                self?.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
             }.addDisposableTo(disposeBag)
 
         exchangeTextView.rx.text
@@ -123,11 +124,10 @@ private extension CurrencyViewController {
 
     func setupDigitButtons() {
         digitButtons.forEach { button in
-            button.rx.tap.map {
-                button.currentTitle!
-                }
-                .bindTo(calculatorViewModel.inputVariable)
-                .addDisposableTo(disposeBag)
+            button.rx.tap
+            .map { button.currentTitle ?? "" }
+            .bindTo(calculatorViewModel.inputVariable)
+            .addDisposableTo(disposeBag)
         }
     }
 

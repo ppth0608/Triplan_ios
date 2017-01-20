@@ -34,7 +34,7 @@ extension CalculatorViewModel {
         inputVariable
             .asObservable()
             .subscribe {
-                self.appendedInputVariable.value.append($0.element!)
+                self.appendedInputVariable.value.append($0.element ?? "")
             }
             .addDisposableTo(disposeBag)
 
