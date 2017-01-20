@@ -10,10 +10,10 @@ import Foundation
 
 extension NSDate: Comparable { }
 
-public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
+public func == (lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs === rhs || lhs.compare(rhs as Date) == .orderedSame
 }
 
-public func <(lhs: NSDate, rhs: NSDate) -> Bool {
+public func < (lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs.compare(rhs as Date) == .orderedAscending
 }
