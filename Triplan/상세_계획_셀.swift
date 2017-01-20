@@ -10,10 +10,10 @@ import UIKit
 
 class 상세_계획_셀: UITableViewCell {
 
-    @IBOutlet weak var 카테고리이미지뷰: UIImageView!
-    @IBOutlet weak var 장소이름: UILabel!
-    @IBOutlet weak var 예산: UILabel!
-    @IBOutlet weak var 메모: UILabel!
+    @IBOutlet fileprivate weak var 카테고리이미지뷰: UIImageView!
+    @IBOutlet fileprivate weak var 장소이름: UILabel!
+    @IBOutlet fileprivate weak var 예산: UILabel!
+    @IBOutlet fileprivate weak var 메모: UILabel!
 }
 
 extension 상세_계획_셀 {

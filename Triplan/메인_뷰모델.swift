@@ -26,7 +26,11 @@ class 메인_뷰모델 {
 private extension 메인_뷰모델 {
 
     func 데이터갱신() {
-        여행정보목록 = try! Realm().objects(여행정보.self)
+        do {
+            여행정보목록 = try Realm().objects(여행정보.self)
+        } catch let error {
+            print(error)
+        }
     }
 
     func 감시자세팅() {

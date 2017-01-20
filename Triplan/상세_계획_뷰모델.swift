@@ -32,11 +32,15 @@ extension 상세_계획_뷰모델 {
 
     func 데이터세팅() {
         여행정보키.value = Defaults[.활성화여행정보키]
-        여행정보데이터 = try! Realm().object(ofType: 여행정보.self, forPrimaryKey: 여행정보키.value)
-        여행계획목록 = try! Realm()
-            .object(ofType: 여행정보.self, forPrimaryKey: 여행정보키.value)?.여행계획목록
-            .sorted(byProperty: "계획날짜", ascending: true)
-//            .filter("계획날짜 == %@", 선택된날짜.value)
+        do {
+            여행정보데이터 = try Realm().object(ofType: 여행정보.self, forPrimaryKey: 여행정보키.value)
+            여행계획목록 = try Realm()
+                .object(ofType: 여행정보.self, forPrimaryKey: 여행정보키.value)?.여행계획목록
+                .sorted(byProperty: "계획날짜", ascending: true)
+            //  .filter("계획날짜 == %@", 선택된날짜.value)
+        } catch let error {
+            print(error)
+        }
     }
 
     func 감시자세팅() {

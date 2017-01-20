@@ -15,22 +15,34 @@ extension Object {
     func 추가() {
         let realm = try? Realm()
 
-        try! realm?.write {
-            realm?.add(self)
+        do {
+            try realm?.write {
+                realm?.add(self)
+            }
+        } catch let error {
+            print(error)
         }
     }
 
     func 업데이트(완료됨: () -> ()) {
         let realm = try? Realm()
 
-        try! realm?.write(완료됨)
+        do {
+            try realm?.write(완료됨)
+        } catch let error {
+            print(error)
+        }
     }
 
     func 삭제() {
         let realm = try? Realm()
 
-        try! realm?.write {
-            realm?.delete(self)
+        do {
+            try realm?.write {
+                realm?.delete(self)
+            }
+        } catch let error {
+            print(error)
         }
     }
 }

@@ -34,7 +34,7 @@ private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
  If there is at least one sequence computation in progress, `true` will be sent.
  When all activities complete `false` will be sent.
  */
-public class ActivityIndicator: SharedSequenceConvertibleType {
+class ActivityIndicator: SharedSequenceConvertibleType {
 
     public typealias E = Bool
     public typealias SharingStrategy = DriverSharingStrategy
@@ -43,7 +43,7 @@ public class ActivityIndicator: SharedSequenceConvertibleType {
     private let _variable = Variable(0)
     private let _loading: SharedSequence<SharingStrategy, Bool>
 
-    public init() {
+    init() {
         _loading = _variable.asDriver()
             .map { $0 > 0 }
             .distinctUntilChanged()
@@ -70,14 +70,14 @@ public class ActivityIndicator: SharedSequenceConvertibleType {
         _lock.unlock()
     }
 
-    public func asSharedSequence() -> SharedSequence<SharingStrategy, E> {
+    func asSharedSequence() -> SharedSequence<SharingStrategy, E> {
         return _loading
     }
 }
 
 extension ObservableConvertibleType {
 
-    public func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<E> {
+    func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<E> {
         return activityIndicator.trackActivityOfObservable(self)
     }
 }

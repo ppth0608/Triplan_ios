@@ -14,20 +14,20 @@ import PKHUD
 class CurrencyViewController: 공통_네비게이션뷰컨트롤러 {
 
     //Currency
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var baseCurrencyLabel: UILabel!
-    @IBOutlet weak var baseCurrencySelectButton: UIButton!
-    @IBOutlet weak var exchangeTextView: UITextView!
-    @IBOutlet weak var exchangeTextViewPlaceholderLabel: UILabel!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var baseCurrencyLabel: UILabel!
+    @IBOutlet fileprivate weak var baseCurrencySelectButton: UIButton!
+    @IBOutlet fileprivate weak var exchangeTextView: UITextView!
+    @IBOutlet fileprivate weak var exchangeTextViewPlaceholderLabel: UILabel!
 
     //Calculator
-    @IBOutlet var digitButtons: [UIButton]!
-    @IBOutlet weak var dotButton: UIButton!
-    @IBOutlet weak var divisionButton: UIButton!
-    @IBOutlet weak var acButton: UIButton!
-    @IBOutlet weak var multiplyButton: UIButton!
-    @IBOutlet weak var subtractionButton: UIButton!
-    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet fileprivate var digitButtons: [UIButton]!
+    @IBOutlet fileprivate weak var dotButton: UIButton!
+    @IBOutlet fileprivate weak var divisionButton: UIButton!
+    @IBOutlet fileprivate weak var acButton: UIButton!
+    @IBOutlet fileprivate weak var multiplyButton: UIButton!
+    @IBOutlet fileprivate weak var subtractionButton: UIButton!
+    @IBOutlet fileprivate weak var plusButton: UIButton!
 
     //ViewModel
     let currencyViewModel = CurrencyViewModel()
@@ -112,8 +112,9 @@ private extension CurrencyViewController {
     }
 
     func setupExchangeVariable() {
-        exchangeTextView.rx.text.subscribe { [weak self] in
-            self?.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
+        exchangeTextView.rx.text
+            .subscribe { [weak self] in
+                self?.exchangeTextViewPlaceholderLabel.isHidden = $0.element == "" ? false : true
             }.addDisposableTo(disposeBag)
 
         exchangeTextView.rx.text
@@ -123,11 +124,10 @@ private extension CurrencyViewController {
 
     func setupDigitButtons() {
         digitButtons.forEach { button in
-            button.rx.tap.map {
-                button.currentTitle!
-                }
-                .bindTo(calculatorViewModel.inputVariable)
-                .addDisposableTo(disposeBag)
+            button.rx.tap
+            .map { button.currentTitle ?? "" }
+            .bindTo(calculatorViewModel.inputVariable)
+            .addDisposableTo(disposeBag)
         }
     }
 

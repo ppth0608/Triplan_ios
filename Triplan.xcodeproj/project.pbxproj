@@ -635,9 +635,9 @@
 			buildConfigurationList = 4A62C3411DEBE665008DAD1D /* Build configuration list for PBXNativeTarget "Triplan" */;
 			buildPhases = (
 				87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */,
-				4A6A7BF51E30BDFB00ED1E81 /* ShellScript */,
 				4A62C3151DEBE664008DAD1D /* Sources */,
 				4A62C3161DEBE664008DAD1D /* Frameworks */,
+				4A6A7BF51E30BDFB00ED1E81 /* ShellScript */,
 				4A62C3171DEBE664008DAD1D /* Resources */,
 				9C6F499ADEAD45F656DC5D98 /* [CP] Embed Pods Frameworks */,
 				A9A701BF0CAA797702721185 /* [CP] Copy Pods Resources */,

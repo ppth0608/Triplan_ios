@@ -15,6 +15,7 @@ class 사이드메뉴_뷰컨트롤러: UIVie
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
 
         let edgeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(사이드메뉴_뷰컨트롤러.메인으로이동(_:)))
         edgeGestureRecognizer.edges = .right

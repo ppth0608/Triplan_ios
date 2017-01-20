@@ -13,7 +13,7 @@ import SwiftyUserDefaults
 
 class 메인_뷰컨트롤러: 공통_네비게이션뷰컨트롤러, ViewControllerContainCircleTransition {
 
-    @IBOutlet weak var 컬렉션뷰: UICollectionView!
+    @IBOutlet fileprivate weak var 컬렉션뷰: UICollectionView!
 
     let 메인뷰모델 = 메인_뷰모델()
     let 컬렉션뷰데이터소스 = 메인_컬렉션뷰_데이터소스()

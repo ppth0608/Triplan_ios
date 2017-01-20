@@ -23,7 +23,7 @@ class 여행정보: Object {
     dynamic var 스탬프카테고리값 = 스탬프종류.없음.rawValue
     var 스탬프카테고리: 스탬프종류 {
         get {
-            return 스탬프종류(rawValue: 스탬프카테고리값)!
+            return 스탬프종류(rawValue: 스탬프카테고리값) ?? 스탬프종류.없음
         } set {
             스탬프카테고리값 = newValue.rawValue
         }

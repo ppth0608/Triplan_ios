@@ -12,7 +12,7 @@ import Moya
 fileprivate extension String {
 
     var URLEscapedString: String {
-        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed)!
+        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed) ?? ""
     }
 }
 
@@ -26,7 +26,7 @@ enum FixerAPI {
 
 extension FixerAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.fixer.io")!
+        return URL(string: "https://api.fixer.io") ?? URL(fileURLWithPath: "")
     }
 
     var path: String {
@@ -59,11 +59,11 @@ extension FixerAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .latestCurrency(_):
-            return "".data(using: String.Encoding.utf8)!
+            return "".data(using: String.Encoding.utf8) ?? Data()
         case .dateCurrency(_, _):
-            return "".data(using: String.Encoding.utf8)!
+            return "".data(using: String.Encoding.utf8) ?? Data()
         case .combinedCurrency(_, _, _):
-            return "".data(using: String.Encoding.utf8)!
+            return "".data(using: String.Encoding.utf8) ?? Data()
         }
     }
 
