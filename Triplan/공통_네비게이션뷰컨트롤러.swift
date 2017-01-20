@@ -26,7 +26,9 @@ extension 공통_네비게이션뷰컨ᄐ
 
 extension 공통_네비게이션뷰컨트롤러: UIGestureRecognizerDelegate {
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard let 네비게이션뷰컨트롤러 = self.navigationController else { return false }
+        guard let 네비게이션뷰컨트롤러 = self.navigationController else {
+            return false
+        }
 
         if 네비게이션뷰컨트롤러.topViewController is 메인_뷰컨트롤러 {
             performSegue(withIdentifier: "메뉴세그웨이", sender: nil)
