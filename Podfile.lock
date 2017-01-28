@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.0.1)
+  - BPStatusBarAlert (0.1.0)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
-  - Hero (0.1.0)
-  - JDropDownAlert (1.0.2)
+  - Hero (0.1.1)
   - ModelMapper (5.0.0)
   - Moya (8.0.0-beta.2):
     - Moya/Core (= 8.0.0-beta.2)
@@ -23,12 +23,12 @@ PODS:
   - Moya/RxSwift (8.0.0-beta.2):
     - Moya/Core
     - RxSwift
-  - PKHUD (4.1.0)
-  - Realm (2.1.2):
-    - Realm/Headers (= 2.1.2)
-  - Realm/Headers (2.1.2)
-  - RealmSwift (2.1.2):
-    - Realm (= 2.1.2)
+  - PKHUD (4.2.0)
+  - Realm (2.4.1):
+    - Realm/Headers (= 2.4.1)
+  - Realm/Headers (2.4.1)
+  - RealmSwift (2.4.1):
+    - Realm (= 2.4.1)
   - Result (3.1.0)
   - RxCocoa (3.0.0-beta.2):
     - RxSwift (~> 3.0.0-beta.2)
@@ -39,9 +39,9 @@ PODS:
   - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
+  - BPStatusBarAlert
   - GoogleMaps
   - Hero
-  - JDropDownAlert
   - Moya-ModelMapper/RxSwift (= 4.0.0-beta.1)
   - Moya/RxSwift
   - PKHUD (~> 4.0)
@@ -53,21 +53,21 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  BPStatusBarAlert: e82a4a236e20301d8776c64661912353e9b94254
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
-  Hero: 14038043c41ea53ba1aa43b4d3655f377d78bea6
-  JDropDownAlert: ae5f11d1fafa97313d745ef84556ae8a35c86bd0
+  Hero: b855122bc80662e7446300ca18c9e4bcb0679540
   ModelMapper: 89ced1f51ec6360e93f6889d08c818d4cad526a3
   Moya: 920d40f738e6f4ece84010cec701bb9693be8251
   Moya-ModelMapper: 79671c17bed1e7943a5d11529ea61a1b6a266792
-  PKHUD: a0ecdee9f67d9b462c0c5e4ba38400292ea6ae6e
-  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
-  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  Realm: 37a5198a197598d9ec0e4d1ae2f64924c86eeb9a
+  RealmSwift: d69e431b79a41acdf14c404b868ae1c2458916e1
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
   RxOptional: b97b59183af80d1e729ac9e51d09a10be668d6a8
   RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: c2f0b82938650bc0a13b5bdef89e63e3ea76247d
+PODFILE CHECKSUM: 52fdbfe82a8e0a0bcec5e5134c5ccd4e134024ec
 
 COCOAPODS: 1.2.0.beta.3

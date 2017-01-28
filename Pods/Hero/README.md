@@ -7,6 +7,8 @@
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 ![Swift 3.0+](https://img.shields.io/badge/Swift-3.0%2B-orange.svg)
 
+[中文 README](https://github.com/lkzhao/Hero/blob/master/README.zh-cn.md)
+
 ## Introduction
 
 **Hero** is a library for building iOS view controller transitions. It provides a layer on top of the UIKit's cumbersome transition APIs. Making custom transitions an easy task for developers.
@@ -23,7 +25,7 @@ Hero can also construct animations for unmatched views. It is easy to define the
 
 By default, Hero provides **dynamic duration & easing** based on the [Material Design Motion Guide](https://material.io/guidelines/motion/duration-easing.html). The duration is determined by the distance and size change. The easing curve is selected base on whether or not the view is entering or exiting the screen. It save you the hassle while providing consistent and delightful animations.
 
-Hero does not make any assumption about how the view is built or structured. It will not modify any of your views' states other than hiding them during the animation. This means that it works with **autolayout**, **programmatic layout**, **UICollectionView**(without modifing its layout object), **UITableView**, **UINavigationController**, **UITabBarController**, etc... 
+Hero does not make any assumption about how the view is built or structured. It will not modify any of your views' states other than hiding them during the animation. This means that it works with **autolayout**, **programmatic layout**, **UICollectionView**(without modifying its layout object), **UITableView**, **UINavigationController**, **UITabBarController**, etc... 
 
 ## Video Demos
 The following videos give you a general idea of what you can do with **Hero**
@@ -43,9 +45,9 @@ Hero is available on Carthage & Cocoapods. See the **[usage guide](https://githu
 
 ## Usage Example 1
 
-<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/simple-v1.svg"  align="left"/>
-<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/simple-v2.svg" align="left"/>
-<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/simple-animation.svg"  align="left"/>
+<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/simple-v1.svg" />
+<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/simple-v2.svg" />
+<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/simple-animation.svg" />
 
 ##### View Controller 1
 ```swift
@@ -63,9 +65,9 @@ greenView.heroModifiers = [.translate(x:0, y:100), .scale(0.5)]
 
 
 ## Usage Example 2
-<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/advance-v1.svg"  align="left"/>
-<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/advance-v2.svg" align="left"/>
-<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/advance-animation.svg"  align="left"/>
+<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/advance-v1.svg" />
+<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/advance-v2.svg" />
+<img src="https://cdn.rawgit.com/lkzhao/Hero/e4b0d15a15d738ac4b163797816059c199100e22/Resources/advance-animation.svg" />
 
 ##### View Controller 1
 ```swift
@@ -84,11 +86,10 @@ for cell in redCells {
 }
 ```
 
+You can do these in the **storyboard** too!
 
-
-You can do these in the storyboard too!
-
-<img src="https://cdn.rawgit.com/lkzhao/Hero/master/Resources/storyboardViewController.png" width="267px"/> <img src="https://cdn.rawgit.com/lkzhao/Hero/master/Resources/storyboardView.png" width="267px"/>
+<img src="https://cdn.rawgit.com/lkzhao/Hero/master/Resources/storyboardView.png" width="267px"/> 
+<img src="https://cdn.rawgit.com/lkzhao/Hero/master/Resources/storyboardViewController.png" width="267px"/>
 
 ## Contribute
 

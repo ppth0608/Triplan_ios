@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double JDropDownAlertVersionNumber;
-FOUNDATION_EXPORT const unsigned char JDropDownAlertVersionString[];
+FOUNDATION_EXPORT double BPStatusBarAlertVersionNumber;
+FOUNDATION_EXPORT const unsigned char BPStatusBarAlertVersionString[];
 

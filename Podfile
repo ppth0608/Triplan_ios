@@ -11,10 +11,10 @@ target 'Triplan' do
   pod 'RxCocoa',    '3.0.0-beta.2'
   pod 'RealmSwift'
   pod 'PKHUD', '~> 4.0'
-  pod "JDropDownAlert"
   pod 'SwiftyUserDefaults'
   pod 'GoogleMaps'
   pod "Hero"
+  pod "BPStatusBarAlert"
 end
 
 post_install do |installer|

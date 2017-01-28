@@ -24,15 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## GoogleMaps
+## BPStatusBarAlert
 
-Copyright 2016 Google
-
-## Hero
-
-The MIT License (MIT)
-
-Copyright (c) 2015 Luke Zhao <me@lkzhao.com>
+Copyright (c) 2017 taehyun.park <taehyun.park@navercorp.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -53,9 +47,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## JDropDownAlert
+## GoogleMaps
 
-Copyright (c) 2016 Steve Jo <trilliwon.io@gmail.com>
+Copyright 2016 Google
+
+## Hero
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Luke Zhao <me@lkzhao.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
