@@ -24,7 +24,7 @@ extension Object {
         }
     }
 
-    func 업데이트(완료됨: () -> ()) {
+    func 업데이트(완료됨: () -> Void) {
         let realm = try? Realm()
 
         do {

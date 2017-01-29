@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import JDropDownAlert
+import BPStatusBarAlert
 
 class 공통_뷰컨트롤러: UIViewController {
 
@@ -29,8 +29,7 @@ class 공통_뷰컨트롤러: UIViewController {
 
     func 알림창표시(메세지: String) {
         DispatchQueue.main.async {
-            let 알림창 = JDropDownAlert(position: .top, direction: .normal)
-            알림창.alertWith(메세지, delay: 2)
+            BPStatusBarAlert.shared.show(message: 메세지)
         }
     }
 

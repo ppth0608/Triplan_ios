@@ -83,7 +83,7 @@ private extension CurrencyViewController {
 
         currencyViewModel.ratesVariable
             .asObservable()
-            .bindTo(tableView.rx.items(cellIdentifier: "CurrencyCell")) { (index, item, cell: CurrencyCell) in
+            .bindTo(tableView.rx.items(cellIdentifier: "CurrencyCell")) { (_, item, cell: CurrencyCell) in
                 cell.rate = Rate(currencyCode: item.currencyCode, rate: item.rate)
             }
             .addDisposableTo(disposeBag)
