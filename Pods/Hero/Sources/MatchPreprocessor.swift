@@ -22,29 +22,28 @@
 
 import UIKit
 
-public class MatchPreprocessor:HeroPreprocessor {
-  public func process(context:HeroContext, fromViews:[UIView], toViews:[UIView]) {
+public class MatchPreprocessor:BasePreprocessor {
+  override public func process(fromViews:[UIView], toViews:[UIView]) {
     for tv in toViews{
       guard let id = tv.heroID, let fv = context.sourceView(for: id) else { continue }
-      if context[tv] == nil {
-        context[tv] = HeroTargetState()
-      }
-      
-      if let zPosition = context[tv]!.zPositionIfMatched {
-        context[tv]!.zPosition = zPosition
-      }
 
-      context[tv]!.source = id
-      
-      context[fv] = context[tv]
-      
-      context[tv]!.opacity = 0
-      if ((fv as? UILabel) != nil && !fv.isOpaque) || tv.alpha < 1 {
-        // cross fade if fromView is a label or if toView is transparent
-        context[fv]!.opacity = 0
-      } else {
-        context[fv]!.opacity = nil
+      var tvState = context[tv] ?? HeroTargetState()
+      if let zPosition = tvState.zPositionIfMatched {
+        tvState.append(contentsOf: [.zPosition(zPosition)])
       }
+      tvState.source = id
+
+      var fvState = tvState
+
+      tvState.opacity = 0
+      if (fv is UILabel && !fv.isOpaque) || tv.alpha < 1 {
+        // cross fade if fromView is a label or if toView is transparent
+        fvState.opacity = 0
+      } else {
+        fvState.opacity = nil
+      }
+      context[tv] = tvState
+      context[fv] = fvState
     }
   }
 }

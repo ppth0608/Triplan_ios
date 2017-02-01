@@ -19,13 +19,13 @@
 
 #### With Hero, you can easily mix & match these effects to build your own custom transition.
 
-At its core, Hero is similar to Keynote's **Magic Move**. It checks the `heroID` property on all source and destinations views. Every matched view pairs are then automatically transitioned from it's old state to it's new state.
+At its core, Hero is similar to Keynote's **Magic Move**. It checks the `heroID` property on all source and destinations views. Every matched view pairs are then automatically transitioned from its old state to its new state.
 
 Hero can also construct animations for unmatched views. It is easy to define these animations via the `heroModifiers` property. Hero will run these animations alongside the **Magic Move** animations. All of these can be interactive, too.
 
 By default, Hero provides **dynamic duration & easing** based on the [Material Design Motion Guide](https://material.io/guidelines/motion/duration-easing.html). The duration is determined by the distance and size change. The easing curve is selected base on whether or not the view is entering or exiting the screen. It save you the hassle while providing consistent and delightful animations.
 
-Hero does not make any assumption about how the view is built or structured. It will not modify any of your views' states other than hiding them during the animation. This means that it works with **autolayout**, **programmatic layout**, **UICollectionView**(without modifying its layout object), **UITableView**, **UINavigationController**, **UITabBarController**, etc... 
+Hero does not make any assumption about how the view is built or structured. It will not modify any of your views' states other than hiding them during the animation. This means that it works with **Auto Layout**, **programmatic layout**, **UICollectionView** (without modifying its layout object), **UITableView**, **UINavigationController**, **UITabBarController**, etc... 
 
 ## Video Demos
 The following videos give you a general idea of what you can do with **Hero**
@@ -37,11 +37,6 @@ The following videos give you a general idea of what you can do with **Hero**
 <a href="https://youtu.be/-6L79or6Iq8"><img src="https://github.com/lkzhao/Hero/blob/master/Resources/overview.png?raw=true" height="300"/></a>
 <a href="https://youtu.be/NFhA6qZdunA"><img src="https://github.com/lkzhao/Hero/blob/master/Resources/debugger.png?raw=true" height="300"/></a>
 <a href="https://youtu.be/m8eeO_GETeA"><img src="https://github.com/lkzhao/Hero/blob/master/Resources/liveInjection.png?raw=true" height="300"/></a>
-
-## Installation & Usage Guide
-Hero is available on Carthage & Cocoapods. See the **[usage guide](https://github.com/lkzhao/Hero/wiki/Usage-Guide)** for instructions.
-
-##### NOTE: Hero won't work on iPhone 7 Simulators due to a [bug](https://forums.developer.apple.com/thread/63438) by Apple. Try using other simulators or a real device when working with Hero.
 
 ## Usage Example 1
 
@@ -90,6 +85,28 @@ You can do these in the **storyboard** too!
 
 <img src="https://cdn.rawgit.com/lkzhao/Hero/master/Resources/storyboardView.png" width="267px"/> 
 <img src="https://cdn.rawgit.com/lkzhao/Hero/master/Resources/storyboardViewController.png" width="267px"/>
+
+## Usage Guide
+
+* [Installation](https://github.com/lkzhao/Hero/wiki/Usage-Guide#installation)
+* [Usage](https://github.com/lkzhao/Hero/wiki/Usage-Guide#usage)
+	* [Storyboard](https://github.com/lkzhao/Hero/wiki/Usage-Guide#storyboard)
+	* [In Code](https://github.com/lkzhao/Hero/wiki/Usage-Guide#in-code)
+* [Attributes](https://github.com/lkzhao/Hero/wiki/Usage-Guide#attributes)
+	* [HeroID](https://github.com/lkzhao/Hero/wiki/Usage-Guide#heroid)
+	* [HeroModifiers](https://github.com/lkzhao/Hero/wiki/Usage-Guide#heromodifiers)
+	* [HeroModifierString](https://github.com/lkzhao/Hero/wiki/Usage-Guide#heromodifierstring)
+* [Modifiers](https://github.com/lkzhao/Hero/wiki/Usage-Guide#modifiers)
+	* [Basic Modifiers](https://github.com/lkzhao/Hero/wiki/Usage-Guide#basic-modifiers)
+	* [Advance Modifiers](https://github.com/lkzhao/Hero/wiki/Usage-Guide#advance-modifiers)
+	* [zPosition](https://github.com/lkzhao/Hero/wiki/Usage-Guide#zposition-modifier)
+	* [Arc](https://github.com/lkzhao/Hero/wiki/Usage-Guide#arc-modifier)
+	* [Source](https://github.com/lkzhao/Hero/wiki/Usage-Guide#source-modifier)
+	* [Cascade](https://github.com/lkzhao/Hero/wiki/Usage-Guide#cascade-modifier)
+	* [IgnoreSubviewModifiers](https://github.com/lkzhao/Hero/wiki/Usage-Guide#ignoresubviewmodifiers-modifier)
+* [UINavigationController & UITabBarController](https://github.com/lkzhao/Hero/wiki/Usage-Guide#uinavigationcontroller--uitabbarcontroller)
+
+##### NOTE: Hero won't work on iPhone 7 Simulators due to a [bug](https://forums.developer.apple.com/thread/63438) by Apple. Try using other simulators or a real device when working with Hero.
 
 ## Contribute
 

@@ -22,38 +22,45 @@
 
 import UIKit
 
-class SourcePreprocessor:HeroPreprocessor {
-  public func process(context:HeroContext, fromViews:[UIView], toViews:[UIView]) {
+class SourcePreprocessor:BasePreprocessor {
+  override public func process(fromViews:[UIView], toViews:[UIView]) {
     for fv in fromViews{
       guard let id = context[fv]?.source,
             let tv = context.destinationView(for: id) else { continue }
-      prepareFor(view: fv, targetView: tv, context: context)
+      prepareFor(view: fv, targetView: tv)
     }
-    for tv in toViews{
+    for tv in toViews {
       guard let id = context[tv]?.source,
             let fv = context.sourceView(for: id) else { continue }
-      prepareFor(view: tv, targetView: fv, context: context)
+      prepareFor(view: tv, targetView: fv)
     }
   }
 }
 
 extension SourcePreprocessor {
-  fileprivate func prepareFor(view:UIView, targetView:UIView, context:HeroContext){
+  
+  fileprivate func prepareFor(view:UIView, targetView:UIView){
     let targetPos = context.container.convert(targetView.layer.position, from: targetView.superview!)
+
+    var state = context[view]!
     
+    // use global coordinate space since over target position is converted from the global container
+    state.useGlobalCoordinateSpace = true
+
     // remove incompatible options
-    context[view]!.transform = nil
-    context[view]!.size = nil
-    
-    context[view]!.position = targetPos
+    state.transform = nil
+    state.size = nil
+
+    state.position = targetPos
     if view.bounds.size != targetView.bounds.size {
-      context[view]!.size = targetView.bounds.size
+      state.size = targetView.bounds.size
     }
     if view.layer.cornerRadius != targetView.layer.cornerRadius {
-      context[view]!.cornerRadius = targetView.layer.cornerRadius
+      state.cornerRadius = targetView.layer.cornerRadius
     }
     if view.layer.transform != targetView.layer.transform {
-      context[view]!.transform = targetView.layer.transform
+      state.transform = targetView.layer.transform
     }
+    context[view] = state
   }
 }

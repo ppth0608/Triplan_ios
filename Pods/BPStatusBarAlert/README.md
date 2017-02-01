@@ -5,14 +5,17 @@
 [![License](https://img.shields.io/cocoapods/l/BPStatusBarAlert.svg?style=flat)](http://cocoapods.org/pods/BPStatusBarAlert)
 [![Platform](https://img.shields.io/cocoapods/p/BPStatusBarAlert.svg?style=flat)](http://cocoapods.org/pods/BPStatusBarAlert)
 
-## Example
+`BPStatusBarAlert` is a library that allows you to easily make text-based alert that appear on the status bar. </br>
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![](https://cloud.githubusercontent.com/assets/9531750/22404392/5f296692-e673-11e6-98f1-72cf33b9220e.gif)
 
 ## Requirements
+ - Deployment Target - `iOS 8.3`
+ - Swift Version - `Swift 3`
 
 ## Installation
 
+### CocoaPods
 BPStatusBarAlert is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -20,9 +23,45 @@ it, simply add the following line to your Podfile:
 pod "BPStatusBarAlert"
 ```
 
+### Manual
+Copy the folder `BPStatusBarAlert` to your project
+
+## Usage
+First, you need the following import BPStatusBarAlert
+```Swift
+import BPStatusBarAlert
+```
+
+Now, you can uses `BPStatusBarAlert` classes using shared property
+```Swift
+@IBAction func buttonTapped(_ sender: Any) {
+    BPStatusBarAlert.shared.show(message: "Complete sharing this article!")
+}
+```
+
+Show function is composed below code
+```Swift
+public func show(position: AlertPosition = .statusBar,
+                     message: String,
+                     messageColor: UIColor = UIColor.white,
+                     bgColor: UIColor = UIColor.bgColor) {
+    ...
+}
+```
+
+So, if you want set up Message text, Message Color, Background Color, you call `show` function with arguments
+```Swift
+BPStatusBarAlert.shared.show(message: "Complete sharing this article!", messageColor: UIColor.red, bgColor: UIColor.blue)
+```
+
+## TODO
+- [x] Change window level on NavigationBar position
+- [ ] Support landscape Mode
+- [ ] Custom Show and Hide (like facebook)
+
 ## Author
 
-taehyun.park, taehyun.park@navercorp.com
+Ben.Park, ppth0608@naver.com
 
 ## License
 

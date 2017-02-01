@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.0.1)
-  - BPStatusBarAlert (0.1.0)
+  - BPStatusBarAlert (0.1.1)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
-  - Hero (0.1.1)
+  - Hero (0.1.3)
   - ModelMapper (5.0.0)
   - Moya (8.0.0-beta.2):
     - Moya/Core (= 8.0.0-beta.2)
@@ -24,11 +24,11 @@ PODS:
     - Moya/Core
     - RxSwift
   - PKHUD (4.2.0)
-  - Realm (2.4.1):
-    - Realm/Headers (= 2.4.1)
-  - Realm/Headers (2.4.1)
-  - RealmSwift (2.4.1):
-    - Realm (= 2.4.1)
+  - Realm (2.4.2):
+    - Realm/Headers (= 2.4.2)
+  - Realm/Headers (2.4.2)
+  - RealmSwift (2.4.2):
+    - Realm (= 2.4.2)
   - Result (3.1.0)
   - RxCocoa (3.0.0-beta.2):
     - RxSwift (~> 3.0.0-beta.2)
@@ -53,15 +53,15 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  BPStatusBarAlert: e82a4a236e20301d8776c64661912353e9b94254
+  BPStatusBarAlert: 3afe82f0382b7d253d97b1136dadaa589ef7835a
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
-  Hero: b855122bc80662e7446300ca18c9e4bcb0679540
+  Hero: 898d486b4bef3509047e5b6489cfb70ff09aafb2
   ModelMapper: 89ced1f51ec6360e93f6889d08c818d4cad526a3
   Moya: 920d40f738e6f4ece84010cec701bb9693be8251
   Moya-ModelMapper: 79671c17bed1e7943a5d11529ea61a1b6a266792
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
-  Realm: 37a5198a197598d9ec0e4d1ae2f64924c86eeb9a
-  RealmSwift: d69e431b79a41acdf14c404b868ae1c2458916e1
+  Realm: d27b758e12d62a3371879a065d4c40aa212c5a54
+  RealmSwift: 9556c0fe0f0cfecacfb755ae9e68ff379fc6bead
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
   RxOptional: b97b59183af80d1e729ac9e51d09a10be668d6a8

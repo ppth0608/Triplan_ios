@@ -22,8 +22,20 @@
 
 import UIKit
 
-open class HeroPlugin: HeroPreprocessor, HeroAnimator{
-  public required init(){}
+open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator{
+  /**
+    Determines whether or not to receive `seekTo` callback on every frame.
+   
+    Default is false.
+   
+    When **requirePerFrameCallback** is **false**, the plugin needs to start its own animations inside `animate` & `resume`
+    The `seekTo` method is only being called during an interactive transition.
+   
+    When **requirePerFrameCallback** is **true**, the plugin will receive `seekTo` callback on every animation frame. Hence it is possible for the plugin to do per-frame animations without implementing `animate` & `resume`
+   */
+  open var requirePerFrameCallback = false
+  
+  public override required init(){}
   
   /**
    Called before any animation.
@@ -32,19 +44,19 @@ open class HeroPlugin: HeroPreprocessor, HeroAnimator{
        - context: object holding all parsed and changed modifiers,
        - fromViews: A flattened list of all views from source ViewController
        - toViews: A flattened list of all views from destination ViewController
-    
+
    To check a view's modifiers:
 
        context[view]
        context[view, "modifierName"]
-   
+
    To set a view's modifiers:
-   
+
        context[view] = [("modifier1", ["parameter1"]), ("modifier2", [])]
        context[view, "modifier1"] = ["parameter1", "parameter2"]
-   
+
   */
-  open func process(context:HeroContext, fromViews:[UIView], toViews:[UIView]){}
+  open func process(fromViews:[UIView], toViews:[UIView]){}
   
   /**
    - Returns: return true if the plugin can handle animating the view.
@@ -55,11 +67,11 @@ open class HeroPlugin: HeroPreprocessor, HeroAnimator{
    If return true, Hero won't animate and won't let any other plugins animate this view.
    The view will also be hidden automatically during the animation.
    */
-  open func canAnimate(context:HeroContext, view:UIView, appearing:Bool) -> Bool { return false }
+  open func canAnimate(view:UIView, appearing:Bool) -> Bool { return false }
   
   /**
    Perform the animation.
-   
+
    Note: views in `fromViews` & `toViews` are hidden already. Unhide then if you need to take snapshots.
    - Parameters:
        - context: object holding all parsed and changed modifiers,
@@ -67,66 +79,59 @@ open class HeroPlugin: HeroPreprocessor, HeroAnimator{
        - toViews: A flattened list of all views from destination ViewController (filtered by `canAnimate`)
    - Returns: The duration needed to complete the animation
    */
-  open func animate(context:HeroContext, fromViews:[UIView], toViews:[UIView]) -> TimeInterval { return 0 }
+  open func animate(fromViews:[UIView], toViews:[UIView]) -> TimeInterval { return 0 }
   
   
   /**
    Called when all animations are completed.
-   
+
    Should perform cleanup and release any reference
    */
-  open func clean(){}
-  
-  
+  open func clean() {}
+
   /**
    For supporting interactive animation only.
-   
+
    This method is called when an interactive animation is in place
    The plugin should pause the animation, and seek to the given progress
    - Parameters:
      - timePassed: time of the animation to seek to.
    */
-  open func seekTo(timePassed:TimeInterval){}
-  
+  open func seekTo(timePassed: TimeInterval) {}
+
   /**
    For supporting interactive animation only.
-   
+
    This method is called when an interactive animation is ended
    The plugin should resume the animation.
    - Parameters:
    - timePassed: will be the same value since last `seekTo`
    - reverse: a boolean value indicating whether or not the animation should reverse
    */
-  open func resume(timePassed:TimeInterval, reverse:Bool) -> TimeInterval { return 0 }
-  
-  /**
-   For supporting interactive animation only.
-   
-   This method is called when user wants to override animation modifiers during an interactive animation
-   
-   - Parameters:
-       - view: the view to override
-       - targetState: the target state to override
-   */
-  open func temporarilySet(view:UIView, targetState:HeroTargetState){}
+  open func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval { return 0 }
 
   /**
-   Plugin which wants to handle the transition interactively should return true.
-   And also keep a reference to the context object to control the transition.
-   - Returns: true if the plugin wants interactive start.
+   For supporting interactive animation only.
+
+   This method is called when user wants to override animation modifiers during an interactive animation
+
    - Parameters:
-       - context: object which the plugin can use to control the interactive transition
+       - state: the target state to override
+       - view: the view to override
    */
-  open func wantInteractiveHeroTransition() -> Bool { return false }
+  open func apply(state:HeroTargetState, to view:UIView){}
 }
 
 // methods for enable/disable the current plugin
 extension HeroPlugin{
+  public var context:HeroContext{
+    return Hero.shared.context
+  }
   public static var isEnabled:Bool{
     get{
       return Hero.isEnabled(plugin: self)
     }
-    set{
+    set {
       if newValue {
         enable()
       } else {
@@ -134,10 +139,10 @@ extension HeroPlugin{
       }
     }
   }
-  public static func enable(){
+  public static func enable() {
     Hero.enable(plugin: self)
   }
-  public static func disable(){
+  public static func disable() {
     Hero.disable(plugin: self)
   }
 }
