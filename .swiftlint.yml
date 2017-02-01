@@ -57,6 +57,8 @@ included:
 excluded:
   - Triplan/external
   - Triplan/Assets.xcassets
+  - Pods
+
 
 line_length: 200
 type_name: 

@@ -637,7 +637,6 @@
 				87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */,
 				4A62C3151DEBE664008DAD1D /* Sources */,
 				4A62C3161DEBE664008DAD1D /* Frameworks */,
-				4A062AEB1E3CD0D400835391 /* ShellScript */,
 				4A62C3171DEBE664008DAD1D /* Resources */,
 				9C6F499ADEAD45F656DC5D98 /* [CP] Embed Pods Frameworks */,
 				A9A701BF0CAA797702721185 /* [CP] Copy Pods Resources */,
@@ -772,19 +771,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A062AEB1E3CD0D400835391 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "swiftlint autocorrect";
-		};
 		87DC22059FD3509D30F0E386 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
