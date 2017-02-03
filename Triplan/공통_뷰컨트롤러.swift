@@ -29,7 +29,9 @@ class 공통_뷰컨트롤러: UIViewController {
 
     func 알림창표시(메세지: String) {
         DispatchQueue.main.async {
-            BPStatusBarAlert.shared.show(message: 메세지)
+            BPStatusBarAlert()
+                .message(message: 메세지)
+                .show()
         }
     }
 

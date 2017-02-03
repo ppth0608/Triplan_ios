@@ -30,7 +30,9 @@ class 공통_테이블뷰컨트롤ᄅ�
 
     func 알림창표시(메세지: String) {
         DispatchQueue.main.async {
-            BPStatusBarAlert.shared.show(message: 메세지)
+            BPStatusBarAlert()
+                .message(message: 메세지)
+                .show()
         }
     }
 
