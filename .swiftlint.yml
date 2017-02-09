@@ -69,7 +69,7 @@ opt_in_rules:
 #  - nimble_operator
 #  - number_separator
 #  - object_literal
-  # - operator_usage_whitespace
+# - operator_usage_whitespace
 #  - overridden_super_call
 #  - private_outlet
 #  - prohibited_super_call
@@ -84,7 +84,6 @@ excluded:
   - Triplan/external
   - Triplan/Assets.xcassets
   - Pods
-
 
 line_length: 200
 type_name: 
