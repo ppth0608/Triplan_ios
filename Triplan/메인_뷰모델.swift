@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 import RxSwift
 import RxCocoa
-import RealmSwift
 
 class 메인_뷰모델 {
 

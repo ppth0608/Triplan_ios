@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RxSwift
 import PKHUD
+import RxSwift
 
 extension PKHUD {
 

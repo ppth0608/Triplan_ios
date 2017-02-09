@@ -8,16 +8,16 @@
 
 import Foundation
 
-private var AssociationKey: UInt8 = 0
+private var associationKey: UInt8 = 0
 
 extension NSObject {
 
     var object: CellPresentable? {
         set {
-            objc_setAssociatedObject(self, &AssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &associationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            if let storedObject = objc_getAssociatedObject(self, &AssociationKey) as? CellPresentable {
+            if let storedObject = objc_getAssociatedObject(self, &associationKey) as? CellPresentable {
                 return storedObject
             } else {
                 return nil
