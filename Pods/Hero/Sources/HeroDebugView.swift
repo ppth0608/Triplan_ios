@@ -22,6 +22,7 @@
 
 import UIKit
 
+#if os(iOS)
 protocol HeroDebugViewDelegate {
   func onProcessSliderChanged(progress: Float)
   func onPerspectiveChanged(translation: CGPoint, rotation: CGFloat, scale: CGFloat)
@@ -30,7 +31,7 @@ protocol HeroDebugViewDelegate {
   func onDone()
 }
 
-public class HeroDebugView: UIView {
+class HeroDebugView: UIView {
   var backgroundView: UIView!
   var debugSlider: UISlider!
   var perspectiveButton: UIButton!
@@ -39,6 +40,7 @@ public class HeroDebugView: UIView {
 
   var delegate: HeroDebugViewDelegate?
   var panGR: UIPanGestureRecognizer!
+
   var pinchGR: UIPinchGestureRecognizer!
 
   var showControls: Bool = false {
@@ -46,16 +48,16 @@ public class HeroDebugView: UIView {
       layoutSubviews()
     }
   }
-  
-  var showOnTop:Bool = false
-  var rotation:CGFloat = CGFloat(M_PI / 6)
-  var scale:CGFloat = 0.6
-  var translation:CGPoint = .zero
-  var progress:Float{
+
+  var showOnTop: Bool = false
+  var rotation: CGFloat = CGFloat(M_PI / 6)
+  var scale: CGFloat = 0.6
+  var translation: CGPoint = .zero
+  var progress: Float {
     return debugSlider.value
   }
-  
-  init(initialProcess:Float, showCurveButton:Bool, showOnTop:Bool) {
+
+  init(initialProcess: Float, showCurveButton: Bool, showOnTop: Bool) {
     super.init(frame:.zero)
     self.showOnTop = showOnTop
     backgroundView = UIView(frame:.zero)
@@ -95,6 +97,7 @@ public class HeroDebugView: UIView {
     panGR = UIPanGestureRecognizer(target: self, action: #selector(pan))
     panGR.delegate = self
     panGR.maximumNumberOfTouches = 1
+
     addGestureRecognizer(panGR)
 
     pinchGR = UIPinchGestureRecognizer(target: self, action: #selector(pinch))
@@ -186,3 +189,4 @@ extension HeroDebugView:UIGestureRecognizerDelegate {
     return perspectiveButton.isSelected
   }
 }
+#endif

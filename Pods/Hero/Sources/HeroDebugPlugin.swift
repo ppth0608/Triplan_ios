@@ -22,15 +22,17 @@
 
 import UIKit
 
+#if os(iOS)
 public class HeroDebugPlugin: HeroPlugin {
-  static var showOnTop:Bool = false
+  static var showOnTop: Bool = false
 
-  var debugView:HeroDebugView?
-  var zPositionMap = [UIView:CGFloat]()
-  var addedLayers:[CALayer] = []
+  var debugView: HeroDebugView?
+  var zPositionMap = [UIView: CGFloat]()
+  var addedLayers: [CALayer] = []
   var updating = false
 
   override public func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval {
+    if Hero.shared.forceNotInteractive { return 0 }
     var hasArc = false
     for v in context.fromViews + context.toViews {
       if context[v]?.arc != nil && context[v]?.position != nil {
@@ -42,8 +44,6 @@ public class HeroDebugPlugin: HeroPlugin {
     debugView.frame = Hero.shared.container.bounds
     debugView.delegate = self
     UIApplication.shared.keyWindow!.addSubview(debugView)
-
-    context.container.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
 
     debugView.layoutSubviews()
     self.debugView = debugView
@@ -172,7 +172,12 @@ extension HeroDebugPlugin:HeroDebugViewDelegate {
     a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     a.duration = 0.4
 
+    UIView.animate(withDuration:0.4) {
+      self.context.container.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
+    }
+
     Hero.shared.container.layer.add(a, forKey: "debug")
     Hero.shared.container.layer.sublayerTransform = t
   }
 }
+#endif

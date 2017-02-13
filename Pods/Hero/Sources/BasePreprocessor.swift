@@ -24,7 +24,8 @@
 
 import UIKit
 
-public class BasePreprocessor:HeroPreprocessor {
-  var context:HeroContext { return Hero.shared.context }
-  public func process(fromViews:[UIView], toViews:[UIView]) {}
+class BasePreprocessor: HeroPreprocessor {
+  weak public var context: HeroContext!
+
+  func process(fromViews: [UIView], toViews: [UIView]) {}
 }

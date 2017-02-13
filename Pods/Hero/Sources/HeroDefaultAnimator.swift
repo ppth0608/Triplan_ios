@@ -22,9 +22,9 @@
 
 import UIKit
 
-public class HeroDefaultAnimator:HeroAnimator{
-  var context:HeroContext { return Hero.shared.context }
-  var viewContexts:[UIView: HeroDefaultAnimatorViewContext] = [:]
+public class HeroDefaultAnimator: HeroAnimator {
+  weak public var context: HeroContext!
+  var viewContexts: [UIView: HeroDefaultAnimatorViewContext] = [:]
 
   public func seekTo(timePassed: TimeInterval) {
     for viewContext in viewContexts.values {
@@ -40,37 +40,53 @@ public class HeroDefaultAnimator:HeroAnimator{
     }
     return duration
   }
-  
-  public func apply(state:HeroTargetState, to view:UIView){
-    guard let context = viewContexts[view] else {
-      print("HERO: unable to temporarily set to \(view). The view must be running at least one animation before it can be interactively changed")
-      return
+
+  public func apply(state: HeroTargetState, to view: UIView) {
+    if let context = viewContexts[view] {
+      context.apply(state:state)
     }
-    context.apply(state:state)
   }
 
-  public func canAnimate(view:UIView, appearing:Bool) -> Bool{
+  public func canAnimate(view: UIView, appearing: Bool) -> Bool {
     guard let state = context[view] else { return false }
-    return state.position != nil ||
-           state.size != nil ||
-           state.transform != nil ||
-           state.cornerRadius != nil ||
-           state.opacity != nil
+    return  state.position != nil ||
+            state.size != nil ||
+            state.transform != nil ||
+            state.cornerRadius != nil ||
+            state.opacity != nil ||
+            state.overlay != nil ||
+            state.borderColor != nil ||
+            state.borderWidth != nil ||
+            state.shadowOpacity != nil ||
+            state.shadowRadius != nil ||
+            state.shadowOffset != nil ||
+            state.shadowColor != nil ||
+            state.shadowPath != nil
   }
 
-  public func animate(fromViews:[UIView], toViews:[UIView]) -> TimeInterval{
-    var duration:TimeInterval = 0
+  public func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval {
+    var duration: TimeInterval = 0
 
     // animate
-    for v in fromViews {
-      animate(view: v, appearing: false)
-    }
-    for v in toViews {
-      animate(view: v, appearing: true)
+    for v in fromViews { animate(view: v, appearing: false) }
+    for v in toViews { animate(view: v, appearing: true) }
+
+    // infinite duration means matching the duration of the longest animation
+    var infiniteDurationViewContexts = [HeroDefaultAnimatorViewContext]()
+    for viewContext in viewContexts.values {
+      if viewContext.duration == .infinity {
+        infiniteDurationViewContexts.append(viewContext)
+      } else {
+        duration = max(duration, viewContext.duration)
+      }
     }
 
-    for viewContext in viewContexts.values {
-      duration = max(duration, viewContext.duration)
+    for viewContexts in infiniteDurationViewContexts {
+      duration = max(duration, viewContexts.optimizedDurationAndTimingFunction().duration)
+    }
+
+    for viewContexts in infiniteDurationViewContexts {
+      viewContexts.apply(state: [.duration(duration)])
     }
 
     return duration
@@ -81,8 +97,11 @@ public class HeroDefaultAnimator:HeroAnimator{
     let viewContext = HeroDefaultAnimatorViewContext(animator:self, snapshot: snapshot, targetState: context[view]!, appearing: appearing)
     viewContexts[view] = viewContext
   }
-  
-  public func clean(){
+
+  public func clean() {
+    for vc in viewContexts.values {
+      vc.clean()
+    }
     viewContexts.removeAll()
   }
 }

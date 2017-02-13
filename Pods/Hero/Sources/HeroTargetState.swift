@@ -22,28 +22,83 @@
 
 import UIKit
 
+public enum HeroSnapshotType {
+  /// Will optimize for different type of views
+  /// For custom views or views with masking, .optimizedDefault might create snapshots 
+  /// that appear differently than the actual view.
+  /// In that case, use .normal or .slowRender to disable the optimization
+  case optimized
+
+  /// snapshotView(afterScreenUpdates:)
+  case normal
+
+  /// layer.render(in: currentContext)
+  case layerRender
+
+  /// will not create snapshot. animate the view directly.
+  /// This will mess up the view hierarchy, therefore, view controllers have to rebuild
+  /// its view structure after the transition finishes
+  case noSnapshot
+}
+
+public enum HeroCoordinateSpace {
+  case global
+  case local
+  case sameParent
+}
+
 public struct HeroTargetState {
-  internal var opacity: CGFloat?
-  internal var cornerRadius: CGFloat?
+  class HeroTargetStateWrapper {
+    var state: HeroTargetState
+    init(state: HeroTargetState) {
+      self.state = state
+    }
+  }
+  internal var beginState: HeroTargetStateWrapper?
+  internal var beginStateIfMatched: [HeroModifier]?
+
   internal var position: CGPoint?
   internal var size: CGSize?
   internal var transform: CATransform3D?
+  internal var opacity: Float?
+  internal var cornerRadius: CGFloat?
+  internal var zPosition: CGFloat?
+
+  internal var borderWidth: CGFloat?
+  internal var borderColor: CGColor?
+
+  internal var shadowColor: CGColor?
+  internal var shadowOpacity: Float?
+  internal var shadowOffset: CGSize?
+  internal var shadowRadius: CGFloat?
+  internal var shadowPath: CGPath?
+  internal var masksToBounds: Bool?
+  internal var displayShadow: Bool = true
+
+  internal var overlay: (color: CGColor, opacity: CGFloat)?
+
   internal var spring: (CGFloat, CGFloat)?
   internal var delay: TimeInterval = 0
   internal var duration: TimeInterval?
   internal var timingFunction: CAMediaTimingFunction?
+
   internal var arc: CGFloat?
-  internal var zPosition: CGFloat?
-  internal var zPositionIfMatched: CGFloat?
   internal var source: String?
-  internal var cascade: (TimeInterval, CascadePreprocessor.CascadeDirection, Bool)?
+  internal var cascade: (TimeInterval, CascadeDirection, Bool)?
+
   internal var ignoreSubviewModifiers: Bool?
-  internal var useGlobalCoordinateSpace: Bool?
+  internal var coordinateSpace: HeroCoordinateSpace?
+  internal var useScaleBasedSizeChange: Bool?
+  internal var snapshotType: HeroSnapshotType?
 
   internal var custom: [String:Any]?
 
   init(modifiers: [HeroModifier]) {
     append(contentsOf: modifiers)
+  }
+
+  mutating func append(_ modifier: HeroModifier) {
+    modifier.apply(&self)
   }
 
   mutating func append(contentsOf modifiers: [HeroModifier]) {

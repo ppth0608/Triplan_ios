@@ -122,6 +122,10 @@ extension HeroModifier {
     }
   }
 
+  public static func translate(_ point: CGPoint, z: CGFloat = 0) -> HeroModifier {
+    return translate(x: point.x, y: point.y, z: z)
+  }
+
   /**
    Rotate 3d
    - Parameters:
@@ -137,6 +141,10 @@ extension HeroModifier {
     }
   }
 
+  public static func rotate(_ point: CGPoint, z: CGFloat = 0) -> HeroModifier {
+    return rotate(x: point.x, y: point.y, z: z)
+  }
+
   /**
    Rotate 2d
    - Parameters:
@@ -147,17 +155,161 @@ extension HeroModifier {
   }
 }
 
+extension HeroModifier {
+  /**
+   Set the opacity for the view to animate from/to.
+   - Parameters:
+     - opacity: opacity for the view to animate from/to
+   */
+  public static func opacity(_ opacity: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.opacity = Float(opacity)
+    }
+  }
+
+  /**
+   Set the cornerRadius for the view to animate from/to.
+   - Parameters:
+     - cornerRadius: cornerRadius for the view to animate from/to
+   */
+  public static func cornerRadius(_ cornerRadius: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.cornerRadius = cornerRadius
+    }
+  }
+
+  /**
+   Set the zPosition for the view to animate from/to.
+   - Parameters:
+   - zPosition: zPosition for the view to animate from/to
+   */
+  public static func zPosition(_ zPosition: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.zPosition = zPosition
+    }
+  }
+
+  /**
+   Set the borderWidth for the view to animate from/to.
+   - Parameters:
+   - borderWidth: borderWidth for the view to animate from/to
+   */
+  public static func borderWidth(_ borderWidth: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.borderWidth = borderWidth
+    }
+  }
+
+  /**
+   Set the borderColor for the view to animate from/to.
+   - Parameters:
+   - borderColor: borderColor for the view to animate from/to
+   */
+  public static func borderColor(_ borderColor: UIColor) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.borderColor = borderColor.cgColor
+    }
+  }
+
+  /**
+   Set the shadowColor for the view to animate from/to.
+   - Parameters:
+   - shadowColor: shadowColor for the view to animate from/to
+   */
+  public static func shadowColor(_ shadowColor: UIColor) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.shadowColor = shadowColor.cgColor
+    }
+  }
+
+  /**
+   Set the shadowOpacity for the view to animate from/to.
+   - Parameters:
+   - shadowOpacity: shadowOpacity for the view to animate from/to
+   */
+  public static func shadowOpacity(_ shadowOpacity: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.shadowOpacity = Float(shadowOpacity)
+    }
+  }
+
+  /**
+   Set the shadowOffset for the view to animate from/to.
+   - Parameters:
+   - shadowOffset: shadowOffset for the view to animate from/to
+   */
+  public static func shadowOffset(_ shadowOffset: CGSize) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.shadowOffset = shadowOffset
+    }
+  }
+
+  /**
+   Set the shadowRadius for the view to animate from/to.
+   - Parameters:
+   - shadowRadius: shadowRadius for the view to animate from/to
+   */
+  public static func shadowRadius(_ shadowRadius: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.shadowRadius = shadowRadius
+    }
+  }
+
+  /**
+   Set the shadowPath for the view to animate from/to.
+   - Parameters:
+   - shadowPath: shadowPath for the view to animate from/to
+   */
+  public static func shadowPath(_ shadowPath: CGPath) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.shadowPath = shadowPath
+    }
+  }
+
+  /**
+   Set the masksToBounds for the view to animate from/to.
+   - Parameters:
+   - masksToBounds: masksToBounds for the view to animate from/to
+   */
+  public static func masksToBounds(_ masksToBounds: Bool) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.masksToBounds = masksToBounds
+    }
+  }
+
+  /**
+   Create an overlay on the animating view.
+   - Parameters:
+     - color: color of the overlay
+     - opacity: opacity of the overlay
+   */
+  public static func overlay(color: UIColor, opacity: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.overlay = (color.cgColor, opacity)
+    }
+  }
+}
+
 // timing modifiers
 extension HeroModifier {
   /**
    Sets the duration of the animation for a given view. If not used, Hero will use determine the duration based on the distance and size changes.
    - Parameters:
      - duration: duration of the animation
+   
+   Note: a duration of .infinity means matching the duration of the longest animation. same as .durationMatchLongest
    */
   public static func duration(_ duration: TimeInterval) -> HeroModifier {
     return HeroModifier { targetState in
       targetState.duration = duration
     }
+  }
+
+  /**
+   Sets the duration of the animation for a given view to match the longest animation of the transition.
+   */
+  public static var durationMatchLongest: HeroModifier = HeroModifier { targetState in
+    targetState.duration = .infinity
   }
 
   /**
@@ -199,65 +351,27 @@ extension HeroModifier {
 // other modifiers
 extension HeroModifier {
   /**
-   Use global coordinate space.
-   
-   When using global coordinate space. The view become a independent view that is not a subview of any view.
-   It won't move when its parent view moves, and won't be affected by parent view's attributes.
-   
-   When a view is matched, this is automatically enabled.
-   The `source` modifier will also enable this.
-   
-   Global coordinate space is default for all views prior to version 0.1.3
-   */
-  public static var useGlobalCoordinateSpace: HeroModifier = HeroModifier { targetState in
-    targetState.useGlobalCoordinateSpace = true
-  }
-  
-  /**
-   Sets the zPosition during the animation, not animatable.
-
-   During animation, Hero might incorrectly infer the order to draw your views. Use this modifier to adjust
-   the view draw order.
-   - Parameters:
-     - zPosition: zPosition during the animation
-   */
-  public static func zPosition(_ zPosition: CGFloat) -> HeroModifier {
-    return HeroModifier { targetState in
-      targetState.zPosition = zPosition
-    }
-  }
-
-  /**
-   Same as zPosition modifier but only effective only when the view is matched. Will override zPosition modifier.
-   Will also force the view to use global coordinate space when the view is matched.
-   - Parameters:
-     - zPosition: zPosition during the animation
-   */
-  public static func zPositionIfMatched(_ zPositionIfMatched: CGFloat) -> HeroModifier {
-    return HeroModifier { targetState in
-      targetState.zPositionIfMatched = zPositionIfMatched
-    }
-  }
-
-  /**
-   ignore all heroModifiers attributes for a view's direct subviews.
-   */
-  public static var ignoreSubviewModifiers: HeroModifier = .ignoreSubviewModifiers()
-
-  /**
-   ignore all heroModifiers attributes for a view's subviews.
-   - Parameters:
-    - recursive: if false, will only ignore direct subviews' modifiers. default false.
-   */
-  public static func ignoreSubviewModifiers(recursive: Bool = false) -> HeroModifier {
-    return HeroModifier { targetState in
-      targetState.ignoreSubviewModifiers = recursive
-    }
-  }
-
-  /**
-   transition from/to the state of the view with matching heroID
+   Transition from/to the state of the view with matching heroID
    Will also force the view to use global coordinate space.
+   
+   The following layer properties will be animated from the given view.
+
+       position
+       bounds.size
+       cornerRadius
+       transform
+       shadowColor
+       shadowOpacity
+       shadowOffset
+       shadowRadius
+       shadowPath
+
+   Note that the following properties **won't** be taken from the source view.
+
+       backgroundColor
+       borderWidth
+       borderColor
+
    - Parameters:
      - heroID: the source view's heroId.
    */
@@ -271,6 +385,7 @@ extension HeroModifier {
    Works in combination with position modifier to apply a natural curve when moving to the destination.
    */
   public static var arc: HeroModifier = .arc()
+
   /**
    Works in combination with position modifier to apply a natural curve when moving to the destination.
    - Parameters:
@@ -296,93 +411,118 @@ extension HeroModifier {
      - delayMatchedViews: whether or not to delay matched subviews until all cascading animation have started
    */
   public static func cascade(delta: TimeInterval = 0.02,
-                      direction: CascadePreprocessor.CascadeDirection = .topToBottom,
-                      delayMatchedViews: Bool = false) -> HeroModifier {
+                             direction: CascadeDirection = .topToBottom,
+                             delayMatchedViews: Bool = false) -> HeroModifier {
     return HeroModifier { targetState in
       targetState.cascade = (delta, direction, delayMatchedViews)
     }
   }
 }
 
-// construct HeroModifier from heroModifierString
+// advance modifiers
 extension HeroModifier {
-  public static func from(name: String, parameters: [String]) -> HeroModifier? {
-    var modifier: HeroModifier?
-    switch name {
-    case "fade":
-      modifier = .fade
-    case "position":
-      modifier = .position(CGPoint(x: parameters.getCGFloat(0) ?? 0, y: parameters.getCGFloat(1) ?? 0))
-    case "size":
-      modifier = .size(CGSize(width: parameters.getCGFloat(0) ?? 0, height: parameters.getCGFloat(1) ?? 0))
-    case "scale":
-      if parameters.count == 1 {
-        modifier = .scale(parameters.getCGFloat(0) ?? 1)
-      } else {
-        modifier = .scale(x: parameters.getCGFloat(0) ?? 1,
-                          y: parameters.getCGFloat(1) ?? 1,
-                          z: parameters.getCGFloat(2) ?? 1)
+  /**
+   Apply modifiers directly to the view at the start of the transition.
+   The modifiers supplied here won't be animated.
+   For source views, modifiers are set directly at the begining of the animation.
+   For destination views, they replace the target state (final appearance).
+   */
+  public static func beginWith(modifiers: [HeroModifier]) -> HeroModifier {
+    return HeroModifier { targetState in
+      if targetState.beginState == nil {
+        targetState.beginState = HeroTargetState.HeroTargetStateWrapper(state: [])
       }
-    case "rotate":
-      if parameters.count == 1 {
-        modifier = .rotate(parameters.getCGFloat(0) ?? 0)
-      } else {
-        modifier = .rotate(x: parameters.getCGFloat(0) ?? 0,
-                           y: parameters.getCGFloat(1) ?? 0,
-                           z: parameters.getCGFloat(2) ?? 0)
-      }
-    case "translate":
-      modifier = .translate(x: parameters.getCGFloat(0) ?? 0,
-                            y: parameters.getCGFloat(1) ?? 0,
-                            z: parameters.getCGFloat(2) ?? 0)
-    case "duration":
-      if let duration = parameters.getDouble(0) {
-        modifier = .duration(duration)
-      }
-    case "delay":
-      if let delay = parameters.getDouble(0) {
-        modifier = .delay(delay)
-      }
-    case "spring":
-      if #available(iOS 9, *) {
-        modifier = .spring(stiffness: parameters.getCGFloat(0) ?? 250, damping: parameters.getCGFloat(1) ?? 30)
-      }
-    case "timingFunction":
-      if let c1 = parameters.getFloat(0),
-        let c2 = parameters.getFloat(1),
-        let c3 = parameters.getFloat(2),
-        let c4 = parameters.getFloat(3) {
-        modifier = .timingFunction(CAMediaTimingFunction(controlPoints: c1, c2, c3, c4))
-      } else if let name = parameters.get(0), let timingFunction = CAMediaTimingFunction.from(name:name) {
-        modifier = .timingFunction(timingFunction)
-      }
-    case "arc":
-      modifier = .arc(intensity: parameters.getCGFloat(0) ?? 1)
-    case "cascade":
-      var cascadeDirection = CascadePreprocessor.CascadeDirection.topToBottom
-      if let directionString = parameters.get(1),
-        let direction = CascadePreprocessor.CascadeDirection(directionString) {
-        cascadeDirection = direction
-      }
-      modifier = .cascade(delta: parameters.getDouble(0) ?? 0.02, direction: cascadeDirection, delayMatchedViews:parameters.getBool(2) ?? false)
-    case "source":
-      if let heroID = parameters.get(0) {
-        modifier = .source(heroID: heroID)
-      }
-    case "useGlobalCoordinateSpace":
-      modifier = .useGlobalCoordinateSpace
-    case "ignoreSubviewModifiers":
-      modifier = .ignoreSubviewModifiers(recursive:parameters.getBool(0) ?? false)
-    case "zPosition":
-      if let zPosition = parameters.getCGFloat(0) {
-        modifier = .zPosition(zPosition)
-      }
-    case "zPositionIfMatched":
-      if let zPosition = parameters.getCGFloat(0) {
-        modifier = .zPositionIfMatched(zPosition)
-      }
-    default: break
+      targetState.beginState!.state.append(contentsOf: modifiers)
     }
-    return modifier
+  }
+
+  /**
+   Apply modifiers directly to the view at the start of the transition if the view is matched with another view.
+   The modifiers supplied here won't be animated.
+   For source views, modifiers are set directly at the begining of the animation.
+   For destination views, they replace the target state (final appearance).
+   */
+  public static func beginWithIfMatched(modifiers: [HeroModifier]) -> HeroModifier {
+    return HeroModifier { targetState in
+      if targetState.beginStateIfMatched == nil {
+        targetState.beginStateIfMatched = []
+      }
+      targetState.beginStateIfMatched!.append(contentsOf: modifiers)
+    }
+  }
+
+  /**
+   Use global coordinate space.
+   
+   When using global coordinate space. The view become a independent view that is not a subview of any view.
+   It won't move when its parent view moves, and won't be affected by parent view's attributes.
+   
+   When a view is matched, this is automatically enabled.
+   The `source` modifier will also enable this.
+   
+   Global coordinate space is default for all views prior to version 0.1.3
+   */
+  public static var useGlobalCoordinateSpace: HeroModifier = HeroModifier { targetState in
+    targetState.coordinateSpace = .global
+  }
+
+  /**
+   ignore all heroModifiers attributes for a view's direct subviews.
+   */
+  public static var ignoreSubviewModifiers: HeroModifier = .ignoreSubviewModifiers()
+
+  /**
+   ignore all heroModifiers attributes for a view's subviews.
+   - Parameters:
+   - recursive: if false, will only ignore direct subviews' modifiers. default false.
+   */
+  public static func ignoreSubviewModifiers(recursive: Bool = false) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.ignoreSubviewModifiers = recursive
+    }
+  }
+
+  /**
+   Will create snapshot optimized for different view type.
+   For custom views or views with masking, useOptimizedSnapshot might create snapshots
+   that appear differently than the actual view.
+   In that case, use .useNormalSnapshot or .useSlowRenderSnapshot to disable the optimization.
+   
+   This modifier actually does nothing by itself since .useOptimizedSnapshot is the default.
+   */
+  public static var useOptimizedSnapshot: HeroModifier = HeroModifier { targetState in
+    targetState.snapshotType = .optimized
+  }
+
+  /**
+   Create snapshot using snapshotView(afterScreenUpdates:).
+   */
+  public static var useNormalSnapshot: HeroModifier = HeroModifier { targetState in
+    targetState.snapshotType = .normal
+  }
+
+  /**
+   Create snapshot using layer.render(in: currentContext).
+   This is slower than .useNormalSnapshot but gives more accurate snapshot for some views (eg. UIStackView).
+   */
+  public static var useLayerRenderSnapshot: HeroModifier = HeroModifier { targetState in
+    targetState.snapshotType = .layerRender
+  }
+
+  /**
+   Force Hero to not create any snapshot when animating this view.
+   This will mess up the view hierarchy, therefore, view controllers have to rebuild
+   its view structure after the transition finishes.
+   */
+  public static var useNoSnapshot: HeroModifier = HeroModifier { targetState in
+    targetState.snapshotType = .noSnapshot
+  }
+
+  /**
+   Force Hero use scale based size animation. This will convert all .size modifier into .scale modifier.
+   This is to help Hero animate layers that doesn't support bounds animation. Also gives better performance.
+   */
+  public static var useScaleBasedSizeChange: HeroModifier = HeroModifier { targetState in
+    targetState.useScaleBasedSizeChange = true
   }
 }

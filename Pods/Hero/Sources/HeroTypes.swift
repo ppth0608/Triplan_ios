@@ -23,30 +23,35 @@
 import UIKit
 
 public protocol HeroPreprocessor {
-  func process(fromViews:[UIView], toViews:[UIView])
+  weak var context: HeroContext! { get set }
+  func process(fromViews: [UIView], toViews: [UIView])
 }
 
 public protocol HeroAnimator {
-  func canAnimate(view:UIView, appearing:Bool) -> Bool
-  func animate(fromViews:[UIView], toViews:[UIView]) -> TimeInterval
+  weak var context: HeroContext! { get set }
+  func canAnimate(view: UIView, appearing: Bool) -> Bool
+  func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval
   func clean()
-  
-  func seekTo(timePassed:TimeInterval)
-  func resume(timePassed:TimeInterval, reverse:Bool) -> TimeInterval
-  func apply(state:HeroTargetState, to view:UIView)
+
+  func seekTo(timePassed: TimeInterval)
+  func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval
+  func apply(state: HeroTargetState, to view: UIView)
 }
 
 public protocol HeroProgressUpdateObserver {
-  func heroDidUpdateProgress(progress:Double)
+  func heroDidUpdateProgress(progress: Double)
 }
 
-@objc public protocol HeroViewControllerDelegate{
-  @objc optional func heroWillStartAnimatingFrom(viewController:UIViewController)
-  @objc optional func heroDidEndAnimatingFrom(viewController:UIViewController)
-  
+@objc public protocol HeroViewControllerDelegate {
+  @objc optional func heroWillStartAnimatingFrom(viewController: UIViewController)
+  @objc optional func heroDidEndAnimatingFrom(viewController: UIViewController)
+  @objc optional func heroDidCancelAnimatingFrom(viewController: UIViewController)
+
   @objc optional func heroWillStartTransition()
   @objc optional func heroDidEndTransition()
+  @objc optional func heroDidCancelTransition()
 
   @objc optional func heroWillStartAnimatingTo(viewController: UIViewController)
   @objc optional func heroDidEndAnimatingTo(viewController: UIViewController)
+  @objc optional func heroDidCancelAnimatingTo(viewController: UIViewController)
 }

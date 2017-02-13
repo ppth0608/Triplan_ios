@@ -15,6 +15,7 @@ target 'Triplan' do
   pod 'GoogleMaps'
   pod "Hero"
   pod "BPStatusBarAlert"
+  pod "lottie-ios"
 end
 
 post_install do |installer|

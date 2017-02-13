@@ -22,6 +22,8 @@
 
 import MetalKit
 
+let π = CGFloat(M_PI)
+
 internal struct KeySet<Key:Hashable, Value:Hashable> {
   var dict: [Key:Set<Value>] = [:]
   internal subscript(key: Key) -> Set<Value> {
@@ -98,16 +100,16 @@ internal func - (left: CGPoint, right: CGPoint) -> CGPoint {
 internal func / (left: CGPoint, right: CGFloat) -> CGPoint {
   return CGPoint(x: left.x/right, y: left.y/right)
 }
-internal func /(left: CGPoint, right: CGPoint) -> CGPoint {
+internal func / (left: CGPoint, right: CGPoint) -> CGPoint {
   return CGPoint(x: left.x/right.x, y: left.y/right.y)
 }
-internal func *(left: CGPoint, right: CGFloat) -> CGPoint {
+internal func * (left: CGPoint, right: CGFloat) -> CGPoint {
   return CGPoint(x: left.x*right, y: left.y*right)
 }
-internal func *(left: CGPoint, right: CGSize) -> CGPoint {
+internal func * (left: CGPoint, right: CGSize) -> CGPoint {
   return CGPoint(x: left.x*right.width, y: left.y*right.width)
 }
-internal func *(left: CGFloat, right: CGPoint) -> CGPoint {
+internal func * (left: CGFloat, right: CGPoint) -> CGPoint {
   return right * left
 }
 
@@ -126,9 +128,19 @@ internal func abs(_ p: CGPoint) -> CGPoint {
 internal func * (left: CGSize, right: CGFloat) -> CGSize {
   return CGSize(width: left.width*right, height: left.height*right)
 }
-internal func *(left: CGSize, right: CGSize) -> CGSize {
+internal func * (left: CGSize, right: CGSize) -> CGSize {
   return CGSize(width: left.width*right.width, height: left.height*right.width)
 }
-internal func /(left: CGSize, right: CGSize) -> CGSize {
+internal func / (left: CGSize, right: CGSize) -> CGSize {
   return CGSize(width: left.width/right.width, height: left.height/right.height)
+}
+
+internal func == (lhs: CATransform3D, rhs: CATransform3D) -> Bool {
+  var lhs = lhs
+  var rhs = rhs
+  return memcmp(&lhs, &rhs, MemoryLayout<CATransform3D>.size) == 0
+}
+
+internal func != (lhs: CATransform3D, rhs: CATransform3D) -> Bool {
+  return !(lhs == rhs)
 }

@@ -22,14 +22,14 @@
 
 import UIKit
 
-public class IgnoreSubviewModifiersPreprocessor:BasePreprocessor {
-  override public func process(fromViews:[UIView], toViews:[UIView]) {
+class IgnoreSubviewModifiersPreprocessor: BasePreprocessor {
+  override func process(fromViews: [UIView], toViews: [UIView]) {
     process(views:fromViews)
     process(views:toViews)
   }
-  
-  private func process(views:[UIView]){
-    for (viewIndex, view) in views.enumerated(){
+
+  func process(views: [UIView]) {
+    for (viewIndex, view) in views.enumerated() {
       guard let recursive = context[view]?.ignoreSubviewModifiers else { continue }
       var parentView = view
       if let _  = view as? UITableView, let wrapperView = view.subviews.get(0) {
