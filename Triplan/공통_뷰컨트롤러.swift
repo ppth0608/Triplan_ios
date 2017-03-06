@@ -43,8 +43,8 @@ class 공통_뷰컨트롤러: UIViewController {
     }
 
     @IBAction func 푸시_환율버튼_탭(sender: UIButton) {
-        let 뷰컨트롤러 = CurrencyViewController.뷰컨트롤러생성(of: .currency)
-        show(뷰컨트롤러, sender: self)
+//        let 뷰컨트롤러 = CurrencyViewController.뷰컨트롤러생성(of: .currency)
+//        show(뷰컨트롤러, sender: self)
     }
 
     @IBAction func 모달_닫기버튼_탭(sender: UIButton) {

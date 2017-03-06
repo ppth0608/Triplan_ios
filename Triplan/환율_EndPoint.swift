@@ -1,73 +1,78 @@
+////
+////  CurrencyEndPoint.swift
+////  hwanewul
+////
+////  Created by Naver on 2016. 10. 24..
+////  Copyright © 2016년 Ben. All rights reserved.
+////
 //
-//  CurrencyEndPoint.swift
-//  hwanewul
+//import Foundation
+//import Moya
 //
-//  Created by Naver on 2016. 10. 24..
-//  Copyright © 2016년 Ben. All rights reserved.
+//fileprivate extension String {
 //
-
-import Foundation
-import Moya
-
-fileprivate extension String {
-
-    var URLEscapedString: String {
-        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed) ?? ""
-    }
-}
-
-// 환율 API
-enum FixerAPI {
-
-    case latestCurrency(base: String)
-    case dateCurrency(date: String, base: String)
-    case combinedCurrency(date: String, base: String, simbols: String)
-}
-
-extension FixerAPI: TargetType {
-    var baseURL: URL {
-        return URL(string: "https://api.fixer.io") ?? URL(fileURLWithPath: "")
-    }
-
-    var path: String {
-        switch self {
-        case .latestCurrency(_):
-            return "/latest"
-        case .dateCurrency(let date, _):
-            return "/\(date.URLEscapedString)"
-        case .combinedCurrency(let date, _, _):
-            return "/\(date.URLEscapedString)"
-        }
-    }
-
-    var method: Moya.Method {
-        return .GET
-    }
-
-    var parameters: [String : Any]? {
-        switch self {
-        case .latestCurrency(let base):
-            return ["base": base.URLEscapedString]
-        case .dateCurrency(_, let base):
-            return ["base": base.URLEscapedString]
-        case .combinedCurrency(_, let base, let simbols):
-            return ["base": base.URLEscapedString,
-                    "symbols": simbols.URLEscapedString]
-        }
-    }
-
-    var sampleData: Data {
-        switch self {
-        case .latestCurrency(_):
-            return "".data(using: String.Encoding.utf8) ?? Data()
-        case .dateCurrency(_, _):
-            return "".data(using: String.Encoding.utf8) ?? Data()
-        case .combinedCurrency(_, _, _):
-            return "".data(using: String.Encoding.utf8) ?? Data()
-        }
-    }
-
-    var task: Task {
-        return .request
-    }
-}
+//    var URLEscapedString: String {
+//        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed) ?? ""
+//    }
+//}
+//
+//// 환율 API
+//enum FixerAPI {
+//
+//    case latestCurrency(base: String)
+//    case dateCurrency(date: String, base: String)
+//    case combinedCurrency(date: String, base: String, simbols: String)
+//}
+//
+//extension FixerAPI: TargetType {
+//    /// The method used for parameter encoding.
+//    public var parameterEncoding: ParameterEncoding {
+//        return URLEncoding.default
+//    }
+//
+//    var baseURL: URL {
+//        return URL(string: "https://api.fixer.io") ?? URL(fileURLWithPath: "")
+//    }
+//
+//    var path: String {
+//        switch self {
+//        case .latestCurrency(_):
+//            return "/latest"
+//        case .dateCurrency(let date, _):
+//            return "/\(date.URLEscapedString)"
+//        case .combinedCurrency(let date, _, _):
+//            return "/\(date.URLEscapedString)"
+//        }
+//    }
+//
+//    var method: Moya.Method {
+//        return .get
+//    }
+//
+//    var parameters: [String : Any]? {
+//        switch self {
+//        case .latestCurrency(let base):
+//            return ["base": base.URLEscapedString]
+//        case .dateCurrency(_, let base):
+//            return ["base": base.URLEscapedString]
+//        case .combinedCurrency(_, let base, let simbols):
+//            return ["base": base.URLEscapedString,
+//                    "symbols": simbols.URLEscapedString]
+//        }
+//    }
+//
+//    var sampleData: Data {
+//        switch self {
+//        case .latestCurrency(_):
+//            return "".data(using: String.Encoding.utf8) ?? Data()
+//        case .dateCurrency(_, _):
+//            return "".data(using: String.Encoding.utf8) ?? Data()
+//        case .combinedCurrency(_, _, _):
+//            return "".data(using: String.Encoding.utf8) ?? Data()
+//        }
+//    }
+//
+//    var task: Task {
+//        return .request
+//    }
+//}

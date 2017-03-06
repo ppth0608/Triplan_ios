@@ -14,7 +14,7 @@ class 여행추가_뷰컨트롤러: 고�
 
     @IBOutlet fileprivate weak var 여행제목입력창: UITextField! {
         didSet {
-            여행제목입력창.rx.text.asObservable().bindTo(여행추가뷰모델.여행제목).addDisposableTo(disposeBag)
+//            여행제목입력창.rx.text.asObservable().bindTo(여행추가뷰모델.여행제목).addDisposableTo(disposeBag)
         }
     }
     @IBOutlet fileprivate weak var 출발날짜: UILabel!
