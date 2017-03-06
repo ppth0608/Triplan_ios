@@ -7,8 +7,6 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
 
 
 // 2
@@ -22,7 +20,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType>
         (_ source1: O1, _ source2: O2, resultSelector: @escaping (O1.E, O2.E) throws -> E)
         -> Observable<E> {
@@ -33,7 +30,7 @@ extension Observable {
     }
 }
 
-class ZipSink2_<E1, E2, O: ObserverType> : ZipSink<O> {
+final class ZipSink2_<E1, E2, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip2<E1, E2, R>
 
@@ -80,7 +77,7 @@ class ZipSink2_<E1, E2, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip2<E1, E2, R> : Producer<R> {
+final class Zip2<E1, E2, R> : Producer<R> {
     typealias ResultSelector = (E1, E2) throws -> R
 
     let source1: Observable<E1>
@@ -115,7 +112,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType, O3: ObservableType>
         (_ source1: O1, _ source2: O2, _ source3: O3, resultSelector: @escaping (O1.E, O2.E, O3.E) throws -> E)
         -> Observable<E> {
@@ -126,7 +122,7 @@ extension Observable {
     }
 }
 
-class ZipSink3_<E1, E2, E3, O: ObserverType> : ZipSink<O> {
+final class ZipSink3_<E1, E2, E3, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip3<E1, E2, E3, R>
 
@@ -179,7 +175,7 @@ class ZipSink3_<E1, E2, E3, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip3<E1, E2, E3, R> : Producer<R> {
+final class Zip3<E1, E2, E3, R> : Producer<R> {
     typealias ResultSelector = (E1, E2, E3) throws -> R
 
     let source1: Observable<E1>
@@ -216,7 +212,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType, O3: ObservableType, O4: ObservableType>
         (_ source1: O1, _ source2: O2, _ source3: O3, _ source4: O4, resultSelector: @escaping (O1.E, O2.E, O3.E, O4.E) throws -> E)
         -> Observable<E> {
@@ -227,7 +222,7 @@ extension Observable {
     }
 }
 
-class ZipSink4_<E1, E2, E3, E4, O: ObserverType> : ZipSink<O> {
+final class ZipSink4_<E1, E2, E3, E4, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip4<E1, E2, E3, E4, R>
 
@@ -286,7 +281,7 @@ class ZipSink4_<E1, E2, E3, E4, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip4<E1, E2, E3, E4, R> : Producer<R> {
+final class Zip4<E1, E2, E3, E4, R> : Producer<R> {
     typealias ResultSelector = (E1, E2, E3, E4) throws -> R
 
     let source1: Observable<E1>
@@ -325,7 +320,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType, O3: ObservableType, O4: ObservableType, O5: ObservableType>
         (_ source1: O1, _ source2: O2, _ source3: O3, _ source4: O4, _ source5: O5, resultSelector: @escaping (O1.E, O2.E, O3.E, O4.E, O5.E) throws -> E)
         -> Observable<E> {
@@ -336,7 +330,7 @@ extension Observable {
     }
 }
 
-class ZipSink5_<E1, E2, E3, E4, E5, O: ObserverType> : ZipSink<O> {
+final class ZipSink5_<E1, E2, E3, E4, E5, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip5<E1, E2, E3, E4, E5, R>
 
@@ -401,7 +395,7 @@ class ZipSink5_<E1, E2, E3, E4, E5, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip5<E1, E2, E3, E4, E5, R> : Producer<R> {
+final class Zip5<E1, E2, E3, E4, E5, R> : Producer<R> {
     typealias ResultSelector = (E1, E2, E3, E4, E5) throws -> R
 
     let source1: Observable<E1>
@@ -442,7 +436,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType, O3: ObservableType, O4: ObservableType, O5: ObservableType, O6: ObservableType>
         (_ source1: O1, _ source2: O2, _ source3: O3, _ source4: O4, _ source5: O5, _ source6: O6, resultSelector: @escaping (O1.E, O2.E, O3.E, O4.E, O5.E, O6.E) throws -> E)
         -> Observable<E> {
@@ -453,7 +446,7 @@ extension Observable {
     }
 }
 
-class ZipSink6_<E1, E2, E3, E4, E5, E6, O: ObserverType> : ZipSink<O> {
+final class ZipSink6_<E1, E2, E3, E4, E5, E6, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip6<E1, E2, E3, E4, E5, E6, R>
 
@@ -524,7 +517,7 @@ class ZipSink6_<E1, E2, E3, E4, E5, E6, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip6<E1, E2, E3, E4, E5, E6, R> : Producer<R> {
+final class Zip6<E1, E2, E3, E4, E5, E6, R> : Producer<R> {
     typealias ResultSelector = (E1, E2, E3, E4, E5, E6) throws -> R
 
     let source1: Observable<E1>
@@ -567,7 +560,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType, O3: ObservableType, O4: ObservableType, O5: ObservableType, O6: ObservableType, O7: ObservableType>
         (_ source1: O1, _ source2: O2, _ source3: O3, _ source4: O4, _ source5: O5, _ source6: O6, _ source7: O7, resultSelector: @escaping (O1.E, O2.E, O3.E, O4.E, O5.E, O6.E, O7.E) throws -> E)
         -> Observable<E> {
@@ -578,7 +570,7 @@ extension Observable {
     }
 }
 
-class ZipSink7_<E1, E2, E3, E4, E5, E6, E7, O: ObserverType> : ZipSink<O> {
+final class ZipSink7_<E1, E2, E3, E4, E5, E6, E7, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip7<E1, E2, E3, E4, E5, E6, E7, R>
 
@@ -655,7 +647,7 @@ class ZipSink7_<E1, E2, E3, E4, E5, E6, E7, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip7<E1, E2, E3, E4, E5, E6, E7, R> : Producer<R> {
+final class Zip7<E1, E2, E3, E4, E5, E6, E7, R> : Producer<R> {
     typealias ResultSelector = (E1, E2, E3, E4, E5, E6, E7) throws -> R
 
     let source1: Observable<E1>
@@ -700,7 +692,6 @@ extension Observable {
     - parameter resultSelector: Function to invoke for each series of elements at corresponding indexes in the sources.
     - returns: An observable sequence containing the result of combining elements of the sources using the specified result selector function.
     */
-    // @warn_unused_result(message:"http://git.io/rxs.uo")
     public static func zip<O1: ObservableType, O2: ObservableType, O3: ObservableType, O4: ObservableType, O5: ObservableType, O6: ObservableType, O7: ObservableType, O8: ObservableType>
         (_ source1: O1, _ source2: O2, _ source3: O3, _ source4: O4, _ source5: O5, _ source6: O6, _ source7: O7, _ source8: O8, resultSelector: @escaping (O1.E, O2.E, O3.E, O4.E, O5.E, O6.E, O7.E, O8.E) throws -> E)
         -> Observable<E> {
@@ -711,7 +702,7 @@ extension Observable {
     }
 }
 
-class ZipSink8_<E1, E2, E3, E4, E5, E6, E7, E8, O: ObserverType> : ZipSink<O> {
+final class ZipSink8_<E1, E2, E3, E4, E5, E6, E7, E8, O: ObserverType> : ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip8<E1, E2, E3, E4, E5, E6, E7, E8, R>
 
@@ -794,7 +785,7 @@ class ZipSink8_<E1, E2, E3, E4, E5, E6, E7, E8, O: ObserverType> : ZipSink<O> {
     }
 }
 
-class Zip8<E1, E2, E3, E4, E5, E6, E7, E8, R> : Producer<R> {
+final class Zip8<E1, E2, E3, E4, E5, E6, E7, E8, R> : Producer<R> {
     typealias ResultSelector = (E1, E2, E3, E4, E5, E6, E7, E8) throws -> R
 
     let source1: Observable<E1>

@@ -84,10 +84,10 @@ public class Hero: HeroBaseController {
     return inNavigationController || inTabBarController
   }
   internal var toOverFullScreen: Bool {
-    return !inContainerController && toViewController!.modalPresentationStyle == .overFullScreen
+    return !inContainerController && (toViewController!.modalPresentationStyle == .overFullScreen || toViewController!.modalPresentationStyle == .overCurrentContext)
   }
   internal var fromOverFullScreen: Bool {
-    return !inContainerController && fromViewController!.modalPresentationStyle == .overFullScreen
+    return !inContainerController && (fromViewController!.modalPresentationStyle == .overFullScreen || toViewController!.modalPresentationStyle == .overCurrentContext)
   }
 
   internal var toView: UIView { return toViewController!.view }
@@ -230,7 +230,9 @@ internal extension Hero {
     }
 
     // move fromView & toView back from our container back to the one supplied by UIKit
-    transitionContainer.addSubview(finished ? fromView : toView)
+    if (toOverFullScreen && finished) || (fromOverFullScreen && !finished) {
+      transitionContainer.addSubview(finished ? fromView : toView)
+    }
     transitionContainer.addSubview(finished ? toView : fromView)
 
     if presenting != finished, !inContainerController {

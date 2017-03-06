@@ -38,7 +38,7 @@ public enum HeroDefaultAnimationType {
   case fade
   case zoom
   case zoomOut
-  indirect case selectBy(presenting:HeroDefaultAnimationType, dismissing:HeroDefaultAnimationType)
+  indirect case selectBy(presenting: HeroDefaultAnimationType, dismissing: HeroDefaultAnimationType)
   case none
 
   public var label: String? {
@@ -73,17 +73,27 @@ internal extension Hero {
   }
 
   func prepareDefaultAnimation() {
+    if case .auto = defaultAnimation {
+      if inNavigationController, let navAnim = toViewController?.navigationController?.heroNavigationAnimationType {
+        defaultAnimation = navAnim
+      } else if inTabBarController, let tabAnim = toViewController?.tabBarController?.heroTabBarAnimationType {
+        defaultAnimation = tabAnim
+      } else if let modalAnim = toViewController?.heroModalAnimationType {
+        defaultAnimation = modalAnim
+      }
+    }
+
     if case .selectBy(let presentAnim, let dismissAnim) = defaultAnimation {
       defaultAnimation = presenting ? presentAnim : dismissAnim
     }
 
     if case .auto = defaultAnimation {
-      if inNavigationController {
+      if animators.contains(where: { $0.canAnimate(view: toView, appearing: true) || $0.canAnimate(view: fromView, appearing: false) }) {
+        defaultAnimation = .none
+      } else if inNavigationController {
         defaultAnimation = presenting ? .push(direction:.left) : .pull(direction:.right)
       } else if inTabBarController {
         defaultAnimation = presenting ? .slide(direction:.left) : .slide(direction:.right)
-      } else if animators.contains(where: { $0.canAnimate(view: toView, appearing: true) || $0.canAnimate(view: fromView, appearing: false) }) {
-        defaultAnimation = .none
       } else {
         defaultAnimation = .fade
       }
@@ -93,8 +103,8 @@ internal extension Hero {
       return
     }
 
-    context[fromView] = [.timingFunction(.standard), .duration(0.375)]
-    context[toView] = [.timingFunction(.standard), .duration(0.375)]
+    context[fromView] = [.timingFunction(.standard), .duration(0.35)]
+    context[toView] = [.timingFunction(.standard), .duration(0.35)]
 
     let shadowState: [HeroModifier] = [.shadowOpacity(0.5),
                                        .shadowColor(.black),
@@ -105,16 +115,18 @@ internal extension Hero {
     case .push(let direction):
       context[toView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: true)),
                                            .shadowOpacity(0),
-                                           .beginWith(modifiers: shadowState)])
+                                           .beginWith(modifiers: shadowState),
+                                           .timingFunction(.deceleration)])
       context[fromView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: false) / 3),
-                                             .overlay(color: .black, opacity: 0.3)])
+                                             .overlay(color: .black, opacity: 0.1),
+                                             .timingFunction(.deceleration)])
     case .pull(let direction):
       insertToViewFirst = true
       context[fromView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: false)),
                                              .shadowOpacity(0),
                                              .beginWith(modifiers: shadowState)])
       context[toView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: true) / 3),
-                                           .overlay(color: .black, opacity: 0.3)])
+                                           .overlay(color: .black, opacity: 0.1)])
     case .slide(let direction):
       context[fromView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: false))])
       context[toView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: true))])
@@ -124,34 +136,44 @@ internal extension Hero {
     case .cover(let direction):
       context[toView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: true)),
                                            .shadowOpacity(0),
-                                           .beginWith(modifiers: shadowState)])
-      context[fromView]!.append(contentsOf: [.overlay(color: .black, opacity: 0.3)])
+                                           .beginWith(modifiers: shadowState),
+                                           .timingFunction(.deceleration)])
+      context[fromView]!.append(contentsOf: [.overlay(color: .black, opacity: 0.1),
+                                             .timingFunction(.deceleration)])
     case .uncover(let direction):
       insertToViewFirst = true
       context[fromView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: false)),
                                              .shadowOpacity(0),
                                              .beginWith(modifiers: shadowState)])
-      context[toView]!.append(contentsOf: [.overlay(color: .black, opacity: 0.3)])
+      context[toView]!.append(contentsOf: [.overlay(color: .black, opacity: 0.1)])
     case .pageIn(let direction):
       context[toView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: true)),
                                            .shadowOpacity(0),
-                                           .beginWith(modifiers: shadowState)])
-      context[fromView]!.append(contentsOf: [.scale(0.7), .overlay(color: .black, opacity: 0.3)])
+                                           .beginWith(modifiers: shadowState),
+                                           .timingFunction(.deceleration)])
+      context[fromView]!.append(contentsOf: [.scale(0.7),
+                                             .overlay(color: .black, opacity: 0.1),
+                                             .timingFunction(.deceleration)])
     case .pageOut(let direction):
       insertToViewFirst = true
       context[fromView]!.append(contentsOf: [.translate(shift(direction: direction, appearing: false)),
                                              .shadowOpacity(0),
                                              .beginWith(modifiers: shadowState)])
-      context[toView]!.append(contentsOf: [.scale(0.7), .overlay(color: .black, opacity: 0.3)])
+      context[toView]!.append(contentsOf: [.scale(0.7),
+                                           .overlay(color: .black, opacity: 0.1)])
     case .fade:
       // TODO: clean up this. overFullScreen logic shouldn't be here
       if !(fromOverFullScreen && !presenting) {
         context[toView] = [.fade]
       }
 
-      if (!presenting && toOverFullScreen) || !fromView.isOpaque || (fromView.backgroundColor?.alphaComponent ?? 1) < 1 {
+      #if os(tvOS)
         context[fromView] = [.fade]
-      }
+      #else
+        if (!presenting && toOverFullScreen) || !fromView.isOpaque || (fromView.backgroundColor?.alphaComponent ?? 1) < 1 {
+          context[fromView] = [.fade]
+        }
+      #endif
 
       context[toView]!.append(.durationMatchLongest)
       context[fromView]!.append(.durationMatchLongest)

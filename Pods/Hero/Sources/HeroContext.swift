@@ -175,6 +175,9 @@ extension HeroContext {
 
           newBarView.addSubview(realSnapshot)
           snapshot = newBarView
+        } else if let effectView = view as? UIVisualEffectView {
+          snapshot = UIVisualEffectView(effect: effectView.effect)
+          snapshot.frame = effectView.bounds
         } else {
           snapshot = view.snapshotView(afterScreenUpdates: true)!
         }
@@ -210,6 +213,8 @@ extension HeroContext {
     snapshot.layer.borderColor = view.layer.borderColor
     snapshot.layer.borderWidth = view.layer.borderWidth
     snapshot.layer.transform = view.layer.transform
+    snapshot.layer.contentsRect = view.layer.contentsRect
+    snapshot.layer.contentsScale = view.layer.contentsScale
 
     if self[view]?.displayShadow ?? true {
       snapshot.layer.shadowRadius = view.layer.shadowRadius
@@ -266,13 +271,20 @@ extension HeroContext {
 extension HeroContext {
   public func hide(view: UIView) {
     if viewAlphas[view] == nil, self[view]?.snapshotType != .noSnapshot {
-      viewAlphas[view] = view.isOpaque ? .infinity : view.alpha
-      view.alpha = 0
+      if view is UIVisualEffectView {
+        view.isHidden = true
+        viewAlphas[view] = 1
+      } else {
+        viewAlphas[view] = view.isOpaque ? .infinity : view.alpha
+        view.alpha = 0
+      }
     }
   }
   public func unhide(view: UIView) {
     if let oldAlpha = viewAlphas[view] {
-      if oldAlpha == .infinity {
+      if view is UIVisualEffectView {
+        view.isHidden = false
+      } else if oldAlpha == .infinity {
         view.alpha = 1
         view.isOpaque = true
       } else {

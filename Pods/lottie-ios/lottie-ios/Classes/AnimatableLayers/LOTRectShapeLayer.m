@@ -70,7 +70,7 @@
   // UIBezierPath Draws rects from the top left corner, After Effects draws them from the top right.
   // Switching to manual drawing.
   
-  CGFloat radius = presentationRect.rectCornerRadius;
+  CGFloat radius = MIN(MIN(halfWidth, halfHeight), presentationRect.rectCornerRadius);
   UIBezierPath *path1 = [UIBezierPath new];
   UIBezierPath *path2 = [UIBezierPath new];
   
@@ -84,8 +84,8 @@
   
   if (radius > 0) {
     point.x = point.x - radius;
-    [path1 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(0) endAngle:DegreestoRadians(90) clockwise:YES];
-    [path2 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(0) endAngle:DegreestoRadians(90) clockwise:YES];
+    [path1 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(0) endAngle:LOT_DegreesToRadians(90) clockwise:YES];
+    [path2 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(0) endAngle:LOT_DegreesToRadians(90) clockwise:YES];
   }
   
   point.x = CGRectGetMinX(rectFrame) + radius;
@@ -95,8 +95,8 @@
   
   if (radius > 0) {
     point.y = point.y - radius;
-    [path1 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(90) endAngle:DegreestoRadians(180) clockwise:YES];
-    [path2 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(90) endAngle:DegreestoRadians(180) clockwise:YES];
+    [path1 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(90) endAngle:LOT_DegreesToRadians(180) clockwise:YES];
+    [path2 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(90) endAngle:LOT_DegreesToRadians(180) clockwise:YES];
   }
   
   point.x = CGRectGetMinX(rectFrame);
@@ -106,8 +106,8 @@
   
   if (radius > 0) {
     point.x = point.x + radius;
-    [path1 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(180) endAngle:DegreestoRadians(270) clockwise:YES];
-    [path2 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(180) endAngle:DegreestoRadians(270) clockwise:YES];
+    [path1 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(180) endAngle:LOT_DegreesToRadians(270) clockwise:YES];
+    [path2 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(180) endAngle:LOT_DegreesToRadians(270) clockwise:YES];
   }
   
   point.x = CGRectGetMaxX(rectFrame) - radius;
@@ -117,8 +117,8 @@
   
   if (radius > 0) {
     point.y = point.y + radius;
-    [path1 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(270) endAngle:DegreestoRadians(360) clockwise:YES];
-    [path2 addArcWithCenter:point radius:radius startAngle:DegreestoRadians(270) endAngle:DegreestoRadians(360) clockwise:YES];
+    [path1 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(270) endAngle:LOT_DegreesToRadians(360) clockwise:YES];
+    [path2 addArcWithCenter:point radius:radius startAngle:LOT_DegreesToRadians(270) endAngle:LOT_DegreesToRadians(360) clockwise:YES];
   }
   [path1 closePath];
   [path2 closePath];
@@ -155,8 +155,8 @@
                            stroke:(LOTShapeStroke *)stroke
                              trim:(LOTShapeTrimPath *)trim
                         transform:(LOTShapeTransform *)transform
-                     withDuration:(NSTimeInterval)duration {
-  self = [super initWithDuration:duration];
+                     withLayerDuration:(NSTimeInterval)duration {
+  self = [super initWithLayerDuration:duration];
   if (self) {
     _rectangle = rectShape;
     _stroke = stroke;

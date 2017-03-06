@@ -38,6 +38,9 @@
       //Single Value, no animation
       _initialValue = [[self _numberValueFromObject:value] copy];
     }
+    if (numberValues[@"x"]) {
+      NSLog(@"%s: Warning: expressions are not supported", __PRETTY_FUNCTION__);
+    }
   }
   return self;
 }
@@ -172,7 +175,7 @@
                      toMin:(NSNumber *)toMin
                      toMax:(NSNumber *)toMax {
   [self remapValueWithBlock:^CGFloat(CGFloat inValue) {
-    return RemapValue(inValue, fromMin.floatValue, fromMax.floatValue, toMin.floatValue, toMax.floatValue);
+    return LOT_RemapValue(inValue, fromMin.floatValue, fromMax.floatValue, toMin.floatValue, toMax.floatValue);
   }];
 }
 

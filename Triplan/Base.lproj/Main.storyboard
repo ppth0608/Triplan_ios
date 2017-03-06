@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vgx-Xb-6qG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="74n-Jj-fkq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,108 +56,22 @@
                         <viewControllerLayoutGuide type="bottom" id="4lc-Pa-kaQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u3G-yl-TNY">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yo2-7H-9pY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hrh-Er-nKq">
-                                    <size key="itemSize" width="180" height="160"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="31" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="여행정보" id="WNt-bG-Rwi" userLabel="여행정보셀" customClass="여행정보_셀" customModule="Triplan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="31" width="180" height="160"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stamp-1" translatesAutoresizingMaskIntoConstraints="NO" id="GAy-pM-B3i" userLabel="스탬프이미지">
-                                                    <rect key="frame" x="14" y="9" width="156" height="142"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="142" id="BMD-JM-L7w"/>
-                                                        <constraint firstAttribute="width" constant="156" id="vju-Aj-JvL"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVB-Om-8PG" userLabel="여행제목">
-                                                    <rect key="frame" x="0.0" y="91" width="180" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="TVB-Om-8PG" firstAttribute="leading" secondItem="WNt-bG-Rwi" secondAttribute="leading" id="26K-Xp-nCS"/>
-                                            <constraint firstItem="GAy-pM-B3i" firstAttribute="centerY" secondItem="WNt-bG-Rwi" secondAttribute="centerY" id="5KL-To-V5Z"/>
-                                            <constraint firstAttribute="trailing" secondItem="TVB-Om-8PG" secondAttribute="trailing" id="EVP-QF-T0p"/>
-                                            <constraint firstAttribute="trailing" secondItem="GAy-pM-B3i" secondAttribute="trailing" constant="10" id="Gvi-TK-17N"/>
-                                            <constraint firstAttribute="bottom" secondItem="TVB-Om-8PG" secondAttribute="bottom" constant="48" id="Ny6-4S-ayt"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="스탬프이미지뷰" destination="GAy-pM-B3i" id="PAK-Eh-gua"/>
-                                            <outlet property="여행제목" destination="TVB-Om-8PG" id="e6X-sv-Yr9"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="여행추가" id="1D9-c4-iQg" userLabel="여행정보추가셀" customClass="여행추가_셀" customModule="Triplan" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="31" width="180" height="160"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_stamp_add" translatesAutoresizingMaskIntoConstraints="NO" id="ZWK-0e-w5v">
-                                                    <rect key="frame" x="10" y="9" width="156" height="142"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="142" id="Iyb-6H-g7C"/>
-                                                        <constraint firstAttribute="width" constant="156" id="gQa-IF-WOh"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="ZWK-0e-w5v" firstAttribute="centerY" secondItem="1D9-c4-iQg" secondAttribute="centerY" id="aCU-Uz-0ca"/>
-                                            <constraint firstItem="ZWK-0e-w5v" firstAttribute="leading" secondItem="1D9-c4-iQg" secondAttribute="leading" constant="10" id="w8I-nu-ioD"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="스탬프이미지" destination="ZWK-0e-w5v" id="iuB-2r-WIh"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="delegate" destination="74n-Jj-fkq" id="GpG-vn-1UQ"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Triplan" id="BXY-NQ-tF6">
                         <barButtonItem key="leftBarButtonItem" image="navi_menu" id="WoN-qq-Od3">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="Ooa-g3-jAD" kind="presentation" identifier="메뉴세그웨이" customClass="BPSideMenuTransion" customModule="Triplan" customModuleProvider="target" id="SW3-E7-7v0"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="환율" id="SL4-Zl-Gbz">
                             <color key="tintColor" red="0.30196078430000001" green="0.73725490199999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="푸시_환율버튼_탭WithSender:" destination="74n-Jj-fkq" id="nfp-dy-mbG"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="컬렉션뷰" destination="yo2-7H-9pY" id="RY5-L0-HZo"/>
-                        <segue destination="Dyh-u1-JAx" kind="custom" identifier="커스텀트랜지션" customClass="BPCircleTransitionSegue" customModule="Triplan" customModuleProvider="target" id="zA4-VM-3pK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkr-VP-SVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055.2" y="-118.29085457271366"/>
+            <point key="canvasLocation" x="-1055" y="-119"/>
         </scene>
         <!--Tabbar-->
         <scene sceneID="u8P-Qr-WSw">
@@ -165,35 +79,11 @@
                 <viewControllerPlaceholder storyboardName="Tabbar" id="Dyh-u1-JAx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06F-AR-iAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482" y="-119"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eTi-NC-l8m">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgx-Xb-6qG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="MOq-P2-LET">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.30196078431372547" green="0.73725490196078436" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="74n-Jj-fkq" kind="relationship" relationship="rootViewController" id="btL-Fi-7eQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a7O-7O-SHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1993" y="-118"/>
+            <point key="canvasLocation" x="-484" y="-120"/>
         </scene>
     </scenes>
     <resources>
-        <image name="main_stamp_add" width="445" height="392"/>
         <image name="navi_menu" width="22" height="22"/>
         <image name="sidemenu_bg" width="640" height="1095"/>
-        <image name="stamp-1" width="444" height="434"/>
     </resources>
 </document>

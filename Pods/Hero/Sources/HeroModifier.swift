@@ -168,6 +168,17 @@ extension HeroModifier {
   }
 
   /**
+   Set the backgroundColor for the view to animate from/to.
+   - Parameters:
+   - backgroundColor: backgroundColor for the view to animate from/to
+   */
+  public static func backgroundColor(_ backgroundColor: UIColor) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.backgroundColor = backgroundColor.cgColor
+    }
+  }
+
+  /**
    Set the cornerRadius for the view to animate from/to.
    - Parameters:
      - cornerRadius: cornerRadius for the view to animate from/to
@@ -186,6 +197,28 @@ extension HeroModifier {
   public static func zPosition(_ zPosition: CGFloat) -> HeroModifier {
     return HeroModifier { targetState in
       targetState.zPosition = zPosition
+    }
+  }
+
+  /**
+   Set the contentsRect for the view to animate from/to.
+   - Parameters:
+   - contentsRect: contentsRect for the view to animate from/to
+   */
+  public static func contentsRect(_ contentsRect: CGRect) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.contentsRect = contentsRect
+    }
+  }
+
+  /**
+   Set the contentsScale for the view to animate from/to.
+   - Parameters:
+   - contentsScale: contentsScale for the view to animate from/to
+   */
+  public static func contentsScale(_ contentsScale: CGFloat) -> HeroModifier {
+    return HeroModifier { targetState in
+      targetState.contentsScale = contentsScale
     }
   }
 

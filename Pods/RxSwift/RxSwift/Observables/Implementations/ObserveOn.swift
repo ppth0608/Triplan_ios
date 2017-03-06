@@ -6,9 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
-class ObserveOn<E> : Producer<E> {
+final class ObserveOn<E> : Producer<E> {
     let scheduler: ImmediateSchedulerType
     let source: Observable<E>
     
@@ -17,7 +15,7 @@ class ObserveOn<E> : Producer<E> {
         self.source = source
         
 #if TRACE_RESOURCES
-        let _ = AtomicIncrement(&resourceCount)
+        let _ = Resources.incrementTotal()
 #endif
     }
     
@@ -29,7 +27,7 @@ class ObserveOn<E> : Producer<E> {
     
 #if TRACE_RESOURCES
     deinit {
-        let _ = AtomicDecrement(&resourceCount)
+        let _ = Resources.decrementTotal()
     }
 #endif
 }
@@ -41,13 +39,13 @@ enum ObserveOnState : Int32 {
     case running = 1
 }
 
-class ObserveOnSink<O: ObserverType> : ObserverBase<O.E> {
+final class ObserveOnSink<O: ObserverType> : ObserverBase<O.E> {
     typealias E = O.E
     
     let _scheduler: ImmediateSchedulerType
 
     var _lock = SpinLock()
-    let _observer: O?
+    let _observer: O
 
     // state
     var _state = ObserveOnState.stopped
@@ -81,7 +79,7 @@ class ObserveOnSink<O: ObserverType> : ObserverBase<O.E> {
     }
     
     func run(_ state: Void, recurse: (Void) -> Void) {
-        let (nextEvent, observer) = self._lock.calculateLocked { () -> (Event<E>?, O?) in
+        let (nextEvent, observer) = self._lock.calculateLocked { () -> (Event<E>?, O) in
             if self._queue.count > 0 {
                 return (self._queue.dequeue(), self._observer)
             }
@@ -92,7 +90,7 @@ class ObserveOnSink<O: ObserverType> : ObserverBase<O.E> {
         }
         
         if let nextEvent = nextEvent, !_cancel.isDisposed {
-            observer?.on(nextEvent)
+            observer.on(nextEvent)
             if nextEvent.isStopEvent {
                 dispose()
             }

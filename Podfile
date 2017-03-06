@@ -4,17 +4,29 @@
 use_frameworks!
 
 target 'Triplan' do
-  pod 'Moya/RxSwift'
-  pod 'Moya-ModelMapper/RxSwift', '4.0.0-beta.1'
-  pod 'RxOptional'
-  pod 'RxSwift',    '3.0.0-beta.2'
-  pod 'RxCocoa',    '3.0.0-beta.2'
+  # Network
+  pod 'Moya/RxSwift', '~> 8.0.0-beta.2'
+#  pod 'Moya-ModelMapper/RxSwift', '4.0.0-beta.1'
+
+  # Rx
+  pod 'RxSwift', '~> 3.1'
+  pod 'RxCocoa', '~> 3.1'
+  pod 'RxDataSources', '~> 1.0'
+  pod 'RxOptional', '~> 3.1'
+  
+  # DB
   pod 'RealmSwift'
+  
+  # UI
   pod 'PKHUD', '~> 4.0'
-  pod 'SwiftyUserDefaults'
   pod 'GoogleMaps'
-  pod "Hero"
   pod "BPStatusBarAlert"
+  
+  # UserDefaults
+  pod 'SwiftyUserDefaults'
+  
+  # Animation
+  pod "Hero"
   pod "lottie-ios"
 end
 

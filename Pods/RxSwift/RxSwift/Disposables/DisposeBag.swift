@@ -1,20 +1,27 @@
 //
 //  DisposeBag.swift
-//  Rx
+//  RxSwift
 //
 //  Created by Krunoslav Zaher on 3/25/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
 extension Disposable {
-    /**
-    Adds `self` to `bag`.
-    
-    - parameter bag: `DisposeBag` to add `self` to.
-    */
+    /// Deprecated in favor of `disposed(by:)`
+    ///
+    /// **@available(\*, deprecated, message="use disposed(by:) instead")**
+    ///
+    /// Adds `self` to `bag`.
+    ///
+    /// - parameter bag: `DisposeBag` to add `self` to.
     public func addDisposableTo(_ bag: DisposeBag) {
+        disposed(by: bag)
+    }
+    
+    /// Adds `self` to `bag`
+    ///
+    /// - parameter bag: `DisposeBag` to add `self` to.
+    public func disposed(by bag: DisposeBag) {
         bag.insert(self)
     }
 }
@@ -39,28 +46,14 @@ public final class DisposeBag: DisposeBase {
     private var _disposables = [Disposable]()
     private var _isDisposed = false
     
-    /**
-    Constructs new empty dispose bag.
-    */
+    /// Constructs new empty dispose bag.
     public override init() {
         super.init()
     }
     
-    /**
-    Adds `disposable` to be disposed when dispose bag is being deinited.
-    
-    - parameter disposable: Disposable to add.
-    */
-    @available(*, deprecated, renamed: "insert(_:)")
-    public func addDisposable(_ disposable: Disposable) {
-        insert(disposable)
-    }
-    
-    /**
-     Adds `disposable` to be disposed when dispose bag is being deinited.
-     
-     - parameter disposable: Disposable to add.
-     */
+    /// Adds `disposable` to be disposed when dispose bag is being deinited.
+    ///
+    /// - parameter disposable: Disposable to add.
     public func insert(_ disposable: Disposable) {
         _insert(disposable)?.dispose()
     }
@@ -76,9 +69,7 @@ public final class DisposeBag: DisposeBase {
         return nil
     }
 
-    /**
-    This is internal on purpose, take a look at `CompositeDisposable` instead.
-    */
+    /// This is internal on purpose, take a look at `CompositeDisposable` instead.
     private func dispose() {
         let oldDisposables = _dispose()
 

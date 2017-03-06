@@ -1,14 +1,12 @@
 //
 //  StartWith.swift
-//  RxCocoa
+//  RxSwift
 //
 //  Created by Krunoslav Zaher on 4/6/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
-class StartWith<Element>: Producer<Element> {
+final class StartWith<Element>: Producer<Element> {
     let elements: [Element]
     let source: Observable<Element>
 

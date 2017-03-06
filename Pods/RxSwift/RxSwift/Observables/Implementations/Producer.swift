@@ -1,12 +1,10 @@
 //
 //  Producer.swift
-//  Rx
+//  RxSwift
 //
 //  Created by Krunoslav Zaher on 2/20/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
-
-import Foundation
 
 class Producer<Element> : Observable<Element> {
     override init() {
@@ -38,7 +36,7 @@ class Producer<Element> : Observable<Element> {
     }
 }
 
-fileprivate class SinkDisposer: Cancelable {
+fileprivate final class SinkDisposer: Cancelable {
     fileprivate enum DisposeState: UInt32 {
         case disposed = 1
         case sinkAndSubscriptionSet = 2
@@ -50,19 +48,19 @@ fileprivate class SinkDisposer: Cancelable {
         case sinkAndSubscriptionSet = 2
     }
     
-    private var _state: UInt32 = 0
+    private var _state: AtomicInt = 0
     private var _sink: Disposable? = nil
     private var _subscription: Disposable? = nil
 
     var isDisposed: Bool {
-        return (_state & DisposeState.disposed.rawValue) != 0
+        return AtomicFlagSet(DisposeState.disposed.rawValue, &_state)
     }
 
     func setSinkAndSubscription(sink: Disposable, subscription: Disposable) {
         _sink = sink
         _subscription = subscription
 
-        let previousState = OSAtomicOr32OrigBarrier(DisposeState.sinkAndSubscriptionSet.rawValue, &_state)
+        let previousState = AtomicOr(DisposeState.sinkAndSubscriptionSet.rawValue, &_state)
         if (previousState & DisposeStateInt32.sinkAndSubscriptionSet.rawValue) != 0 {
             rxFatalError("Sink and subscription were already set")
         }
@@ -76,7 +74,8 @@ fileprivate class SinkDisposer: Cancelable {
     }
     
     func dispose() {
-        let previousState = OSAtomicOr32OrigBarrier(DisposeState.disposed.rawValue, &_state)
+        let previousState = AtomicOr(DisposeState.disposed.rawValue, &_state)
+
         if (previousState & DisposeStateInt32.disposed.rawValue) != 0 {
             return
         }

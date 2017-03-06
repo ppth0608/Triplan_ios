@@ -8,8 +8,8 @@
 
 import Foundation
 import Moya
-import Mapper
-import Moya_ModelMapper
+//import Mapper
+//import Moya_ModelMapper
 import RxOptional
 import RxSwift
 
@@ -25,7 +25,7 @@ struct CurrencyFixerAPITrackerModel {
             let obsevableCurrency = self.baseCountryVariable.asObservable()
                 .observeOn(MainScheduler.instance)
                 .flatMapLatest { baseCountry -> Observable<[String: Double]> in
-                    self.currecy(baseCountry: baseCountry)
+//                    self.currecy(baseCountry: baseCountry)
             }
             obsevableCurrency.bindTo(self.currencyValue).addDisposableTo(self.disposeBag)
             print(self.currencyValue.value)
@@ -42,14 +42,15 @@ struct CurrencyFixerAPITrackerModel {
         return baseCountryVariable.asObservable()
             .observeOn(MainScheduler.instance)
             .flatMapLatest { baseCountry -> Observable<[String: Double]> in
-                self.currecy(baseCountry: baseCountry)
+                return
+//                self.currecy(baseCountry: baseCountry)
             }
     }
-
-    fileprivate func currecy(baseCountry: String) -> Observable<[String: Double]> {
-        return provider
-            .request(FixerAPI.latestCurrency(base: baseCountry))
-            .mapObjectOptional(type: Currency.self)
-            .map { $0?.rates ?? [:] }
-    }
+//
+//    fileprivate func currecy(baseCountry: String) -> Observable<[String: Double]> {
+//        return provider
+//            .request(FixerAPI.latestCurrency(base: baseCountry))
+////            .mapObjectOptional(type: Currency.self)
+//            .map { $0?.rates ?? [:] }
+//    }
 }

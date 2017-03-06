@@ -7,6 +7,8 @@
 //
 
 #import "LOTLayer.h"
+#import "LOTAsset.h"
+#import "LOTAssetGroup.h"
 #import "LOTAnimatableColorValue.h"
 #import "LOTAnimatablePointValue.h"
 #import "LOTAnimatableNumberValue.h"
@@ -15,41 +17,71 @@
 #import "LOTComposition.h"
 #import "LOTHelpers.h"
 #import "LOTMask.h"
+#import "LOTHelpers.h"
 
 @implementation LOTLayer
 
-- (instancetype)initWithJSON:(NSDictionary *)jsonDictionary fromComposition:(LOTComposition *)composition {
+- (instancetype)initWithJSON:(NSDictionary *)jsonDictionary
+              withCompBounds:(CGRect)compBounds
+               withFramerate:(NSNumber *)framerate
+              withAssetGroup:(LOTAssetGroup *)assetGroup {
   self = [super init];
   if (self) {
-    [self _mapFromJSON:jsonDictionary fromComposition:composition];
+    [self _mapFromJSON:jsonDictionary
+        withCompBounds:compBounds
+         withFramerate:framerate
+     withAssetGroup:assetGroup];
   }
   return self;
 }
 
-- (void)_mapFromJSON:(NSDictionary *)jsonDictionary fromComposition:(LOTComposition *)composition {
+- (void)_mapFromJSON:(NSDictionary *)jsonDictionary
+      withCompBounds:(CGRect)compBounds
+       withFramerate:(NSNumber *)framerate
+      withAssetGroup:(LOTAssetGroup *)assetGroup{
+  
+  _parentCompBounds = compBounds;
   _layerName = [jsonDictionary[@"nm"] copy];
   _layerID = [jsonDictionary[@"ind"] copy];
-  _compBounds = composition.compBounds;
-  _framerate = composition.framerate;
   
   NSNumber *layerType = jsonDictionary[@"ty"];
-  if (layerType.integerValue <= LOTLayerTypeShape) {
-    _layerType = layerType.integerValue;
-  } else {
-    _layerType = LOTLayerTypeUnknown;
+  _layerType = layerType.integerValue;
+  
+  if (jsonDictionary[@"refId"]) {
+    _referenceID = [jsonDictionary[@"refId"] copy];
   }
   
   _parentID = [jsonDictionary[@"parent"] copy];
+  
   _inFrame = [jsonDictionary[@"ip"] copy];
   _outFrame = [jsonDictionary[@"op"] copy];
+  _framerate = framerate;
   
-  if (_layerType == LOTLayerTypeSolid) {
-    _solidWidth = jsonDictionary[@"sw"];
-    _solidHeight = jsonDictionary[@"sh"];
-    _compBounds = CGRectMake(0, 0, _solidWidth.floatValue, _solidHeight.floatValue);
+  if (_layerType == LOTLayerTypePrecomp) {
+    _layerHeight = [jsonDictionary[@"h"] copy];
+    _layerWidth = [jsonDictionary[@"w"] copy];
+    [assetGroup buildAssetNamed:_referenceID
+                     withBounds:CGRectMake(0, 0, _layerWidth.floatValue, _layerHeight.floatValue)
+                   andFramerate:_framerate];
+  } else if (_layerType == LOTLayerTypeImage) {
+    [assetGroup buildAssetNamed:_referenceID
+                     withBounds:CGRectZero
+                   andFramerate:_framerate];
+    _imageAsset = [assetGroup assetModelForID:_referenceID];
+    _layerWidth = [_imageAsset.assetWidth copy];
+    _layerHeight = [_imageAsset.assetHeight copy];
+  } else if (_layerType == LOTLayerTypeSolid) {
+    _layerWidth = jsonDictionary[@"sw"];
+    _layerHeight = jsonDictionary[@"sh"];
     NSString *solidColor = jsonDictionary[@"sc"];
     _solidColor = [UIColor LOT_colorWithHexString:solidColor];
+  } else {
+    _layerWidth = @(compBounds.size.width);
+    _layerHeight = @(compBounds.size.height);
   }
+  
+  _layerBounds = CGRectMake(0, 0, _layerWidth.floatValue, _layerHeight.floatValue);
+  
   NSDictionary *ks = jsonDictionary[@"ks"];
   
   NSDictionary *opacity = ks[@"o"];
@@ -65,13 +97,13 @@
   if (rotation) {
     _rotation = [[LOTAnimatableNumberValue alloc] initWithNumberValues:rotation frameRate:_framerate];
     [_rotation remapValueWithBlock:^CGFloat(CGFloat inValue) {
-      return DegreesToRadians(inValue);
+      return LOT_DegreesToRadians(inValue);
     }];
   }
   
   NSDictionary *position = ks[@"p"];
   if ([position[@"s"] boolValue]) {
-    // Seperate dimensions
+    // Separate dimensions
     _positionX = [[LOTAnimatableNumberValue alloc] initWithNumberValues:position[@"x"] frameRate:_framerate];
     _positionY = [[LOTAnimatableNumberValue alloc] initWithNumberValues:position[@"y"] frameRate:_framerate];
   } else {
@@ -81,7 +113,7 @@
   NSDictionary *anchor = ks[@"a"];
   if (anchor) {
     _anchor = [[LOTAnimatablePointValue alloc] initWithPointValues:anchor frameRate:_framerate];
-    [_anchor remapPointsFromBounds:_compBounds toBounds:CGRectMake(0, 0, 1, 1)];
+    [_anchor remapPointsFromBounds:_layerBounds toBounds:CGRectMake(0, 0, 1, 1)];
     _anchor.usePathAnimation = NO;
   }
   
@@ -102,47 +134,73 @@
   
   NSMutableArray *shapes = [NSMutableArray array];
   for (NSDictionary *shapeJSON in jsonDictionary[@"shapes"]) {
-    id shapeItem = [LOTShapeGroup shapeItemWithJSON:shapeJSON frameRate:_framerate compBounds:_compBounds];
+    id shapeItem = [LOTShapeGroup shapeItemWithJSON:shapeJSON frameRate:_framerate compBounds:_layerBounds];
     if (shapeItem) {
       [shapes addObject:shapeItem];
     }
   }
   _shapes = shapes;
-  
-  _hasInAnimation = (_inFrame.integerValue > composition.startFrame.integerValue);
-  _hasOutAnimation = (_outFrame.integerValue < composition.endFrame.integerValue);
-  _hasInOutAnimation = _hasInAnimation || _hasOutAnimation;
-  if (_hasInOutAnimation) {
-    NSMutableArray *keys = [NSMutableArray array];
-    NSMutableArray *keyTimes = [NSMutableArray array];
-    CGFloat compLength = composition.endFrame.floatValue - composition.startFrame.floatValue;
     
-    if (_hasInAnimation) {
-      [keys addObject:@1];
-      [keyTimes addObject:@0];
-      [keys addObject:@0];
-      CGFloat inTime = _inFrame.floatValue / compLength;
-      [keyTimes addObject:@(inTime)];
-    } else {
-      [keys addObject:@0];
-      [keyTimes addObject:@0];
+  NSArray *effects = jsonDictionary[@"ef"];
+  if (effects.count > 0) {
+    
+    NSDictionary *effectNames = @{ @0: @"slider",
+                                   @1: @"angle",
+                                   @2: @"color",
+                                   @3: @"point",
+                                   @4: @"checkbox",
+                                   @5: @"group",
+                                   @6: @"noValue",
+                                   @7: @"dropDown",
+                                   @9: @"customValue",
+                                   @10: @"layerIndex",
+                                   @20: @"tint",
+                                   @21: @"fill" };
+                             
+    for (NSDictionary *effect in effects) {
+      NSNumber *typeNumber = effect[@"ty"];
+      NSString *name = effect[@"nm"];
+      NSString *internalName = effect[@"mn"];
+      NSString *typeString = effectNames[typeNumber];
+      if (typeString) {
+        NSLog(@"%s: Warning: %@ effect not supported: %@ / %@", __PRETTY_FUNCTION__, typeString, internalName, name);
+      }
     }
-    
-    if (_hasOutAnimation) {
-      [keys addObject:@1];
-      CGFloat outTime = _outFrame.floatValue / compLength;
-      [keyTimes addObject:@(outTime)];
-      [keys addObject:@1];
-      [keyTimes addObject:@1];
-    } else {
-      [keys addObject:@0];
-      [keyTimes addObject:@1];
-    }
-    
-    _compDuration = composition.timeDuration;
-    _inOutKeyTimes = keyTimes;
-    _inOutKeyframes = keys;
   }
+  
+  
+  _hasInAnimation = _inFrame.integerValue > 0;
+  
+  NSMutableArray *keys = [NSMutableArray array];
+  NSMutableArray *keyTimes = [NSMutableArray array];
+  CGFloat layerLength = _outFrame.integerValue;
+  _layerDuration = (layerLength / _framerate.floatValue);
+  
+  if (_hasInAnimation) {
+    [keys addObject:@1];
+    [keyTimes addObject:@0];
+    [keys addObject:@0];
+    CGFloat inTime = _inFrame.floatValue / layerLength;
+    [keyTimes addObject:@(inTime)];
+  } else {
+    [keys addObject:@0];
+    [keyTimes addObject:@0];
+  }
+  
+  [keys addObject:@1];
+  [keyTimes addObject:@1];
+
+  
+  
+  _inOutKeyTimes = keyTimes;
+  _inOutKeyframes = keys;
+}
+
+- (NSString*)description {
+    NSMutableString *text = [[super description] mutableCopy];
+    [text appendFormat:@" %@ id: %d pid: %d frames: %d-%d", _layerName, (int)_layerID.integerValue, (int)_parentID.integerValue,
+     (int)_inFrame.integerValue, (int)_outFrame.integerValue];
+    return text;
 }
 
 @end

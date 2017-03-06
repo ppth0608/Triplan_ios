@@ -1,18 +1,12 @@
-# Lottie for iOS (and [Android](https://github.com/airbnb/lottie-android))
+# Lottie for iOS, MacOS (and [Android](https://github.com/airbnb/lottie-android) and [React Native](https://github.com/airbnb/lottie-react-native))
 
 Lottie is a mobile library for Android and iOS that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [bodymovin](https://github.com/bodymovin/bodymovin) and renders the vector animations natively on mobile and through React Native!
-
-
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand.
 Since the animation is backed by JSON they are extremely small in size but can be large in complexity!
 Animations can be played, resized, looped, sped up, slowed down, and even interactively scrubbed.
 
 Lottie also supports native UIViewController Transitions out of the box!
-
-* [Painstaking example 1](http://jeremie-martinez.com//2016/09/15/train-animations/)
-* [Painstaking example 2](https://blog.twitter.com/2015/hearts-on-twitter)
-* [Painstaking example 3](https://medium.com/@crafty/animation-jump-through-861f4f5b3de4#.lvq6k8lb5)
 
 Here is just a small sampling of the power of Lottie
 
@@ -24,36 +18,25 @@ Here is just a small sampling of the power of Lottie
 
 ![Abcs](_Gifs/Examples4.gif)
 
-## Install Lottie
-
-###CocoaPods
-Add the pod to your podfile
-```
-pod 'lottie-ios'
-```
-run
-```
-pod install
-```
-
-###Carthage
-Install Carthage (https://github.com/Carthage/Carthage)
-Add Lottie to your Cartfile
-```
-github "airbnb/lottie-ios" "master"
-```
-run
-```
-carthage update
-```
-
 ## Using Lottie
 Lottie supports iOS 8 and above.
 Lottie animations can be loaded from bundled JSON or from a URL
 
+To bundle JSON just add it and any images that the animation requires to your target in xcode.
+
 The simplest way to use it is with LOTAnimationView:
 ```objective-c
 LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
+[self.view addSubview:animation];
+[animation playWithCompletion:^(BOOL animationFinished) {
+  // Do Something
+}];
+```
+
+If you are working with multiple bundles you can use.
+
+```objective-c
+LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie" inBundle:[NSBundle YOUR_BUNDLE]];
 [self.view addSubview:animation];
 [animation playWithCompletion:^(BOOL animationFinished) {
   // Do Something
@@ -129,13 +112,9 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Linear Interpolation
-
 * Bezier Interpolation
-
 * Hold Interpolation
-
 * Rove Across Time
-
 * Spatial Bezier
 
 ### Solids
@@ -143,13 +122,9 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Transform Anchor Point
-
 * Transform Position
-
 * Transform Scale
-
 * Transform Rotation
-
 * Transform Opacity
 
 ### Masks
@@ -157,9 +132,7 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Path
-
 * Opacity
-
 * Multiple Masks (additive)
 
 ### Track Mattes
@@ -173,7 +146,6 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Multiple Parenting
-
 * Nulls
 
 ### Shape Layers
@@ -181,23 +153,14 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Anchor Point
-
 * Position
-
 * Scale
-
 * Rotation
-
 * Opacity
-
 * Path
-
 * Group Transforms (Anchor point, position, scale etc)
-
 * Rectangle (All properties)
-
 * Elipse (All properties)
-
 * Multiple paths in one group
 
 #### Stroke (shape layer)
@@ -205,13 +168,9 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Stroke Color
-
 * Stroke Opacity
-
 * Stroke Width
-
 * Line Cap
-
 * Dashes
 
 #### Fill (shape layer)
@@ -219,7 +178,6 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Fill Color
-
 * Fill Opacity
 
 #### Trim Paths (shape layer)
@@ -227,10 +185,55 @@ animationView?.play(completion: { (finished) in
 ---
 
 * Trim Paths Start
-
 * Trim Paths End
-
 * Trim Paths Offset
+
+#### Layer Features
+
+---
+
+* Precomps
+* Image Layers
+* Shape Layers
+* Null Layers
+* Solid Layers
+* Parenting Layers
+* Alpha Matte Layers
+
+## Currently Unsupport After Effects Features
+
+* Even-Odd winding paths
+* Merge Shapes
+* Trim Shapes Individually feature of Trim Paths
+* Expressions
+* 3d Layer support
+* Gradients
+* Polystar shapes (Can convert to vector path as a workaround)
+* Alpha inverted mask
+
+
+## Install Lottie
+
+###CocoaPods
+Add the pod to your podfile
+```
+pod 'lottie-ios'
+```
+run
+```
+pod install
+```
+
+###Carthage
+Install Carthage (https://github.com/Carthage/Carthage)
+Add Lottie to your Cartfile
+```
+github "airbnb/lottie-ios" "master"
+```
+run
+```
+carthage update
+```
 
 ## Try it out
 
@@ -240,7 +243,13 @@ After installing the cocoapod into your project import Lottie with
 `#import <Lottie/Lottie.h>`
 
 Try with Carthage.
-In your application targets “General” tab under the “Embedded Binaries” section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that `carthage update` produced.
+In your application targets “General” tab under the “Linked Frameworks and Libraries” section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that `carthage update` produced.
+
+## Community Contributions
+ * [Xamarin bindings](https://github.com/martijn00/LottieXamarin)
+ * [NativeScript bindings](https://github.com/bradmartin/nativescript-lottie)
+ * [Appcelerator Titanium bindings](https://github.com/m1ga/ti.animation)
+ * MacOS Support added by [Alex Pawlowski](https://github.com/pawlowskialex)
 
 ## Alternatives
 1. Build animations by hand. Building animations by hand is a huge time commitment for design and engineering across Android and iOS. It's often hard or even impossible to justify spending so much time to get an animation right.
@@ -263,10 +272,9 @@ File github issues for anything that is unexpectedly broken. If an After Effects
 ## Roadmap (In no particular order)
 - Add support for interactive animated transitions
 - Add support for parenting programmatically added layers, moving/scaling
-- Support for the After Effects Trim Paths Offset feature
-- Animation Syncing
 - Programmatically alter animations
 - Animation Breakpoints/Seekpoints
 - Gradients
 - LOTAnimatedButton
 - Repeater objects
+

@@ -1,14 +1,12 @@
 //
 //  Error.swift
-//  Rx
+//  RxSwift
 //
 //  Created by Krunoslav Zaher on 8/30/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
-class Error<Element> : Producer<Element> {
+final class Error<Element> : Producer<Element> {
     private let _error: Swift.Error
     
     init(error: Swift.Error) {
