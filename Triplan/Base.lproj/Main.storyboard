@@ -58,7 +58,110 @@
                     <view key="view" contentMode="scaleToFill" id="u3G-yl-TNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-CM-UKz" userLabel="설정버튼">
+                                <rect key="frame" x="329" y="0.0" width="46" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="HlN-2a-2nP"/>
+                                    <constraint firstAttribute="height" constant="66" id="iOt-7D-s8L"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-12" minY="31" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="mainSetBtn"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHh-xa-IcE" userLabel="구분선">
+                                <rect key="frame" x="40" y="94" width="15" height="1"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.26666666666666666" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="KXe-Ua-ToB"/>
+                                    <constraint firstAttribute="height" constant="1" id="Mav-73-arN"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TYPE SOMETING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUF-oy-rhD" userLabel="여행제목">
+                                <rect key="frame" x="40" y="107" width="132.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2627450980392157" green="0.26666666666666666" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6xg-9H-Mdy" userLabel="컬렉션뷰">
+                                <rect key="frame" x="0.0" y="175" width="375" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="KK0-d0-CHK"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jaK-eJ-kEq">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="38" minY="0.0" maxX="38" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JHZ-xb-szR">
+                                        <rect key="frame" x="38" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seoul" translatesAutoresizingMaskIntoConstraints="NO" id="HZb-Ba-83J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HZb-Ba-83J" secondAttribute="trailing" id="WQJ-nW-YTo"/>
+                                            <constraint firstItem="HZb-Ba-83J" firstAttribute="top" secondItem="JHZ-xb-szR" secondAttribute="top" id="df2-he-IUg"/>
+                                            <constraint firstAttribute="bottom" secondItem="HZb-Ba-83J" secondAttribute="bottom" id="es9-YB-vAO"/>
+                                            <constraint firstItem="HZb-Ba-83J" firstAttribute="leading" secondItem="JHZ-xb-szR" secondAttribute="leading" id="s11-ob-CIc"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="300"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUa-iV-p6p" userLabel="페이지뷰">
+                                <rect key="frame" x="111" y="541" width="153" height="2"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8N-7K-UhW" userLabel="현제페이지뷰">
+                                        <rect key="frame" x="0.0" y="0.0" width="16" height="2"/>
+                                        <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Mmf-bf-ZPe"/>
+                                            <constraint firstAttribute="width" constant="16" id="wv1-N8-ec6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="x8N-7K-UhW" firstAttribute="leading" secondItem="zUa-iV-p6p" secondAttribute="leading" id="5oh-3b-Lax"/>
+                                    <constraint firstAttribute="height" constant="2" id="D45-PO-rbW"/>
+                                    <constraint firstItem="x8N-7K-UhW" firstAttribute="centerY" secondItem="zUa-iV-p6p" secondAttribute="centerY" id="S4K-Tn-Ye2"/>
+                                    <constraint firstAttribute="width" constant="153" id="iVO-eV-MXI"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7r-7S-zac">
+                                <rect key="frame" x="160" y="583" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="BUu-kP-6Cv"/>
+                                    <constraint firstAttribute="height" constant="55" id="WCr-wg-8DI"/>
+                                </constraints>
+                                <state key="normal" image="mainPlusBtn"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zUF-oy-rhD" firstAttribute="top" secondItem="UHh-xa-IcE" secondAttribute="bottom" constant="12" id="4YX-dP-mdD"/>
+                            <constraint firstItem="6xg-9H-Mdy" firstAttribute="leading" secondItem="u3G-yl-TNY" secondAttribute="leading" id="A31-ND-mTv"/>
+                            <constraint firstAttribute="trailing" secondItem="6xg-9H-Mdy" secondAttribute="trailing" id="Kyv-3N-NgU"/>
+                            <constraint firstAttribute="trailing" secondItem="h3W-CM-UKz" secondAttribute="trailing" id="MEv-MH-Gcv"/>
+                            <constraint firstItem="L7r-7S-zac" firstAttribute="centerX" secondItem="u3G-yl-TNY" secondAttribute="centerX" id="QCy-BF-AGF"/>
+                            <constraint firstItem="UHh-xa-IcE" firstAttribute="leading" secondItem="u3G-yl-TNY" secondAttribute="leading" constant="40" id="UI7-HD-RSx"/>
+                            <constraint firstItem="zUF-oy-rhD" firstAttribute="leading" secondItem="UHh-xa-IcE" secondAttribute="leading" id="eGr-j8-PpS"/>
+                            <constraint firstItem="4lc-Pa-kaQ" firstAttribute="top" secondItem="L7r-7S-zac" secondAttribute="bottom" constant="29" id="fgb-8e-4vt"/>
+                            <constraint firstItem="h3W-CM-UKz" firstAttribute="top" secondItem="u3G-yl-TNY" secondAttribute="top" id="gnQ-MS-eUk"/>
+                            <constraint firstItem="UHh-xa-IcE" firstAttribute="top" secondItem="u3G-yl-TNY" secondAttribute="topMargin" constant="94" id="kPX-Xb-gYr"/>
+                            <constraint firstItem="L7r-7S-zac" firstAttribute="top" secondItem="zUa-iV-p6p" secondAttribute="bottom" constant="40" id="seM-sC-k40"/>
+                            <constraint firstItem="zUa-iV-p6p" firstAttribute="centerX" secondItem="u3G-yl-TNY" secondAttribute="centerX" id="tJ0-IU-xcP"/>
+                            <constraint firstItem="6xg-9H-Mdy" firstAttribute="top" secondItem="zUF-oy-rhD" secondAttribute="bottom" constant="47" id="z1i-bl-WTG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Triplan" id="BXY-NQ-tF6">
                         <barButtonItem key="leftBarButtonItem" image="navi_menu" id="WoN-qq-Od3">
@@ -71,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkr-VP-SVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055" y="-119"/>
+            <point key="canvasLocation" x="-1055.2" y="-119.1904047976012"/>
         </scene>
         <!--Tabbar-->
         <scene sceneID="u8P-Qr-WSw">
@@ -83,7 +186,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mainPlusBtn" width="55" height="55"/>
+        <image name="mainSetBtn" width="27" height="27"/>
         <image name="navi_menu" width="22" height="22"/>
+        <image name="seoul" width="300" height="300"/>
         <image name="sidemenu_bg" width="640" height="1095"/>
     </resources>
 </document>

@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import SwiftyUserDefaults
+import RxDataSources
 
 class 메인_뷰컨트롤러: UIViewController {
 
@@ -27,15 +28,5 @@ fileprivate extension 메인_뷰컨트롤러 {
 
 // MARK: - IBAction
 extension 메인_뷰컨트롤러 {
-
-}
-
-// MARK: - UICollectionViewDelegate
-extension 메인_뷰컨트롤러: UICollectionViewDelegate {
-
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-extension 메인_뷰컨트롤러: UICollectionViewDelegateFlowLayout {
 
 }
