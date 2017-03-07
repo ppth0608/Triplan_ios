@@ -26,13 +26,10 @@
 		4A1E2C371DFD487E00E66DAC /* 여행계획.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E2C361DFD487E00E66DAC /* 여행계획.swift */; };
 		4A1E2C391DFD964500E66DAC /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E2C381DFD964500E66DAC /* CellPresentable.swift */; };
 		4A371BBF1E195C4F0033CF8E /* 공통_네비게이션뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A371BBE1E195C4F0033CF8E /* 공통_네비게이션뷰컨트롤러.swift */; };
-		4A3F97F11DF2927800F74DD8 /* 여행정보_셀.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F97F01DF2927800F74DD8 /* 여행정보_셀.swift */; };
-		4A3F97F41DF2928B00F74DD8 /* 여행추가_셀.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F97F31DF2928B00F74DD8 /* 여행추가_셀.swift */; };
 		4A60A5061DF2B22D00F28495 /* 공통_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60A5051DF2B22D00F28495 /* 공통_뷰컨트롤러.swift */; };
 		4A60A5091DF4418D00F28495 /* Currency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A60A5071DF4418D00F28495 /* Currency.storyboard */; };
 		4A60A50B1DF441BB00F28495 /* Addition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A60A50A1DF441BB00F28495 /* Addition.storyboard */; };
 		4A60A50E1DF441F000F28495 /* 여행추가_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60A50D1DF441F000F28495 /* 여행추가_뷰컨트롤러.swift */; };
-		4A60A5171DF461F600F28495 /* 메인_뷰모델.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60A5161DF461F600F28495 /* 메인_뷰모델.swift */; };
 		4A62C26F1E12108F0080780F /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C26E1E12108F0080780F /* NSObject+Extension.swift */; };
 		4A62C2711E1222B10080780F /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A62C2701E1222B10080780F /* ContentsCell.swift */; };
 		4A62C27F1E1604C20080780F /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62C27E1E1604C20080780F /* Schedule.storyboard */; };
@@ -95,9 +92,18 @@
 		4A8606261E2541950025F4C3 /* 사이드메뉴_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8606251E2541950025F4C3 /* 사이드메뉴_뷰컨트롤러.swift */; };
 		4A8606281E25435C0025F4C3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8606271E25435C0025F4C3 /* UIView+Extension.swift */; };
 		4A9DC8901DEF2EA700989C71 /* 메인_뷰컨트롤러.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */; };
-		4A9DC8921DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */; };
 		4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */; };
 		4ABF25B31E6DB9FE00B1B964 /* 개편.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF25B21E6DB9FE00B1B964 /* 개편.xcassets */; };
+		4ABF25BE1E6EF9FF00B1B964 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25BD1E6EF9FF00B1B964 /* UIViewController+Rx.swift */; };
+		4ABF25C31E6EFB2400B1B964 /* 서비스제공자.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25C21E6EFB2400B1B964 /* 서비스제공자.swift */; };
+		4ABF25C51E6EFB5E00B1B964 /* 기반서비스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25C41E6EFB5E00B1B964 /* 기반서비스.swift */; };
+		4ABF25C71E6EFBB400B1B964 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25C61E6EFBB400B1B964 /* BaseViewController.swift */; };
+		4ABF25CB1E6EFE3800B1B964 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25CA1E6EFE3800B1B964 /* Array+Extension.swift */; };
+		4ABF25CD1E6EFE4400B1B964 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25CC1E6EFE4400B1B964 /* Dictionary+Extension.swift */; };
+		4ABF25CF1E6EFE5500B1B964 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25CE1E6EFE5500B1B964 /* Sequence+Extension.swift */; };
+		4ABF25D11E6EFF2E00B1B964 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25D01E6EFF2E00B1B964 /* ModelType.swift */; };
+		4ABF25D31E6F025C00B1B964 /* 여행정보서비스.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25D21E6F025C00B1B964 /* 여행정보서비스.swift */; };
+		4ABF25D51E6F05FE00B1B964 /* 메인_뷰모델.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF25D41E6F05FE00B1B964 /* 메인_뷰모델.swift */; };
 		4AC4C9351DFEF76700DB79F0 /* 로딩뷰.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4C9341DFEF76700DB79F0 /* 로딩뷰.swift */; };
 		4AC4C9371DFEFB6D00DB79F0 /* 인디케이터뷰.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4C9361DFEFB6D00DB79F0 /* 인디케이터뷰.swift */; };
 		4AE205EE1E194B2700B12A46 /* 유저디폴츠세팅.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE205ED1E194B2700B12A46 /* 유저디폴츠세팅.swift */; };
@@ -143,13 +149,10 @@
 		4A1E2C361DFD487E00E66DAC /* 여행계획.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "여행계획.swift"; sourceTree = "<group>"; };
 		4A1E2C381DFD964500E66DAC /* CellPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		4A371BBE1E195C4F0033CF8E /* 공통_네비게이션뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "공통_네비게이션뷰컨트롤러.swift"; sourceTree = "<group>"; };
-		4A3F97F01DF2927800F74DD8 /* 여행정보_셀.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "여행정보_셀.swift"; sourceTree = "<group>"; };
-		4A3F97F31DF2928B00F74DD8 /* 여행추가_셀.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "여행추가_셀.swift"; sourceTree = "<group>"; };
 		4A60A5051DF2B22D00F28495 /* 공통_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "공통_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A60A5081DF4418D00F28495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Currency.storyboard; sourceTree = "<group>"; };
 		4A60A50A1DF441BB00F28495 /* Addition.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Addition.storyboard; sourceTree = "<group>"; };
 		4A60A50D1DF441F000F28495 /* 여행추가_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "여행추가_뷰컨트롤러.swift"; sourceTree = "<group>"; };
-		4A60A5161DF461F600F28495 /* 메인_뷰모델.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_뷰모델.swift"; sourceTree = "<group>"; };
 		4A62C26E1E12108F0080780F /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		4A62C2701E1222B10080780F /* ContentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
 		4A62C27E1E1604C20080780F /* Schedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
@@ -219,9 +222,18 @@
 		4A8606251E2541950025F4C3 /* 사이드메뉴_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "사이드메뉴_뷰컨트롤러.swift"; sourceTree = "<group>"; };
 		4A8606271E25435C0025F4C3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_뷰컨트롤러.swift"; sourceTree = "<group>"; };
-		4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_컬렉션뷰_데이터소스.swift"; sourceTree = "<group>"; };
 		4AB7099A1DFDAEBC00933FBF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		4ABF25B21E6DB9FE00B1B964 /* 개편.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "개편.xcassets"; sourceTree = "<group>"; };
+		4ABF25BD1E6EF9FF00B1B964 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		4ABF25C21E6EFB2400B1B964 /* 서비스제공자.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "서비스제공자.swift"; sourceTree = "<group>"; };
+		4ABF25C41E6EFB5E00B1B964 /* 기반서비스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "기반서비스.swift"; sourceTree = "<group>"; };
+		4ABF25C61E6EFBB400B1B964 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4ABF25CA1E6EFE3800B1B964 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		4ABF25CC1E6EFE4400B1B964 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		4ABF25CE1E6EFE5500B1B964 /* Sequence+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		4ABF25D01E6EFF2E00B1B964 /* ModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
+		4ABF25D21E6F025C00B1B964 /* 여행정보서비스.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "여행정보서비스.swift"; sourceTree = "<group>"; };
+		4ABF25D41E6F05FE00B1B964 /* 메인_뷰모델.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "메인_뷰모델.swift"; sourceTree = "<group>"; };
 		4AC4C9341DFEF76700DB79F0 /* 로딩뷰.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "로딩뷰.swift"; sourceTree = "<group>"; };
 		4AC4C9361DFEFB6D00DB79F0 /* 인디케이터뷰.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "인디케이터뷰.swift"; sourceTree = "<group>"; };
 		4AE205ED1E194B2700B12A46 /* 유저디폴츠세팅.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "유저디폴츠세팅.swift"; sourceTree = "<group>"; };
@@ -263,7 +275,6 @@
 		4A0512741E004C28005D7DD9 /* 데이터 */ = {
 			isa = PBXGroup;
 			children = (
-				4A1E2C341DFD483000E66DAC /* 여행정보.swift */,
 				4A1E2C361DFD487E00E66DAC /* 여행계획.swift */,
 				4A1E2C291DFD47A100E66DAC /* 환율.swift */,
 			);
@@ -275,28 +286,8 @@
 			children = (
 				4A1E2C381DFD964500E66DAC /* CellPresentable.swift */,
 				4A62C2701E1222B10080780F /* ContentsCell.swift */,
-				4A0512761E004C4E005D7DD9 /* StoryboardIdentifiable.swift */,
-				4A05127B1E00524A005D7DD9 /* UIViewControllerCreatable.swift */,
 			);
 			name = "프로토콜";
-			sourceTree = "<group>";
-		};
-		4A1E2BE81DFC574E00E66DAC /* 기능 */ = {
-			isa = PBXGroup;
-			children = (
-				4AE205EC1E194B1B00B12A46 /* 유저디폴츠 */,
-				4AC4C9331DFEF74800DB79F0 /* 로딩뷰 */,
-				4A1E2BE91DFC575500E66DAC /* 데이터베이스 */,
-			);
-			name = "기능";
-			sourceTree = "<group>";
-		};
-		4A1E2BE91DFC575500E66DAC /* 데이터베이스 */ = {
-			isa = PBXGroup;
-			children = (
-				4A1E2BEA1DFC57D100E66DAC /* 데이터베이스.swift */,
-			);
-			name = "데이터베이스";
 			sourceTree = "<group>";
 		};
 		4A1E2C111DFD471E00E66DAC /* 환율 */ = {
@@ -396,19 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				4A62C34E1DEBED27008DAD1D /* 인터페이스 */,
-				4A1E2BE81DFC574E00E66DAC /* 기능 */,
-				4A3F97EF1DF2909800F74DD8 /* 공통 */,
-				4A9DC88A1DEF2B8200989C71 /* 메인 */,
-				4A60A50C1DF441DD00F28495 /* 여행추가 */,
-				4A673E061E077F9B007587B1 /* 탭바 */,
-				4A673E0D1E07A613007587B1 /* 계획 */,
-				4A7068F71E21310A006C3F07 /* 계획추가 */,
-				4A673E0F1E07A621007587B1 /* 통계 */,
-				4A673E101E07A626007587B1 /* 설정 */,
-				4A8606241E2541800025F4C3 /* 사이드메뉴 */,
-				4A1E2C111DFD471E00E66DAC /* 환율 */,
-				4A1E2C121DFD472A00E66DAC /* 모델 */,
-				4AB709991DFDAEAA00933FBF /* 유틸 */,
+				4ABF25BA1E6EF97300B1B964 /* Renewal */,
+				4ABF25BB1E6EF98300B1B964 /* Old */,
 				4A62C31C1DEBE664008DAD1D /* AppDelegate.swift */,
 			);
 			name = src;
@@ -578,19 +558,118 @@
 			name = "사이드메뉴";
 			sourceTree = "<group>";
 		};
-		4A9DC88A1DEF2B8200989C71 /* 메인 */ = {
+		4ABF25B41E6EF94A00B1B964 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */,
-				4A9DC8911DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift */,
-				4A60A5161DF461F600F28495 /* 메인_뷰모델.swift */,
-				4A3F97F01DF2927800F74DD8 /* 여행정보_셀.swift */,
-				4A3F97F31DF2928B00F74DD8 /* 여행추가_셀.swift */,
 			);
-			name = "메인";
+			name = Views;
 			sourceTree = "<group>";
 		};
-		4AB709991DFDAEAA00933FBF /* 유틸 */ = {
+		4ABF25B51E6EF95200B1B964 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25C61E6EFBB400B1B964 /* BaseViewController.swift */,
+				4A9DC88F1DEF2EA700989C71 /* 메인_뷰컨트롤러.swift */,
+				4ABF25D41E6F05FE00B1B964 /* 메인_뷰모델.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4ABF25B61E6EF95A00B1B964 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25C91E6EFD4700B1B964 /* 스토리보드 */,
+				4ABF25C81E6EFC8200B1B964 /* Extension */,
+				4AE205EC1E194B1B00B12A46 /* 유저디폴츠 */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4ABF25B71E6EF95E00B1B964 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25C21E6EFB2400B1B964 /* 서비스제공자.swift */,
+				4ABF25C41E6EFB5E00B1B964 /* 기반서비스.swift */,
+				4ABF25D21E6F025C00B1B964 /* 여행정보서비스.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4ABF25B81E6EF96700B1B964 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25BF1E6EFA9A00B1B964 /* UIViewController */,
+				4ABF25C11E6EFAB100B1B964 /* Database */,
+				4ABF25C01E6EFAA100B1B964 /* HUD */,
+			);
+			name = Rx;
+			sourceTree = "<group>";
+		};
+		4ABF25B91E6EF96C00B1B964 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25D01E6EFF2E00B1B964 /* ModelType.swift */,
+				4A1E2C341DFD483000E66DAC /* 여행정보.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4ABF25BA1E6EF97300B1B964 /* Renewal */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25B91E6EF96C00B1B964 /* Models */,
+				4ABF25B81E6EF96700B1B964 /* Rx */,
+				4ABF25B71E6EF95E00B1B964 /* Services */,
+				4ABF25B61E6EF95A00B1B964 /* Utils */,
+				4ABF25B51E6EF95200B1B964 /* ViewControllers */,
+				4ABF25B41E6EF94A00B1B964 /* Views */,
+			);
+			name = Renewal;
+			sourceTree = "<group>";
+		};
+		4ABF25BB1E6EF98300B1B964 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F97EF1DF2909800F74DD8 /* 공통 */,
+				4A60A50C1DF441DD00F28495 /* 여행추가 */,
+				4A673E061E077F9B007587B1 /* 탭바 */,
+				4A673E0D1E07A613007587B1 /* 계획 */,
+				4A7068F71E21310A006C3F07 /* 계획추가 */,
+				4A673E0F1E07A621007587B1 /* 통계 */,
+				4A673E101E07A626007587B1 /* 설정 */,
+				4A8606241E2541800025F4C3 /* 사이드메뉴 */,
+				4A1E2C111DFD471E00E66DAC /* 환율 */,
+				4A1E2C121DFD472A00E66DAC /* 모델 */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		4ABF25BF1E6EFA9A00B1B964 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF25BD1E6EF9FF00B1B964 /* UIViewController+Rx.swift */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		4ABF25C01E6EFAA100B1B964 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				4AC4C9361DFEFB6D00DB79F0 /* 인디케이터뷰.swift */,
+				4AC4C9341DFEF76700DB79F0 /* 로딩뷰.swift */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		4ABF25C11E6EFAB100B1B964 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4A1E2BEA1DFC57D100E66DAC /* 데이터베이스.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		4ABF25C81E6EFC8200B1B964 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				4A62C28C1E163C9F0080780F /* String+Extension.swift */,
@@ -600,17 +679,20 @@
 				4A62C26E1E12108F0080780F /* NSObject+Extension.swift */,
 				4A62C28A1E1634EC0080780F /* Optional_Extension.swift */,
 				4A8606271E25435C0025F4C3 /* UIView+Extension.swift */,
+				4ABF25CA1E6EFE3800B1B964 /* Array+Extension.swift */,
+				4ABF25CC1E6EFE4400B1B964 /* Dictionary+Extension.swift */,
+				4ABF25CE1E6EFE5500B1B964 /* Sequence+Extension.swift */,
 			);
-			name = "유틸";
+			name = Extension;
 			sourceTree = "<group>";
 		};
-		4AC4C9331DFEF74800DB79F0 /* 로딩뷰 */ = {
+		4ABF25C91E6EFD4700B1B964 /* 스토리보드 */ = {
 			isa = PBXGroup;
 			children = (
-				4AC4C9341DFEF76700DB79F0 /* 로딩뷰.swift */,
-				4AC4C9361DFEFB6D00DB79F0 /* 인디케이터뷰.swift */,
+				4A0512761E004C4E005D7DD9 /* StoryboardIdentifiable.swift */,
+				4A05127B1E00524A005D7DD9 /* UIViewControllerCreatable.swift */,
 			);
-			name = "로딩뷰";
+			name = "스토리보드";
 			sourceTree = "<group>";
 		};
 		4AE205EC1E194B1B00B12A46 /* 유저디폴츠 */ = {
@@ -857,8 +939,8 @@
 			files = (
 				4A0512791E004CDA005D7DD9 /* UIStroryboard+Extension.swift in Sources */,
 				4A6A7C721E320EA700ED1E81 /* CVCalendarViewDelegate.swift in Sources */,
+				4ABF25CF1E6EFE5500B1B964 /* Sequence+Extension.swift in Sources */,
 				4A6A7C791E320EA700ED1E81 /* CVRange.swift in Sources */,
-				4A3F97F11DF2927800F74DD8 /* 여행정보_셀.swift in Sources */,
 				4A673E141E07ACFB007587B1 /* 상세_설정_뷰컨트롤러.swift in Sources */,
 				4A62C28B1E1634EC0080780F /* Optional_Extension.swift in Sources */,
 				4A6A7C6E1E320EA700ED1E81 /* CVCalendarViewAnimator.swift in Sources */,
@@ -866,10 +948,12 @@
 				4A673E0A1E07A5D2007587B1 /* 탭_뷰컨트롤러.swift in Sources */,
 				4AFC95251E1EBC74005DECCD /* 상세_계획_추가_셀.swift in Sources */,
 				4A6A7C7B1E320EA700ED1E81 /* CVSelectionType.swift in Sources */,
+				4ABF25D11E6EFF2E00B1B964 /* ModelType.swift in Sources */,
 				4AB7099B1DFDAEBC00933FBF /* NSDate+Extension.swift in Sources */,
 				4A6A7C6C1E320EA700ED1E81 /* CVCalendarTouchController.swift in Sources */,
 				4A1E2C301DFD47C300E66DAC /* 환율_API트레커모델.swift in Sources */,
 				4A60A5061DF2B22D00F28495 /* 공통_뷰컨트롤러.swift in Sources */,
+				4ABF25C71E6EFBB400B1B964 /* BaseViewController.swift in Sources */,
 				4A6A7C7A1E320EA700ED1E81 /* CVScrollDirection.swift in Sources */,
 				4A1E2C2E1DFD47B900E66DAC /* 환율_셀.swift in Sources */,
 				4A1E2C2C1DFD47AF00E66DAC /* 환율_EndPoint.swift in Sources */,
@@ -899,11 +983,9 @@
 				4A673E121E07ACF1007587B1 /* 상세_통계_뷰컨트롤러.swift in Sources */,
 				4A62C2711E1222B10080780F /* ContentsCell.swift in Sources */,
 				4A7068F91E213128006C3F07 /* 상세_계획_추가_뷰컨트롤러.swift in Sources */,
-				4A9DC8921DEF2F4000989C71 /* 메인_컬렉션뷰_데이터소스.swift in Sources */,
 				4A1E2C2A1DFD47A100E66DAC /* 환율.swift in Sources */,
 				4A6A7C7E1E320EA700ED1E81 /* CVStatus.swift in Sources */,
 				4A6A7C771E320EA700ED1E81 /* CVDate.swift in Sources */,
-				4A3F97F41DF2928B00F74DD8 /* 여행추가_셀.swift in Sources */,
 				4A6A7C7F1E320EA700ED1E81 /* CVWeekdaySymbolType.swift in Sources */,
 				4A6A7C5E1E320EA700ED1E81 /* BPCircleTransionUnwindSegue.swift in Sources */,
 				4A6A7C631E320EA700ED1E81 /* CVAuxiliaryView.swift in Sources */,
@@ -917,23 +999,29 @@
 				4AC4C9351DFEF76700DB79F0 /* 로딩뷰.swift in Sources */,
 				4A6A7C601E320EA700ED1E81 /* ViewControllerContainBPCircleTransion.swift in Sources */,
 				4A62C26F1E12108F0080780F /* NSObject+Extension.swift in Sources */,
+				4ABF25D31E6F025C00B1B964 /* 여행정보서비스.swift in Sources */,
 				4A1E2C321DFD47CD00E66DAC /* 환율_계산기_뷰모델.swift in Sources */,
+				4ABF25C51E6EFB5E00B1B964 /* 기반서비스.swift in Sources */,
 				4A1E2BF41DFD3EA900E66DAC /* 공통_테이블뷰컨트롤러.swift in Sources */,
 				4AC4C9371DFEFB6D00DB79F0 /* 인디케이터뷰.swift in Sources */,
 				4A6A7C761E320EA700ED1E81 /* CVCalendarWeekView.swift in Sources */,
 				4A70690F1E2148E6006C3F07 /* 공통_탭뷰컨트롤러.swift in Sources */,
+				4ABF25BE1E6EF9FF00B1B964 /* UIViewController+Rx.swift in Sources */,
 				4A62C2871E162C4C0080780F /* 상세_통계_뷰모델.swift in Sources */,
 				4A6A7C701E320EA700ED1E81 /* CVCalendarViewAppearance.swift in Sources */,
 				4A6A7C621E320EA700ED1E81 /* BPSideMenuUnwindTransition.swift in Sources */,
 				4AFC95271E1EBC91005DECCD /* 상세_계획_테이블뷰_데이터소스.swift in Sources */,
+				4ABF25CD1E6EFE4400B1B964 /* Dictionary+Extension.swift in Sources */,
+				4ABF25C31E6EFB2400B1B964 /* 서비스제공자.swift in Sources */,
 				4AFC95231E1EBC64005DECCD /* 상세_계획_셀.swift in Sources */,
+				4ABF25CB1E6EFE3800B1B964 /* Array+Extension.swift in Sources */,
 				4A6A7C6B1E320EA700ED1E81 /* CVCalendarMonthView.swift in Sources */,
 				4A6A7C611E320EA700ED1E81 /* BPSideMenuTransition.swift in Sources */,
 				4A60A50E1DF441F000F28495 /* 여행추가_뷰컨트롤러.swift in Sources */,
-				4A60A5171DF461F600F28495 /* 메인_뷰모델.swift in Sources */,
 				4A6A7C6D1E320EA700ED1E81 /* CVCalendarView.swift in Sources */,
 				4A6A7C6F1E320EA700ED1E81 /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				4A6A7C741E320EA700ED1E81 /* CVCalendarWeekContentViewController.swift in Sources */,
+				4ABF25D51E6F05FE00B1B964 /* 메인_뷰모델.swift in Sources */,
 				4A6A7C781E320EA700ED1E81 /* CVPresent.swift in Sources */,
 				4A6A7C671E320EA700ED1E81 /* CVCalendarManager.swift in Sources */,
 				4A1E2C271DFD479400E66DAC /* 환율_뷰모델.swift in Sources */,

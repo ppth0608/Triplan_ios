@@ -39,13 +39,9 @@ class 여행정보: Object {
     }
 }
 
-extension 여행정보: CollectionViewCellPresentable {
+extension 여행정보: Identifiable {
 
-    static var cellHeight: CGFloat {
-        return 160
-    }
-
-    static var cellWidth: CGFloat {
-        return UIScreen.main.bounds.width / 2 - 10
+    var id: String {
+        return 여행정보키
     }
 }
