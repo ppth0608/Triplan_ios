@@ -104,9 +104,12 @@ fileprivate extension 여행추가_뷰컨트롤
         }
 
         switch 셀인덱스 {
-        case 2: 출발데이터피커숨겨짐 = !출발데이터피커숨겨짐
-        case 4: 도착데이터피커숨겨짐 = !도착데이터피커숨겨짐
-        default: return
+        case 2:
+            출발데이터피커숨겨짐 = !출발데이터피커숨겨짐
+        case 4:
+            도착데이터피커숨겨짐 = !도착데이터피커숨겨짐
+        default:
+            return
         }
 
         테이블뷰UI업데이트()

@@ -30,8 +30,8 @@ protocol TableViewCellPresentable: CellPresentable { }
 
 extension TableViewCellPresentable {
 
-    func cell<T: UITableViewCell>(from tableView: UITableView, with indexPath: IndexPath) -> T {
-        return tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as! T
+    func cell<T: UITableViewCell>(from tableView: UITableView, with indexPath: IndexPath) -> T? {
+        return tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as? T
     }
 }
 
@@ -42,7 +42,7 @@ protocol CollectionViewCellPresentable: CellPresentable {
 
 extension CollectionViewCellPresentable {
 
-    func cell<T: UICollectionViewCell>(from collectionView: UICollectionView, with indexPath: IndexPath) -> T {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath) as! T
+    func cell<T: UICollectionViewCell>(from collectionView: UICollectionView, with indexPath: IndexPath) -> T? {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath) as? T
     }
 }
